@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block content %}
+<div class="slider-area">
+    <div class="slider-active owl-carousel">
+        <div class="item">
+            <a href="{% url 'login' %}"><img src="https://www.robertsonlodges.com/library/cape-kidnappers/activities/golf/_d8a7343.jpg" /></a>
+        </div>
+    </div>
+</div>
+{% block search %}
+        {% csrf_token %}
+        {% endblock %}
+{% endblock %}

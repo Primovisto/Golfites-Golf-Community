@@ -1,10 +1,70 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>Our Simple Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "css/font-awesome-4.7.0/css/font-awesome.css" %}">
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
 </head>
 <body>
+<div class="container">
+   <div class="masthead">
+       <ul class="nav nav-pills pull-right">
+           <li class="nav-item"><a href="#">Home</a></li>
+           <li class="nav-item"><a href="{% url 'equipment' %}">Equipment</a></li>
+           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Social
+                    </a>
+               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                        <a class="dropdown-item" style="padding:10px;" href="#">Blog</a><br>
+                        <a class="dropdown-item" href="#" style="padding:10px;">Forum</a>
+                    </div>
+           </li>
+           {% if user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'profile' %}">Profile</a></li>
+                <li class="nav-item"><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+                <li class="nav-item"><a href="{% url 'register' %}">Register</a></li>
+                <li class="nav-item"><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+       </ul>
+       <h1><span class="fui-settings-16 muted"><img src="http://i66.tinypic.com/23w2x6h.png"></span></h1>
+   </div>
+</div>
+
+    {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+
+   <div class="content">
+       {% block content %}
+       {% endblock %}
+   </div>
+   <hr>
+   <div class="footer">
+       <p>Made By Bootcampers and Django </p>
+   </div>
 
 </body>
 </html>
