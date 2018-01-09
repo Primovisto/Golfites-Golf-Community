@@ -25,11 +25,16 @@ SECRET_KEY = '-rl*rbql1zag@#&wx#8#)(7l@ajz0p$zvs!wr7h&hs^=bxe(px'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Stripe environment variables
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_vl0D4IPFphDE1u3Ckqnx3A9e')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_PDReg0EVRNz11YIG1pZo5iWV')
+
 # PayPal Settings
 SITE_URL = 'http://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'edward@primovisto.com'
 
+DISQUS_WEBSITE_SHORTNAME = 'mybootcampblog'
 SITE_ID = 1
 
 ALLOWED_HOSTS = []
@@ -45,8 +50,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'disqus',
+    'polls',
+    'threads',
+    'tinymce',
+    'courses',
+    'education_center',
+    'emoticons',
+    'debug_toolbar',
     'home',
     'accounts',
+    'blog',
     'paypal_store',
     'paypal.standard.ipn',
     'equipment',
@@ -61,6 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'Golfites_Golf_Community.urls'
@@ -146,4 +162,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
+# tinymce settings
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')

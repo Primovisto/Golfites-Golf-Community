@@ -1,6 +1,6 @@
 
 from django.conf.urls import url
-from .views import all_equipment,equipment_page
+from .views import all_equipment, equipment_page
 
 urlpatterns = [
 

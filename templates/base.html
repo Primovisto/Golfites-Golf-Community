@@ -18,22 +18,34 @@
     <script src="/static/js/script.js"></script>
     <script src="/static/js/ajax.js"></script>
     <script src="/static/js/owl.carousel.min.js"></script>
+
+    {% block head_js %}{% endblock head_js %}
 </head>
 <body>
 <div class="container">
    <div class="masthead">
        <ul class="nav nav-pills pull-right">
-           <li class="nav-item"><a href="#">Home</a></li>
+           <li class="nav-item"><a href="http://127.0.0.1:8000">Home</a></li>
+           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Golf Courses
+                    </a>
+               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                        <a class="dropdown-item" style="padding:10px;" href="{% url 'courses' %}">Find a Course</a><br>
+                        <a class="dropdown-item" href="/forum/" style="padding:10px;">Golf Course Directory</a>
+                    </div>
+           </li>
            <li class="nav-item"><a href="{% url 'equipment' %}">Equipment</a></li>
            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Social
                     </a>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" style="padding:10px;" href="#">Blog</a><br>
-                        <a class="dropdown-item" href="#" style="padding:10px;">Forum</a>
+                        <a class="dropdown-item" style="padding:10px;" href="{% url 'blog' %}">Blog</a><br>
+                        <a class="dropdown-item" href="/forum/" style="padding:10px;">Forum</a>
                     </div>
            </li>
+           <li class="nav-item"><a class="nav-link" href="{% url 'education_blog' %}">Education Center</a></li>
            {% if user.is_authenticated %}
                 <li class="nav-item"><a href="{% url 'profile' %}">Profile</a></li>
                 <li class="nav-item"><a href="{% url 'logout' %}">Log Out</a></li>

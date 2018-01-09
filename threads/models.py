@@ -1,0 +1,26 @@
+from django.db import models
+from django.utils import timezone
+from tinymce.models import HTMLField
+from django.conf import settings
+
+
+class Subject(models.Model):
+    name = models.CharField(max_length=255)
+    description = HTMLField()
+
+    def __str__(self):
+        return self.name
+
+
+class Thread(models.Model):
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='threads', on_delete=models.PROTECT)
+    subject = models.ForeignKey(Subject, related_name='threads', on_delete=models.PROTECT)
+    created_at = models.DateTimeField(default=timezone.now)
+
+
+class Post(models.Model):
+    thread = models.ForeignKey(Thread, related_name='posts', on_delete=models.PROTECT)
+    comment = HTMLField(blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='posts', on_delete=models.PROTECT)
+    created_at = models.DateTimeField(default=timezone.now)
