@@ -6,25 +6,26 @@
     <div class="container">
 
     <div class="row">
-<h2>Irish Golf Course Directory</h2>
+<h2 style="text-align:center;">Irish Golf Course Directory</h2>
     <div class="col-md-4">
+    <div class="top-50-courses" style="margin-bottom:20px; text-align:center;text-decoration:underline;">
+    <h4>Ireland's top 50 Golf Courses 2017</h4>
+</div>
     {% for course in all_courses %}
 
 
+<div class="col-md-4">
 
-        <div class="course-info" style="display:block; height:50px;">
-        <a style="display:inline-block;" href="{{ course.url }}"><p>{{ course.name }}</p></a>
-        {% if course.course_image %}
-                                <img class="img-responsive img-circle" src="/media/{{ course.course_image }}" style="display:inline-block; width:40px; height: 40px; float:left; background-color: #fff; color: #ffffff;"/>
-                            {% else %}
-                                <div class="" style="display:inline-block;">No images available</div>
-                            {% endif %}
+        <div class="course-info" style="display:block;">
+
+       <a style="display:inline-block;" href="{{ course.url }}"><p>{{ course.name }}</p></a>
+</div>
 </div>
 
 {% endfor %}
 </div>
-        <div class="col-md-8 pull-right">
-           <iframe src="https://www.google.com/maps/d/embed?mid=1jryEkPkBy4bZIwlNax_SL7MsS-8bk8Gu" width="800" height="660"></iframe>
+        <div class="col-md-8">
+           <iframe src="https://www.google.com/maps/d/embed?mid=1jryEkPkBy4bZIwlNax_SL7MsS-8bk8Gu" width="800" height="750></iframe>
         </div>
     </div>
 </div>

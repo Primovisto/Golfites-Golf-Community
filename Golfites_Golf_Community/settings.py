@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'disqus',
     'polls',
+    'golfer',
     'threads',
     'tinymce',
     'courses',
