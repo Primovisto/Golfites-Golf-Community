@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
+{% load embed_video_tags %}
 {% block content %}
     <div class="maincontent" style="border-top:4px solid #6c8835;margin-top:20px;">
 <div class="container">
@@ -11,47 +12,40 @@
                 <a href="{% url 'index' %}">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="{% url 'all_golfers' %}">Browse Products</a></li>
+                <a href="{% url 'all_golfers' %}">Browse Golfers</a></li>
         </ol>
     <div class="row">
+
             <div class="col-md-6" style="margin-top:20px;">
-                {% if equipment.image %}
-                    <img class="img-responsive product-image" src="/media/{{ equipment.image }}"/>
+                {% if golfer.image %}
+                    <img class="img-responsive" style="margin:30px auto; height:400px; width:500px;" src="/media/{{ golfer.image }}"/>
                 {% else %}
                     <div class="#">No images</div>
                 {% endif %}
 </div>
     <div class="col-md-6">
                 <h2 class="product-header">{{ golfer.name }}</h2>
-                <p class="product-details-desc"><strong>Description:</strong> {{ golfer.product_short_description }}</p>
-                <p class="product-details-price">€ {{ equipment.price }}</p>
-
-                <p class="product-details-views">Views: {{ equipment.views }}</p>
+                <p class="product-details-desc"><strong>Club:</strong> {{ golfer.golf_club }}</p>
+                <p><strong>Current Handicap:</strong> {{ golfer.current_handicap }}</p>
+                <p><strong>Lowest Handicap:</strong> {{ golfer.lowest_handicap }}</p>
+    <p><strong>Greatest Golfing Achievement:</strong> {{ golfer.biggest_golfing_achievement }}</p>
+<p class="product-details-views"><strong>About My Golf:</strong> {{ golfer.about_my_golf }}</p>
+                <p class="product-details-views"><strong>What's in the bag?</strong> {{ golfer.whats_in_your_bag }}</p>
                 <hr>
-
-
-                </div>
+                <p><strong>My Golf Swing:</strong><br>{% video golfer.swing as my_video %}
+    {% video my_video '500x410' %}
+{% endvideo %}</p>
 </div>
+
       </div>
+<div class="row">
+    <div class="col-md-12">
+        {% load disqus_tags %}
+                    {% set_disqus_title post.title %}
+                    {% disqus_show_comments %}
     </div>
-
-    <div class="product-info">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6">
-                    <h2 class="product-info-header">Product Info</h2>
-                    <p class="product-info-desc">{{ equipment.product_long_description }}</p>
-
-                </div>
-                <div class="col-xs-6">
-
-                    <h2 class="product-info-header">About {{ equipment.brand }}</h2>
-                    <p class="product-info-desc">{{ equipment.brand_description }}
-                        </p>
-
-                </div>
-            </div>
-        </div>
+</div>
+    </div>
 
     </div>
 

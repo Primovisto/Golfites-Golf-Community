@@ -3,16 +3,7 @@
 {% load bootstrap_tags %}
 {% load embed_video_tags %}
 {% block content %}
-    <div class="slider-area">
-    <div class="slider-active owl-carousel">
-        <div class="item">
-            <img src="http://i68.tinypic.com/2ibj63b.png" />
-        </div>
-        <div class="item">
-            <img src="http://www.theskinnybeep.com/wp-content/uploads/2010/10/Brunch-Wrangler-Lomo-October-Milan-2010-31.jpg" />
-        </div>
-    </div>
-</div>
+    
 <div class="container">
 
         <!-- Breadcrumbs -->
@@ -40,7 +31,7 @@
 
                         <div class="col-lg-3 col-sm-6 col-xs-12">
 
-                        <a style="cursor:pointer; text-decoration:none;" onclick="location.href='{% url 'equipmentpage' golfer.id %}'">
+                        <a style="cursor:pointer; text-decoration:none;" onclick="location.href='{% url 'golfer_page' golfer.id %}'">
                         {% if golfer.image %}
                                 <img class="img-responsive img-circle" src="/media/{{ golfer.image }}" style="width:200px; height: 200px; margin:30px auto 0 auto;"/>
                             {% else %}
@@ -49,12 +40,10 @@
                         <h2 class="product-title"><strong>Name:</strong>{{ golfer.name}}</h2>
                             <div class="product-details">
 
-                                <p><strong>Handicap:</strong>{{ golfer.handicap }}</p>
+                                <p><strong>Handicap:</strong>{{ golfer.current_handicap }}</p>
                                 <p><strong>Golf Club:</strong>{{ golfer.golf_club }}</p>
                                 <p><strong>What's in your bag?:</strong>{{ golfer.whats_in_your_bag }}</p>
-                                <p><strong>Golf Swing:</strong><br>{% video golfer.swing as my_video %}
-    {% video my_video '250x180' %}
-{% endvideo %}</p>
+
 
 
                             </div>
