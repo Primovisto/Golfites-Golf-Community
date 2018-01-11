@@ -7,7 +7,12 @@ class NewGolferForm(forms.ModelForm):
         model = GolferProfile
         fields = (
                   'name',
-                  'handicap',
+                  'image',
                   'golf_club',
+                  'current_handicap',
+                  'lowest_handicap',
+                  'about_my_golf',
+                  'biggest_golfing_achievement',
                   'whats_in_your_bag',
+                  'swing',
                   )
