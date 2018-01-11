@@ -11,6 +11,8 @@ class UserRegistrationForm(UserCreationForm):
     MONTH_CHOICES = list(enumerate(MONTH_ABBREVIATIONS, 1))
     YEAR_CHOICES = [(i, i) for i in range(2015, 2036)]
 
+    handicap = forms.IntegerField(label="Your handicap")
+    golf_club = forms.CharField(label="Your golf club", max_length=255)
     credit_card_number = forms.CharField(label='Credit card number')
     cvv = forms.CharField(label='Security code (CVV)')
     expiry_month = forms.ChoiceField(label="Month", choices=MONTH_CHOICES)

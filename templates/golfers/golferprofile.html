@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+{% block content %}
+    <div class="maincontent" style="border-top:4px solid #6c8835;margin-top:20px;">
+<div class="container">
+
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'all_golfers' %}">Browse Products</a></li>
+        </ol>
+    <div class="row">
+            <div class="col-md-6" style="margin-top:20px;">
+                {% if equipment.image %}
+                    <img class="img-responsive product-image" src="/media/{{ equipment.image }}"/>
+                {% else %}
+                    <div class="#">No images</div>
+                {% endif %}
+</div>
+    <div class="col-md-6">
+                <h2 class="product-header">{{ golfer.name }}</h2>
+                <p class="product-details-desc"><strong>Description:</strong> {{ golfer.product_short_description }}</p>
+                <p class="product-details-price">€ {{ equipment.price }}</p>
+
+                <p class="product-details-views">Views: {{ equipment.views }}</p>
+                <hr>
+
+
+                </div>
+</div>
+      </div>
+    </div>
+
+    <div class="product-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2 class="product-info-header">Product Info</h2>
+                    <p class="product-info-desc">{{ equipment.product_long_description }}</p>
+
+                </div>
+                <div class="col-xs-6">
+
+                    <h2 class="product-info-header">About {{ equipment.brand }}</h2>
+                    <p class="product-info-desc">{{ equipment.brand_description }}
+                        </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% block search %}
+        {% csrf_token %}
+        {% endblock %}
+{% endblock %}

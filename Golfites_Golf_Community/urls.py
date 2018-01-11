@@ -21,6 +21,7 @@ from Golfites_Golf_Community.settings import MEDIA_ROOT
 from accounts import urls as accounts_urls
 from blog import urls as blog_urls
 from equipment import urls as equipment_urls
+from golfer import urls as golfers_urls
 from education_center import urls as education_center_urls
 from threads import urls as threads_urls
 from home.views import index
@@ -37,5 +38,6 @@ urlpatterns = [
     url(r'^forum/', include(threads_urls)),
     url(r'^education_center/', include(education_center_urls)),
     url(r'^courses/', include(courses_urls)),
+    url(r'^golfers/', include(golfers_urls)),
 
 ]
