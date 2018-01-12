@@ -2,14 +2,108 @@
 {% load bootstrap_tags %}
 {% load staticfiles %}
 {% block content %}
-<div class="slider-area">
+<div class="slider-area" style="position:relative;top:75px;">
     <div class="slider-active owl-carousel">
         <div class="item">
-            <a href="{% url 'login' %}"><img src="https://www.robertsonlodges.com/library/cape-kidnappers/activities/golf/_d8a7343.jpg" /></a>
+            <a href="{% url 'login' %}"><img src="/media/images/ir-int-mast-golf_obrien_101005_7739.jpg" /></a>
+            <div class="item-caption" style="margin-left: auto;margin-right:auto;">
+                <div class="slide-header" style="margin-left:auto; margin-right:auto;">
+                    <h2 style="font-family:arial;font-size:26px; text-transform:uppercase; padding:10px 20px;color:#fff;text-shadow: 2px 2px 0 rgba(0, 0, 0, 1); font-weight:700;">The online community for Irish golfers with a passion for the game</h2>
+                    <div class="connect" style="font-size:20px; font-weight:400; text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);"> <span>Connect</span> <span style="color:#fff;font-size:25px;">|</span> <span>Learn</span> <span style=" color:#fff;font-size:25px;">|</span> <span>Play</span></div>
+                    <div class="button-slider-section" style="margin-top:20px;">
+                        <button type="button" style="padding:12px 18px;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Get Started</button>
+                        <button type="button" style="padding:12px 18px;font-size:18px;border:none;background-color:#333;border-radius:2px;" class="slider-btn-2">About Golfites</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-{% block search %}
+<section id="register" style="background-color:#eee;position:relative; top:75px;padding-top:60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="register-header" style="background-color:#eee;">
+                    <h4 style="font-family:roboto;text-align:center;color:#333;font-size:30px;">Join the Golfites community</h4>
+                    <p style="font-family:roboto;text-align:center;color:#333;font-size:19px;">Join our community and gain access to Golfites array of built-in features. Connect, Learn and Play with other members.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container login-register-form" style="background-color:#fff; height:400px;">
+    <div class="row">
+    <div class="col-lg-4 col-centered" style="float:none;margin:0 auto;">
+    <form role="form" method="post" class="login-form" action="{% url 'login' %}">
+        <legend>Login</legend>
         {% csrf_token %}
-        {% endblock %}
+        {{ form| as_bootstrap }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+            <div class="register-link">
+        <p style="text-align:center;">Not a registered member? <a href="{% url 'register' %}">Sign up</a></p>
+    </div>
+            </div>
+        </div>
+    
+
+</div>
+
+</section>
+    <section id="features" style="background-color:#eee;position:relative; top:75px;padding-top:60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-background">
+                <h4>Forum</h4>
+                <img src="/media/images/bigstock-modern-golf-man-with-smart-pho-65229274.jpg" style="height:200px;width:320px;"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <button type="button" style="padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Join our Forum</button>
+
+            </div>
+            <div class="col-md-4 col-background" style="margin:0 57px;">
+                <h4>Academy</h4>
+                <img src="/media/images/Academy-1-2016.jpg" style="height:200px;width:320px;"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <button type="button" style="padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Visit the Academy</button>
+
+            </div>
+            <div class="col-md-4 col-background">
+                 <h4>Equipment</h4>
+                <img src="/media/images/equipment.jpg" style="height:200px;width:320px;"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <button type="button" style="padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Check out our Equipment</button>
+
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row white-background">
+            <div class="col-md-4">
+                <h4>Irish Golf Courses</h4>
+                <img src="/media/images/89252.jpg" style="height:200px;width:320px;"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <button type="button" style="padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Search golf courses</button>
+
+            </div>
+            <div class="col-md-4">
+                <h4>Academy</h4>
+                <img src="/media/images/Academy-1-2016.jpg" style="height:200px;width:320px;"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <button type="button" style="padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Visit the Academy</button>
+
+            </div>
+            <div class="col-md-4">
+                 <h4>Equipment</h4>
+                <img src="/media/images/equipment.jpg" style="height:200px;width:320px;"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <button type="button" style="padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Check out our Equipment</button>
+
+            </div>
+        </div>
+</div>
+    </section>
+{% block search %}
+    {% csrf_token %}
+{% endblock %}
 {% endblock %}
