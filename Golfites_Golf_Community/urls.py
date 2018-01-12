@@ -24,6 +24,7 @@ from equipment import urls as equipment_urls
 from golfer import urls as golfers_urls
 from education_center import urls as education_center_urls
 from threads import urls as threads_urls
+from ads import urls as ads_urls
 from home.views import index
 from courses import urls as courses_urls
 
@@ -39,5 +40,6 @@ urlpatterns = [
     url(r'^education_center/', include(education_center_urls)),
     url(r'^courses/', include(courses_urls)),
     url(r'^golfers/', include(golfers_urls)),
+    url(r'^ads/', include(ads_urls)),
 
 ]

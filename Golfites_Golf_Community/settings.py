@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'disqus',
     'polls',
     'embed_video',
+    'ads',
     'golfer',
     'threads',
     'tinymce',
