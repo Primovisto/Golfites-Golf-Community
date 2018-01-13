@@ -11,6 +11,7 @@ class EducationBlogPost(models.Model):
     # author is linked to a registered
     # user, via the User model in the auth app.
     author = models.ForeignKey('accounts.User', on_delete=models.PROTECT)
+    author_image = models.ImageField(upload_to="images", blank=True, null=True)
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
@@ -25,3 +26,6 @@ class EducationBlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+
+

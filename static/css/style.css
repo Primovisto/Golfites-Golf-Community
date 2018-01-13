@@ -16,6 +16,10 @@ p{
     font-family: raleway;
     font-size:13px;
 }
+
+body{
+    background-color:#fff;
+}
 /* Owl Carousel Styles*/
 
 .owl-carousel .item img {
@@ -73,16 +77,22 @@ background: #fff none repeat scroll 0 0;
 .slider-active .owl-dot.active{
 	background:#888 none repeat scroll 0 0;
 }
-.slider-active .item .item-caption{
+.academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
             position: absolute;
-            top:28%;
-	        left:12%;
+            top:34%;
+	        left:10%;
     margin-left:auto;
     margin-right:auto;
             text-align:center;
             color: #fff;
             font-size: 36px;
             font-weight: bold;
+        }
+
+.academy-slider .slider-active .item .item-caption{
+
+	        left:18%;
+
         }
 
 /* Header Section Styles*/
@@ -472,8 +482,8 @@ background-color: rgba(255,255,255,1);
 /* Products Catalogue */
 .product-title{
     text-align:left;
-        font-size:24px;
-        font-weight:600;
+
+
 }
 
 .catalogue-header h1{
@@ -592,6 +602,11 @@ font-family:Barlow Semi Condensed;
 
 .features_paragraph{
     margin-top:20px;
+}
+
+.product-title{
+    font-family:roboto;
+    font-size:18px;
 }
 
 

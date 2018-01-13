@@ -21,13 +21,14 @@
                     <div class="#">No images</div>
                 {% endif %}
 </div>
-    <div class="col-md-6">
+    <div class="col-md-6" style="background-color: #fff;padding:20px 40px;">
                 <h2 class="product-header">{{ ad.name }}</h2>
                 <p class="product-details-desc"><strong>Description:</strong> {{ ad.product_short_description }}</p>
                 <p class="product-details-price">€ {{ ad.price }}</p>
 
-                <p class="product-details-views"><strong>Views:</strong> {{ ad.views }}</p>
+                <p><strong>Views:</strong> {{ ad.views }}</p>
                 <p><strong>Location:</strong> {{ ad.location }}</p>
+        <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
         <div class="comments-section">
             <p><strong>Message seller about this ad:</strong></p>
                     {% load disqus_tags %}

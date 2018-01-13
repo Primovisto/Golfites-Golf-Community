@@ -37,7 +37,7 @@ PAYPAL_RECEIVER_EMAIL = 'edward@primovisto.com'
 DISQUS_WEBSITE_SHORTNAME = 'mybootcampblog'
 SITE_ID = 1
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['golfites-golf-community.herokuapp.com']
 
 AUTH_USER_MODEL = 'accounts.User'
 

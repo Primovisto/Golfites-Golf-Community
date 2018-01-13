@@ -1,18 +1,54 @@
 {% extends "base.html" %}
  
 {% block content %}
-    {% for post in posts %}
-        <div class="row">
-            <hr>
-            <div class="col-md-2 col-sm-3 text-center">
-                <a class="story-img" href="#">
-                    <img src="http://placehold.it/100" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
-                </a>
+    <div class="slider-area academy-slider">
+    <div class="slider-active owl-carousel">
+        <div class="item">
+            <a href="{% url 'login' %}"><img src="/media/images/GolfitesAcademy.png" /></a>
+            <div class="item-caption" style="margin-left: auto;margin-right:auto;">
+                <div class="slide-header" style="margin-left:auto; margin-right:auto;">
+                    <h2 style="font-family:arial;font-size:35px; text-transform:uppercase; padding:10px 20px;color:#fff;text-shadow: 2px 2px 0 rgba(0, 0, 0, 1); font-weight:700;">Welcome to the Golfites Academy</h2>
+                    <p style="font-family:arial;font-size:25px; padding:10px 20px;color:#fff;text-shadow: 2px 2px 0 rgba(0, 0, 0, 1); font-weight:700;">Gain the best tips and advice from Golfites team of experienced contributors.</p>
+
+
+                </div>
             </div>
-            <div class="col-md-10 col-sm-9">
+        </div>
+    </div>
+</div>
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h4 style="text-align:left;">Golf Instruction</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+ {% for post in posts %}
+        <div class="container">
+        <div class="row">
+
+            <div class="col-md-2 col-sm-3 text-center" style="padding:20px 0 0;">
+                <hr>
+                <a class="story-img" href="#">
+
+
+                <img src="/media/{{ post.author_image}}" style="width:70px; height: 70px; background-color: #12ABB2; color: #ffffff;" class="img-responsive center-block
+">
+
+            </a>
+<p style="margin-top:5px;">{{ post.author }}</p>
+            </div>
+            <div class="col-md-8 col-sm-9" style="background-color:#fff;padding:20px 0 0;">
+            <hr>
                 <h3>{{ post.title }}</h3>
                 <div class="row">
                     <div class="col-xs-9">
+                        {% if post.image %}
+          <img src="/media/{{ post.image}}" style="background-size:cover;height:300px;">
+      {% endif %}
     <p>{{ post.content|truncatewords:30 }}</p>
     <p><button class="btn btn-default" onclick="location.href ={{ post.id }}">Read More</button></p>
                         <button class="btn btn-default" onclick="location.href='{% url 'education_new_post' %}'">New Post</button>
@@ -20,7 +56,15 @@
 
 </div>
                 </div>
+
+            </div>
+
+            <div class="col-md-2 col-sm-3 text-center">
+
+
+
             </div>
         </div>
-    {% endfor %}
+        </div>
+{% endfor %}
 {% endblock %}

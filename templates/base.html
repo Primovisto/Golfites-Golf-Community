@@ -155,12 +155,25 @@
     <div class="content">
         {% block content %} {% endblock %}
     </div>
-    <hr>
-    <footer style="text-align: center; height:60px;background-color: #eee; margin-top:50px;">
+    <section style="padding:50px 0;background-color:#bbb;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="width:100%;">
+                <div class="banner-header" style="display: table;
+  margin: 0 auto;">
+                    <h4 style="display:inline-block;text-align:center;margin-right:20px;">Join our community to get the most from your golf.</h4>
+                    <button type="button" onclick="location.href='{% url 'ads' %}'" style="display:inline-block; padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Sign Up Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <footer style="text-align: center; height:60px;background-color: #666;color:#fff;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p class="footer-wording">&copy; Copyright 2017 by Ed Stack for Code Institute Project</p>
+                    <p class="footer-wording" style="color:#fff;">&copy; Copyright 2017 by Ed Stack for Code Institute Project</p>
                 </div>
             </div>
         </div>

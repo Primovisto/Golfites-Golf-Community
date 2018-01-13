@@ -2,7 +2,7 @@
 {% load bootstrap_tags %}
 {% load staticfiles %}
 {% block content %}
-<div class="slider-area" style="position:relative;top:75px;">
+<div class="slider-area">
     <div class="slider-active owl-carousel">
         <div class="item">
             <a href="{% url 'login' %}"><img src="/media/images/ir-int-mast-golf_obrien_101005_7739.jpg" /></a>
@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-<section id="register" style="background-color:#eee;position:relative; top:75px;padding-top:60px;">
+<section id="register" style="background-color:#eee;padding-top:60px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -47,7 +47,7 @@
         </div>
     </div>
 </section>
-<section id="features" style="background-color:#eee;position:relative; top:75px;padding-top:60px;">
+<section id="features" style="background-color:#eee;padding:60px 0;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-background">
@@ -114,6 +114,7 @@
         </div>
     </div>
 </section>
+
 {% block search %}
     {% csrf_token %}
 {% endblock %}
