@@ -71,7 +71,7 @@ var requirejs, require, define;
 
         //Adjust any relative paths.
         if (name && name.charAt(0) === ".") {
-            //If have a base name, try to normalize against it,
+            //If have a base.txt name, try to normalize against it,
             //otherwise, assume it is a top-level require that will
             //be relative to baseUrl in the end.
             if (baseName) {
@@ -1468,7 +1468,7 @@ S2.define('select2/selection/base',[
 
 S2.define('select2/selection/single',[
   'jquery',
-  './base',
+  './base.txt',
   '../utils',
   '../keys'
 ], function ($, BaseSelection, Utils, KEYS) {
@@ -1568,7 +1568,7 @@ S2.define('select2/selection/single',[
 
 S2.define('select2/selection/multiple',[
   'jquery',
-  './base',
+  './base.txt',
   '../utils'
 ], function ($, BaseSelection, Utils) {
   function MultipleSelection ($element, options) {
@@ -3020,7 +3020,7 @@ S2.define('select2/data/base',[
 });
 
 S2.define('select2/data/select',[
-  './base',
+  './base.txt',
   '../utils',
   'jquery'
 ], function (BaseAdapter, Utils, $) {
