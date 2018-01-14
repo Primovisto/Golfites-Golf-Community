@@ -4,12 +4,21 @@ h2, h4{
 }
 
 h4{
-    font-size:18px;
+     font-size:20px;
+    font-family:roboto;
+    text-align:center;
+    color:#333;
+    margin:20px 0;
 }
 
 p{
     color:#333;
-    font-family: barlow semi condensed;
+    font-family: raleway;
+    font-size:13px;
+}
+
+body{
+    background-color:#fff;
 }
 /* Owl Carousel Styles*/
 
@@ -68,14 +77,22 @@ background: #fff none repeat scroll 0 0;
 .slider-active .owl-dot.active{
 	background:#888 none repeat scroll 0 0;
 }
-.slider-active .item .item-caption{
+.academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
             position: absolute;
-            top:30%;
-	        left:14%;
+            top:34%;
+	        left:10%;
+    margin-left:auto;
+    margin-right:auto;
             text-align:center;
             color: #fff;
             font-size: 36px;
             font-weight: bold;
+        }
+
+.academy-slider .slider-active .item .item-caption{
+
+	        left:18%;
+
         }
 
 /* Header Section Styles*/
@@ -385,7 +402,19 @@ background-color: rgba(255,255,255,1);
     font-size:18px;
 }
 
+.login-form{
+    margin-top:60px;
+}
 
+.col-background{
+    background-color:#fff;
+    width:30%;
+}
+
+.white-background{
+    background-color:#fff;
+    margin-top:60px;
+}
 
 
 /* Contact Us Page */
@@ -453,8 +482,8 @@ background-color: rgba(255,255,255,1);
 /* Products Catalogue */
 .product-title{
     text-align:left;
-        font-size:24px;
-        font-weight:600;
+
+
 }
 
 .catalogue-header h1{
@@ -571,200 +600,13 @@ font-family:Barlow Semi Condensed;
     border: none;
 }
 
-
-/* Cart Styling */
-.table>tbody>tr>td, .table>tfoot>tr>td{
-    vertical-align: middle;
-}
-@media screen and (max-width: 600px) {
-    table#cart tbody td .form-control{
-        width:20%;
-        display: inline !important;
-    }
-    .actions .btn{
-        width:30%;
-        margin:1.5em 0;
-    }
-
-    .actions .btn-info{
-        float:left;
-    }
-    .actions .btn-danger{
-        float:right;
-    }
-
-    table#cart thead { display: none; }
-    table#cart tbody td { display: block; padding: .6rem;}
-    table#cart tbody tr td:first-child { background: #fff; color: #fff; }
-    table#cart tbody td:before {
-        content: attr(data-th); font-weight: bold;
-        display: inline-block; width: 8rem;
-    }
-
-
-
-    table#cart tfoot td{display:block; }
-    table#cart tfoot td .btn{display:block;}
-
-}
-
-
-
-
-
-
-
-/* Media Queries */
-@media only screen
-  and (max-device-width: 667px) {
-
-.product-title{
-    text-align:center;
-        font-size:18px;
-        font-weight:600;
-}
-    .product-image{
-    width:auto;
-    height:auto;
-}
-
-    .product-header{
-        font-size:28px;
-        text-align:center;
-    }
-
-    .product-details-desc{
-    font-size:12px;
-
-}
-
-.product-details-price{
-    font-size:28px;
-}
-
-.add-cart-btn{
-    font-size:16px;
-    height: 60px;
-    padding:10px 20px;
-    max-width:60%;
-    border:none;
-}
-
-.purchase-btn{
-    font-size:16px;
-    padding:10px 20px;
-    border:none;
-    margin-left:10px;
-    max-width:60%;
-    height: 60px;
-
-}
-
-.product-info{
-    font-size:20px;
-    margin: 30px 0 0 0;
-}
-
-.product-info-header{
-
-    font-size:20px;
-    padding:15px;
-}
-
-.product-info-desc{
-    font-size:11px;
-    padding:5px;
-    line-height:16px;
-}
-
-.footer-wording {
-    font-size:12px;
-}
-.contact-info{
-    margin-top:30px;
-}
-.contact-details{
+.features_paragraph{
     margin-top:20px;
 }
+
+.product-title{
+    font-family:roboto;
+    font-size:18px;
 }
 
-@media only screen
-  and (max-device-width: 320px){
-    .add-cart-btn{
-    font-size:12px;
-    height: 50px;
-    padding:8px 16px;
 
-}
-
-.purchase-btn{
-    font-size:12px;
-    padding:8px 16px;
-    height: 50px;
-
-}
-.footer-wording {
-    font-size:11px;
-}
-}
-
-@media only screen
-and (min-device-width: 768px)
-  and (max-device-width: 1024px){
-    h4 {
-        font-size:14px;
-    }
-    .product-title{
-    text-align:center;
-        font-size:24px;
-        font-weight:600;
-}
-
-    .product-info{
-        margin:40px 0 0 0;
-    }
-}
-/* iPhone 6 landscape */
-@media only screen and (device-width: 667px){
-    .product-details{
-        margin-left:110px;
-    }
-}
-
-/*iphone 6 plus landscape */
-@media only screen and (device-width: 736px){
-    .product-details{
-        margin-left:150px;
-    }
-}
-
-/*iphone 5 landscape */
-@media only screen and (device-width: 568px){
-    .product-details{
-        margin-left:60px;
-    }
-}
-
-/*ipad landscape */
-@media only screen and (device-width: 1024px){
-    .product-details{
-        margin-left:50px;
-    }
-}
-
-/* Media Queries - Product Page Payments section*/
-@media only screen
-  and (max-device-width: 475px){
-    .credit-card-payments{
-        display:block;
-        top:0;
-        margin-left:0;
-        margin-top:20px;
-    }
-
-    .paypal-payments{
-        top:0;
-        display:block;
-        margin-top:20px;
-    }
-}
