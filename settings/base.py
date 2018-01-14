@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'courses',
     'education_center',
     'emoticons',
-    'debug_toolbar',
     'home',
     'accounts',
     'blog',
