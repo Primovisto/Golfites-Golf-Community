@@ -20,7 +20,7 @@ SITE_URL = 'https://golfites-golf-community.herokuapp.com'
 PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'edward@primovisto.com'
 
-ALLOWED_HOSTS.append('golfites-golf-community.herokuapp.com', 'localhost')
+ALLOWED_HOSTS.append('golfites-golf-community.herokuapp.com')
 
 # Log DEBUG information to the console
 LOGGING = {
