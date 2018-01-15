@@ -9,9 +9,9 @@ class Equipment(models.Model):
     name = models.CharField(max_length=35, default='')
     brand = models.CharField(max_length=35, default='')
     product_short_description = models.TextField(default='')
-    product_long_description = models.TextField(default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    brand_description = models.TextField(default='')
+    brand_logo = models.ImageField(upload_to="images", blank=True, null=True)
+    condition = models.CharField(max_length=35, default='')
     views = models.IntegerField(default=0)
     image = models.ImageField(upload_to="images", blank=True, null=True)
 

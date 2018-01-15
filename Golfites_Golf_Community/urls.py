@@ -27,6 +27,7 @@ from threads import urls as threads_urls
 from ads import urls as ads_urls
 from home.views import index
 from courses import urls as courses_urls
+from equipment.views import search_names
 
 
 urlpatterns = [
@@ -41,5 +42,7 @@ urlpatterns = [
     url(r'^courses/', include(courses_urls)),
     url(r'^golfers/', include(golfers_urls)),
     url(r'^ads/', include(ads_urls)),
+    url(r'^courses/search/$', search_names, name='search'),
+
 
 ]

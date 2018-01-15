@@ -1,0 +1,12 @@
+{% if courses.count > 0 %}
+
+{% for course in courses %}
+<li><a href="/courses/{{ course.id }}/" style="color:#232323;">{{ course.name }}</a></li>
+{% endfor %}
+
+{% else %}
+
+    <li>Nothing to show!</li>
+
+
+{% endif %}

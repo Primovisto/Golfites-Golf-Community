@@ -3,35 +3,31 @@
 {% load staticfiles %}
 {% block content %}
 
-    <div class="container">
+    <div class="container" style="margin-top:75px;padding-bottom:60px;">
 
     <div class="row">
+        <div class="col-md-12">
 <h2 style="text-align:center;">Irish Golf Course Directory</h2>
-    <div class="col-md-4">
-    <div class="top-50-courses" style="margin-bottom:20px; text-align:center;text-decoration:underline;">
-    <h4>Ireland's top 50 Golf Courses 2017</h4>
+        </div>
+
+
 </div>
-    {% for course in all_courses %}
-
-
-<div class="col-md-4">
-
-        <div class="course-info" style="display:block;">
-
-       <a style="display:inline-block;" href="{{ course.url }}"><p>{{ course.name }}</p></a>
-</div>
-</div>
-
-{% endfor %}
-</div>
-        <div class="col-md-8">
-           <iframe src="https://www.google.com/maps/d/embed?mid=1jryEkPkBy4bZIwlNax_SL7MsS-8bk8Gu" width="800" height="750></iframe>
+        <div class="row">
+        <div class="col-md-12 center-block">
+           <iframe class="center-block" src="https://www.google.com/maps/d/embed?mid=1jryEkPkBy4bZIwlNax_SL7MsS-8bk8Gu" width="1000" height="920"></iframe>
         </div>
     </div>
+
+    <div class="search-icon"><a href="#" data-mini="false" data-theme="e" data-role="button" class="opensearch" data-icon="search"><i class="fa fa-search"></i>Search Courses</a></div>
+                        <div class="search_field" style="display:none;">
+        <input type="text" id="search" name="search" data-theme="e" placeholder="search courses..."/>
+        <div id="search-results"></div>
+
+</div>
 </div>
 
 
 {% block search %}
         {% csrf_token %}
-        {% endblock %}
+{% endblock %}
 {% endblock %}

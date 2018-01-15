@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-xs-9">
                         {% if post.image %}
-          <img src="/media/{{ post.image}}" style="background-size:cover;height:300px;">
+          <img src="/media/{{ post.image}}" style="background-size:cover;height:300px;margin-bottom:10px;">
       {% endif %}
     <p>{{ post.content|truncatewords:30 }}</p>
     <p><button class="btn btn-default" onclick="location.href ={{ post.id }}">Read More</button></p>

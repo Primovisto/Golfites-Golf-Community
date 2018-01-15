@@ -13,6 +13,8 @@ class Course(models.Model):
     name = models.CharField(max_length=200)
     course_image = models.ImageField(upload_to="images", blank=True, null=True)
     url = models.URLField(max_length=200, null=True)
+    contact_number = models.CharField(max_length=60, default='')
+    course_description = models.TextField(default='')
 
     def publish(self):
         self.published_date = timezone.now()

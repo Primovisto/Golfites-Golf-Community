@@ -37,7 +37,7 @@ PAYPAL_RECEIVER_EMAIL = 'edward@primovisto.com'
 DISQUS_WEBSITE_SHORTNAME = 'mybootcampblog'
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['golfites-golf-community.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['golfites-golf-community.herokuapp.com', 'localhost', '127.0.0.1:8000']
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -80,6 +80,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Golfites_Golf_Community.urls'
