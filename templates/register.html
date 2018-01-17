@@ -13,32 +13,36 @@
 {% endblock %}
 
 {% block content %}
-    <div class="maincontent">
-    <div class="container">
+    <div class="maincontent register-page">
+    <div class="container" style="background:#eee;">
 
     <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
+        <ol class="breadcrumb register-page">
             <li class="breadcrumb-item">
                 <a href="{% url 'index' %}">Home</a>
             </li>
             <li class="breadcrumb-item active">Register</li>
         </ol>
-<div class="col-xs-2"></div>
-        <div class="col-xs-8">
+<div class="col-xs-3"></div>
+        <div class="col-md-6 register-page-column">
+            <div class="register-details">
+            <h4>Create Your Golfites Account</h4>
+            <p>Join Golfites today for €4.99/month. Already have an account? <a href="https://golfites-golf-community.herokuapp.com/accounts/login">Login here</a></p>
+                </div>
   <form role="form" method="post" id="register-form" action="{% url 'register' %}">
     <div id="credit-card-errors" style="display:none">
       <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
 
-    <legend>Register with Modapo</legend>
+
     {% csrf_token %}
     {{ form|as_bootstrap }}
     <div class="form-group">
-      <input class="btn btn-primary" id="validate_card_btn" name="commit" type="submit" value="Validate Credit Card">
+      <input class="btn btn-primary" id="validate_card_btn" name="commit" type="submit" value="Become a Golfites Member">
     </div>
   </form>
             </div>
-        <div class="col-xs-2"></div>
+        <div class="col-xs-3"></div>
      </div>
     </div>
     {% block search %}

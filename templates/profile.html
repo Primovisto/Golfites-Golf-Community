@@ -1,64 +1,186 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-<div class="maincontent">
+<div class="maincontent" style="padding-bottom:60px;background: #EEEEEE;">
     <div class="container">
-
-    <!-- Breadcrumbs -->
-
-        <ol class="breadcrumb">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb" style="background:#eee;">
             <li class="breadcrumb-item">
                 <a href="{% url 'index' %}">Home</a>
             </li>
             <li class="breadcrumb-item">My Profile</li>
         </ol>
 
-    <div class="row">
-        <div class="col-xs-12">
-            <h2 class="seller-dashboard-header">Golfer Dashboard</h2>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4 style="font-size:30px;">Member Dashboard</h4>
+            </div>
         </div>
-    </div>
-    <div class="row">
-    <div class="col-xs-12">
-        <hr>
-        <p class="welcome-message">Welcome, {{ user.username }}! Thanks for logging in.</p>
-        <hr>
-    </div>
-    </div>
-        <div class="container">
-          <div class="row">
-
-
-
-            <div class="col-lg-9 col-md-9 col-sm-12">
-                <div class="seller-info">
-                    <h2 class="seller-details-header">My Details:</h2>
-                <a class="profile-img" href="#">
+        <div class="container" style="background-color: #fff;padding:40px 20px;">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="seller-info">
+                        <h4 style="font-size:24px;text-align:left;">My Details:</h4>
+                        <hr>
+                        <a class="profile-img" href="#">
 
 
                 </a>
-                    <p class="seller-info"><strong>Username: </strong>{{ user.username }}</p>
-                    <p class="seller-info"><strong>Email address: </strong>{{ user.email }}</p>
+
+                <p style="font-family:roboto;font-size:20px;">Welcome, {{ user.username }}! Thanks for logging in.</p>
+                <hr>
+                        <p class="seller-info"><strong>Username: </strong>{{ user.username }}</p>
+                        <p class="seller-info"><strong>Email address: </strong>{{ user.email }}</p>
                     </div>
-
-                <div class="seller-actions">
-                    <div class="add-new-product">
-                        <button class="add-new-btn" onclick="location.href='{% url 'new' %}'">Create your Golfer Profile</button>
-                       <!-- <button class="edit-btn" onclick="location.href=">Edit your Golfer Profile</button> -->
-
+                    <div class="seller-actions">
+                    <div class="change-password">
+                        <button style="background-color:#516588; color:#fff; font-family:roboto;border:none;padding:12px 18px;" onclick="location.href='{% url 'change_password' %}'">Change Password</button>
                     </div>
+                        <div class="edit-ads-section" style="margin-top:50px;">
+                            <h4 style="text-align:left;font-size:24px;">My Ads:</h4>
+                        <hr>
+{% for ad in ads %}
+                    {% if user.id == ad.advertiser_id %}
+                        {% if ad.image %}
+                                <img class="img-responsive" src="/media/{{ ad.image }}" style="width:50px; height: 50px;"/>
+                            {% else %}
+                                <div class="">No images available</div>
+                            {% endif %}
+                        <p class="browseads"><strong>Ad title: </strong>{{ ad.name }}</p>
+                        <p class="browseads"><strong>Ad price: </strong>&euro;{{ ad.price }}</p>
+                        <button style="background-color:#516588; color:#fff; font-family:roboto;border:none;padding:12px 18px;" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit
+                            ad
+                        </button>
+                        <hr>
+                    {% endif %}
+                {% endfor %}
 
+
+
+
+                        </div>
+                    <div class="edit-ads-section" style="margin-top:50px;">
+                            <h4 style="text-align:left;font-size:24px;">My Profile:</h4>
+                        <hr>
+{% for golferprofile in golfers %}
+                    {% if user.id == golferprofile.golfer_id %}
+                        {% if golferprofile.image %}
+                                <img class="img-responsive" src="/media/{{ golferprofile.image }}" style="width:50px; height: 50px;"/>
+                            {% else %}
+                                <div class="">No images available</div>
+                            {% endif %}
+                        <p class="browseads"><strong>Golfer Name: </strong>{{ golferprofile.name }}</p>
+                        <button style="background-color:#516588; color:#fff; font-family:roboto;border:none;padding:12px 18px;" onclick="location.href='{% url 'editgolfer' golferprofile.id %}'">Edit
+                            Profile
+                        </button>
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+
+
+
+
+                        </div>
+
+
+                </div>
                 </div>
 
 
-            </div>
 
+                <div class="col-lg-9 col-md-12 col-sm-12">
+                    <h4 style="font-size:24px;text-align:left;">Features:</h4>
+                    <hr>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <div class="logo-image">
+                                <img src="/media/images/profile.png" alt="golfites ads" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-btn">
+                                        <button class="view-site-btn" style="top:30%;padding-right:25px;" onclick="location.href='{% url 'all_golfers' %}'">Browse Profiles</button>
+                                        <button class="view-site-btn" onclick="location.href='{% url 'new' %}'">Create your Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Golfer Profiles</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <div class="logo-image">
+                                <img src="/media/images/GolfAcademySlider2.jpg" alt="golfites ads" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-btn">
+                                        <button class="view-site-btn" style="top:40%; left:28%;" onclick="location.href='{% url 'education_blog' %}'">Visit Academy</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Academy</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <div class="logo-image">
+                                <img src="/media/images/golfitescoursefinder.jpg" alt="golfites ads" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-btn">
+                                        <button class="view-site-btn" style="top:40%; left:24%;" onclick="location.href='{% url 'courses' %}'">Visit Course Finder</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Course Finder</h4>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
+                <div class="col-lg-9 col-md-9 pull-right" style="margin-top:40px;">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="portfolio-item">
+                            <div class="logo-image">
+                                <img src="/media/images/The-Players-2015-_I2C5423.jpg" alt="golfites ads" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-btn">
+                                        <button class="view-site-btn" style="top:42%;left:27%;" onclick="location.href='{% url 'forum' %}'">Visit our Forum</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Forum</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <div class="logo-image">
+                                <img src="/media/images/used-golf.jpg" alt="golfites equipment" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-btn">
+                                        <button class="view-site-btn" style="top:42%;left:26%;" onclick="location.href='{% url 'equipment' %}'">View Equipment</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Equipment</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-item">
+                            <div class="logo-image">
+                                <img src="/media/images/ilustrasi-olahraga-golf.jpg" alt="golfites ads" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-btn">
+                                        <button class="view-site-btn" style="top:30%; left:32%;" onclick="location.href='{% url 'new_ad' %}'">Post an Ad</button>
+                                        <button class="view-site-btn" style="top:55%;left:32%;padding-right:18px;" onclick="location.href='{% url 'ads' %}'">View Ads</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Ads</h4>
+                        </div>
+                    </div>
+                </div>
+</div>
+        </div>
 </div>
     </div>
-</div>
-    {% block search %}
-        {% csrf_token %}
-        {% endblock %}
+
+{% block search %}
+{% csrf_token %}
+{% endblock %}
 {% endblock %}

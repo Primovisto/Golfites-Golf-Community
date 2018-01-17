@@ -5,12 +5,10 @@
     <div class="slider-active owl-carousel">
         <div class="item">
             <a href="{% url 'login' %}"><img src="/media/images/GolfitesAcademy.png" /></a>
-            <div class="item-caption" style="margin-left: auto;margin-right:auto;">
-                <div class="slide-header" style="margin-left:auto; margin-right:auto;">
-                    <h2 style="font-family:arial;font-size:35px; text-transform:uppercase; padding:10px 20px;color:#fff;text-shadow: 2px 2px 0 rgba(0, 0, 0, 1); font-weight:700;">Welcome to the Golfites Academy</h2>
-                    <p style="font-family:arial;font-size:25px; padding:10px 20px;color:#fff;text-shadow: 2px 2px 0 rgba(0, 0, 0, 1); font-weight:700;">Gain the best tips and advice from Golfites team of experienced contributors.</p>
-
-
+            <div class="item-caption">
+                <div class="slide-header">
+                    <h2>Welcome to the Golfites Academy</h2>
+                    <p>Gain the best tips and advice from Golfites team of experienced contributors.</p>
                 </div>
             </div>
         </div>
@@ -32,22 +30,21 @@
 
             <div class="col-md-2 col-sm-3 text-center" style="padding:20px 0 0;">
                 <hr>
+                <div class="academy-detail">
                 <a class="story-img" href="#">
-
-
-                <img src="/media/{{ post.author_image}}" style="width:70px; height: 70px; background-color: #12ABB2; color: #ffffff;" class="img-responsive center-block
-">
-
-            </a>
-<p style="margin-top:5px;">{{ post.author }}</p>
+                    <img src="/media/{{ post.author_image}}" class="img-responsive center-block">
+                </a>
+                    <p>{{ post.author }}</p>
+            </div>
             </div>
             <div class="col-md-8 col-sm-9" style="background-color:#fff;padding:20px 0 0;">
             <hr>
                 <h3>{{ post.title }}</h3>
                 <div class="row">
                     <div class="col-xs-9">
+                    <div class="academy-blog-post">
                         {% if post.image %}
-          <img src="/media/{{ post.image}}" style="background-size:cover;height:300px;margin-bottom:10px;">
+          <img src="/media/{{ post.image}}">
       {% endif %}
     <p>{{ post.content|truncatewords:30 }}</p>
     <p><button class="btn btn-default" onclick="location.href ={{ post.id }}">Read More</button></p>
@@ -55,6 +52,7 @@
     <p>{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
 
 </div>
+                    </div>
                 </div>
 
             </div>

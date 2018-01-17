@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Ad(models.Model):
+    advertiser = models.ForeignKey('accounts.User', default='', blank=True, null=True, on_delete=models.PROTECT)
     name = models.CharField(max_length=35, default='')
     product_short_description = models.TextField(default='')
     location = models.CharField(max_length=150, default='')
@@ -13,4 +14,3 @@ class Ad(models.Model):
 
     def __str__(self):
         return self.name
-

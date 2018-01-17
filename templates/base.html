@@ -25,123 +25,52 @@
 </head>
 
 <body>
-    <style>
-    .nav {
 
-        position: absolute;
-        display: flex;
-        left: 0;
-        right: 0;
-        z-index: 500;
-        height: 75px;
-        perspective: 2000px;
-        padding-bottom: 30px;
-        background-color: rgba(81, 101, 136, 1);
-        border-bottom: 1px solid #fff;
-    }
-
-    .nav .nav-main {
-
-        position: relative;
-    }
-
-
-    .nav .nav-section.logo {
-        position: absolute;
-        top: 18px;
-        left: 0;
-    }
-
-    .nav li {
-        list-style: none;
-    }
-
-    .nav .nav-section.logo .nav-link {
-        padding-left: 20px;
-        color: #fff;
-        position: relative;
-        bottom: 8px;
-    }
-
-    .nav .nav-section.primary {
-        display: flex;
-        justify-content: center;
-        line-height: 50px;
-        position: relative;
-        top: 15px;
-    }
-
-    .nav .nav-section.secondary {
-        display: flex;
-        display: -ms-flexbox;
-        position: absolute;
-        top: 15px;
-        right: 0;
-    }
-
-    .nav .nav-section.secondary .nav-link:last-child {
-        padding-right: 20px;
-    }
-
-    .nav .nav-section.secondary .nav-link:last-child:after {
-        padding-right: 20px;
-    }
-
-    .nav .nav-link {
-        padding: 0 18px;
-        text-decoration: none;
-        display: inline-block;
-        height: 50px;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        font-size: 17px;
-        line-height: 50px;
-        font-weight: 500;
-        margin: 0;
-        color: #fff;
-    }
-
-    .nav .nav-link:hover {
-        color: #888;
-    }
-    </style>
     <div class="container">
-        <header class="nav">
+        <header class="navigation">
             <div class="container">
                 <div class="row">
-                    <ul class="nav-main">
-                        <li class="nav-section logo">
-                            <a href="https://golfites-golf-community.herokuapp.com" class="nav-link" style="width:290px;">
+                    <ul class="nav">
+                    <a href="https://golfites-golf-community.herokuapp.com">
+    <div class="nav-section logo">
+
                 <img src="/media/images/Golfites%20Logo.png" height="50" width="175"/>
-            </a>
-                        </li>
-                        <div class="nav-section primary nav-item dropdown">
-                            <li><a href="{% url 'all_golfers' %}" class="nav-link">Golfers</a></li>
-                            <li><a href="{% url 'education_blog' %}" class="nav-link">Golf Academy</a></li>
 
-                               <li class="dropdown">
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Social <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="{% url 'blog' %}">Blog</a></li>
-                <li><a href="{% url 'forum' %}">Forum</a></li>
+    </div>
+                    </a>
+    <div class="nav-section primary nav-item">
+        <li><a href="{% url 'all_golfers' %}" class="nav-link">Golfers</a></li>
+        <li><a href="{% url 'courses' %}" class="nav-link">Golf Courses</a></li>
+        <li class="dropdown">
+    <a id="drop1" class="nav-link" role="button" href="https://www.google.com">Social <b class="caret"></b></a>
+    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
+      <li role="presentation"><a role="menuitem" href="{% url 'education_blog' %}">Academy</a></li>
+      <li role="presentation"><a role="menuitem" href="{% url 'forum' %}">Forum</a></li>
+    </ul>
+  </li>
+        <li class="dropdown">
+    <a id="drop1" class="nav-link" role="button" href="https://www.google.com">Market <b class="caret"></b></a>
+    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
+      <li role="presentation" class="dropdown-link"><a role="menuitem" href="{% url 'equipment' %}">Equipment</a></li>
+      <li role="presentation"><a role="menuitem" href="{% url 'ads' %}">Ads</a></li>
+    </ul>
+  </li>
+        <li><a href="{% url 'education_blog' %}" class="nav-link">About Us</a></li>
 
-              </ul>
-            </li>
-                            <li><a href="{% url 'courses' %}" class="nav-link">Golf Courses</a></li>
-                            <li><a href="{% url 'equipment' %}" class="nav-link">Equipment</a></li>
-                        </div>
-                        <li class="nav-section secondary">
-                            {% if user.is_authenticated %}
-                            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                            <a class="nav-link dashboard-item" href="{% url 'logout' %}">Log Out</a> {% else %}
-                            <a class="nav-link" href="{% url 'register' %}">Register</a>
-                            <a class="nav-link dashboard-item" href="{% url 'login' %}">Log In</a> {% endif %}
-                        </li>
-                        <li class="nav-mobile"></li>
-                    </ul>
+    </div>
+    <li class="nav-section secondary">
+        {% if user.is_authenticated %}
+        <a class="nav-secondary-link" href="{% url 'profile' %}">Profile</a>
+        <a class="nav-secondary-link dashboard-item" href="{% url 'logout' %}">Log Out</a> {% else %}
+        <span>
+                                <img src="/media/images/User-Interface-Login-icon.png"/>
+                            <a class="nav-secondary-link dashboard-item" href="{% url 'login' %}">Log In</a>
+                                </span>
+        <span class="divider">|</span>
+        <a class="nav-secondary-link dashboard-item" href="{% url 'register' %}">Sign Up</a> {% endif %}
+    </li>
+    <li class="nav-mobile"></li>
+</ul>
                 </div>
             </div>
         </header>
@@ -156,25 +85,24 @@
     <div class="content">
         {% block content %} {% endblock %}
     </div>
-    <section style="padding:50px 0;background-color:#bbb;">
+    <section class="footer-top">
     <div class="container">
         <div class="row">
-            <div class="col-md-12" style="width:100%;">
-                <div class="banner-header" style="display: table;
-  margin: 0 auto;">
-                    <h4 style="display:inline-block;text-align:center;margin-right:20px;">Join our community to get the most from your golf.</h4>
-                    <button type="button" onclick="location.href='{% url 'ads' %}'" style="display:inline-block; padding:12px 18px;color:#fff;margin:20px auto;font-size:18px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;" class="slider-btn-1">Sign Up Now</button>
+            <div class="col-md-12 " style="width:100%;">
+                <div class="banner-header">
+                    <h4>Join our community to get the most from your golf.</h4>
+                    <button type="button" class="sign-up-btn" onclick="location.href='{% url 'register' %}'" >Sign Up Now</button>
                 </div>
             </div>
         </div>
     </div>
     </section>
 
-    <footer style="text-align: center; height:60px;background-color: #666;color:#fff;">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p class="footer-wording" style="color:#fff;">&copy; Copyright 2017 by Ed Stack for Code Institute Project</p>
+                    <p class="footer-wording">&copy; Copyright 2017 by Ed Stack for Code Institute Project</p>
                 </div>
             </div>
         </div>

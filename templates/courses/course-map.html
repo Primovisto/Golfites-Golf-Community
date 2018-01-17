@@ -2,32 +2,51 @@
 {% load bootstrap_tags %}
 {% load staticfiles %}
 {% block content %}
-
-    <div class="container" style="margin-top:75px;padding-bottom:60px;">
-
-    <div class="row">
-        <div class="col-md-12">
-<h2 style="text-align:center;">Irish Golf Course Directory</h2>
-        </div>
-
-
-</div>
-        <div class="row">
-        <div class="col-md-12 center-block">
-           <iframe class="center-block" src="https://www.google.com/maps/d/embed?mid=1jryEkPkBy4bZIwlNax_SL7MsS-8bk8Gu" width="1000" height="920"></iframe>
+<div class="banner-image">
+    <img src="/media/images/slide13.jpg" />
+    <div class="search-position">
+        <h4>Golf Course Finder</h4>
+        <input type="text" id="search" name="search" data-mini="false" data-theme="e" class="opensearch" data-icon="search" placeholder="Search Courses..." />
+        <div class="search_field opensearch" id="search" style="display:none;">
+            <div id="search-results"></div>
         </div>
     </div>
-
-    <div class="search-icon"><a href="#" data-mini="false" data-theme="e" data-role="button" class="opensearch" data-icon="search"><i class="fa fa-search"></i>Search Courses</a></div>
-                        <div class="search_field" style="display:none;">
-        <input type="text" id="search" name="search" data-theme="e" placeholder="search courses..."/>
-        <div id="search-results"></div>
-
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="padding-top:60px;">
+            <div class="courses-header">
+                <h4>Irish Golf Course Directory</h4>
+                <p>Our directory below was created to allow you to find any of the over 400 golf courses in Ireland. Have fun discovering the beautiful courses this country has to offer.</p>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="container" style="margin-top:25px;padding-bottom:60px;">
+    <div class="row">
+        <div class="col-md-3 center-block">
+            <div class="courses-content">
+                {% for course in all_courses %}
+                <div class="courses-alignment">
+                    <a onclick="location.href='{{ course.url }}'">
+                            {% if course.course_image %}
+                                <img class="img-responsive" src="/media/{{ course.course_image }}"/>
+                            {% else %}
+                                <div class="">No images available</div>
+                            {% endif %}
 
-
+                <p>{{ course.name }}</p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-9 center-block" style="padding-left:0;">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1jryEkPkBy4bZIwlNax_SL7MsS-8bk8Gu" width="850" height="710"></iframe>
+        </div>
+    </div>
+</div>
 {% block search %}
-        {% csrf_token %}
+{% csrf_token %}
 {% endblock %}
 {% endblock %}

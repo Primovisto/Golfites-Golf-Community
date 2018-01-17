@@ -35,15 +35,17 @@
                 {% for equipment in equipment %}
 
                         <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <a style="cursor:pointer; text-decoration:none;" onclick="location.href='{% url 'equipmentpage' equipment.id %}'">
+                        <div class="equipment-detail">
+                        <a onclick="location.href='{% url 'equipmentpage' equipment.id %}'">
                             {% if equipment.image %}
-                                <img class="img-responsive" src="/media/{{ equipment.image }}" style="width:250px; height: 250px;margin:30px auto 0 auto;"/>
+                                <img class="img-responsive" src="/media/{{ equipment.image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
-                        <h2 class="product-title" style="text-align:center;">{{ equipment.name}}</h2>
+                        <h2 class="equipment-title">{{ equipment.name}}</h2>
 
                         </a>
+                        </div>
                         </div>
 
                 {% endfor %}
@@ -52,13 +54,7 @@
         </div>
         <!-- End of Content -->
 </div>
-<div class="search-icon"><a href="#" data-mini="false" data-theme="e" data-role="button" class="opensearch" data-icon="search"><i class="fa fa-search"></i>Search Courses</a></div>
-                        <div class="search_field" style="display:none;">
-        <input type="text" id="search" name="search" data-theme="e" placeholder="search equipment..."/>
-        <div id="search-results"></div>
 
-</div>
-</div>
 
     {% block search %}
         {% csrf_token %}

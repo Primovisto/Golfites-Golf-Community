@@ -35,16 +35,19 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
 
-                {% for ad in ad %}
+                {% for ad in ads %}
 
                         <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <a style="cursor:pointer; text-decoration:none;" onclick="location.href='{% url 'ads_page' ad.id %}'">
+                        <div class="ad-details">
+                        <a class="ad-link" onclick="location.href='{% url 'ads_page' ad.id %}'">
                             {% if ad.image %}
-                                <img class="img-responsive" src="/media/{{ ad.image }}" style="width:350px; height: 266px; margin:30px auto 0 auto;"/>
+                                <img class="img-responsive" src="/media/{{ ad.image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
-                        <h2 class="product-title">{{ ad.name}}</h2>
+
+                        <h2 class="product-title">{{ ad.name }}</h2>
+
                             <div class="product-details">
 
                                 <p><strong>Price:</strong> € {{ ad.price }}</p>
@@ -53,6 +56,7 @@
 
                             </div>
                         </a>
+                        </div>
                         </div>
 
                 {% endfor %}

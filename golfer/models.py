@@ -4,6 +4,7 @@ from embed_video.fields import EmbedVideoField
 
 # Create your models here.
 class GolferProfile(models.Model):
+    golfer = models.ForeignKey('accounts.User', default='', blank=True, null=True, on_delete=models.PROTECT)
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to="images", blank=True, null=True)
     about_my_golf = models.TextField(default='', blank=True, null=True)

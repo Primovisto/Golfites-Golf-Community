@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+{% block content %}
+    <div class="maincontent">
+    <div class="container">
 
-</body>
-</html>
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'profile' %}">My Profile</a>
+            </li>
+            <li class="breadcrumb-item active">Add Ad</li>
+        </ol>
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn btn-success">Create Ad</button>
+                </form>
+            </div>
+        </div>
+        <!-- End of Content -->
+    </div>
+    </div>
+    {% block search %}
+        {% csrf_token %}
+        {% endblock %}
+{% endblock %}

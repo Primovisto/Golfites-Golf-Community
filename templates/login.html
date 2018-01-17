@@ -1,12 +1,31 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
+    <div class="maincontent login-page">
+    <div class="container">
+    <!-- Breadcrumbs -->
+        <ol class="breadcrumb login-page">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Login</li>
+        </ol>
+        <div class="col-xs-3"></div>
+        <div class="col-md-6 login-page-column">
+            <div class="login-details">
+            <h4>Login to your Golfites Account</h4>
+            <p>Not yet a Golfites member? Visit our registrations page to <a href="https://golfites-golf-community.herokuapp.com/accounts/register">Sign Up.</a></p>
+                </div>
     <form role="form" method="post" action="{% url 'login' %}">
-        <legend>Login</legend>
+
         {% csrf_token %}
         {{ form| as_bootstrap }}
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Login</button>
         </div>
     </form>
+            </div>
+        <div class="col-xs-3"></div>
+    </div>
+    </div>
 {% endblock %}
