@@ -49,7 +49,7 @@
             <div class="col-md-4 col-background">
                 <h4>Forum</h4>
                 <img src="/media/images/bigstock-modern-golf-man-with-smart-pho-65229274.jpg" />
-                <p class="features_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p class="features_paragraph">Join Ireland's one and only golf specific forum to discuss and debate all things golf with fellow Golfites members. Golfers usually have a lot to say so get it off your chest here! </p>
                 <div class="wrapper">
                     <button type="button" onclick="location.href='{% url 'forum' %}'" style="margin:20px 0;" class="slider-btn-1">Join our Forum</button>
                 </div>
@@ -57,7 +57,7 @@
             <div class="col-md-4 col-background" style="margin:0 57px;">
                 <h4>Academy</h4>
                 <img src="/media/images/Academy-1-2016.jpg" />
-                <p class="features_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p class="features_paragraph">Do you have a thirst for golfing knowledge? Join our Academy and take your game to the next level by learning from our experienced group of academy contributors. </p>
                 <div class="wrapper">
                     <button type="button" onclick="location.href='{% url 'education_blog' %}'" style="margin:20px 0;" class="slider-btn-1">Visit the Academy</button>
                 </div>
@@ -65,7 +65,7 @@
             <div class="col-md-4 col-background">
                 <h4>Irish Golf Courses</h4>
                 <img src="/media/images/89252.jpg" />
-                <p class="features_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p class="features_paragraph">Search and discover Irish golf courses near you using Golfites' course finder map and directory. The number one and only place to map over 400 of our great golf courses.</p>
                 <div class="wrapper" style="display:flex;justify-content:center;">
                     <button type="button" onclick="location.href='{% url 'courses' %}'" style="margin:20px 0;" class="slider-btn-1">Search golf courses</button>
                 </div>
@@ -75,13 +75,16 @@
     <div class="container">
         <div class="row white-background">
             <div class="col-md-4">
-                <h4>Equipment</h4>
+                <h4 class="homepage-options">Equipment</h4>
                 <img src="/media/images/equipment.jpg" />
-                <p class="features_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <button type="button" onclick="location.href='{% url 'equipment' %}'" class="slider-btn-1">Check out our Equipment</button>
+                <p class="features_paragraph">On the look out for a new driver, irons or putter? Click through below to check out Golfites wide range of golf equipment. We might have just what you are looking for!</p>
+                <div class="wrapper">
+                <button type="button" onclick="location.href='{% url 'equipment' %}'" class="slider-btn-1">View Equipment</button>
+                    </div>
             </div>
-            <div class="col-md-4" style="padding:20px;">
-                <h4>Latest Ads</h4> {% for ad in latest_ads %}
+            <div class="col-md-4" style="padding:0 20px;">
+                <h4 class="homepage-options">Latest Ads</h4>
+                {% for ad in latest_ads %}
                 <div class="ad-item">
                     <h4>{{ ad.name  }}</h4>
                     <span class="text-center">
@@ -100,10 +103,12 @@
                 <hr> {% endfor %}
             </div>
             <div class="col-md-4">
-                <h4>Ads Board</h4>
+                <h4 class="homepage-options">Ads Board</h4>
                 <p>Do you have golf clubs and/or accessories you'd like to sell? Post an ad on Golfites and give your items the best chance to find a new home. </p>
-                <button type="button" onclick="location.href='{% url 'new_ad' %}'" class="slider-btn-1">Post an Ad</button>
-                <button type="button" onclick="location.href='{% url 'ads' %}'" class="slider-btn-1">Search Ads</button>
+                <div class="wrapper">
+                <button type="button" onclick="location.href='{% url 'new_ad' %}'" style="margin:10px;" class="slider-btn-1">Post an Ad</button>
+                <button type="button" onclick="location.href='{% url 'ads' %}'" style="margin:10px;" class="slider-btn-1">Search Ads</button>
+                </div>
             </div>
         </div>
     </div>

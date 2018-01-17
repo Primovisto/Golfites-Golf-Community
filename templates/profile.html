@@ -41,7 +41,7 @@
                             <button class="slider-btn-1" onclick="location.href='{% url 'change_password' %}'">Change Password</button>
                         </div>
                     <hr>
-                        <div class="my-ads-section" style="margin-top:50px;">
+                        <div class="my-ads-section" style="margin-top:20px;">
                             <h4 class="my-ads-header"><strong>My Ads:</strong></h4>
                              {% for ad in ads %}
                                  {% if user.id == ad.advertiser_id %}
@@ -52,11 +52,14 @@
                             {% endif %}
                             <p class="browseads"><strong>Ad title: </strong>{{ ad.name }}</p>
                             <p class="browseads"><strong>Ad price: </strong>&euro;{{ ad.price }}</p>
-                            <button class="slider-btn-1" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit ad
+                            <button class="slider-btn-1" style="margin-bottom:30px;" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit ad
                             </button>
-                            {% endif %} {% endfor %}
+                            {% endif %}
+
+                             {% endfor %}
+                        <hr>
                         </div>
-                    <hr>
+
                         <div class="my-profile-section" style="margin-top:50px;">
                             <h4 class="my-profile-header"><strong>My Profile:</strong></h4>
 

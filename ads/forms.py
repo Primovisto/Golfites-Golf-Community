@@ -6,6 +6,7 @@ class NewAdForm(forms.ModelForm):
     class Meta:
         model = Ad
         fields = (
+                  'advertiser',
                   'name',
                   'contact_email',
                   'published_date',

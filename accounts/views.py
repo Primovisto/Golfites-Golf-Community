@@ -56,9 +56,11 @@ def register(request):
     args.update(csrf(request))
     return render(request, 'register.html', args)
 
+
+@login_required(login_url='/login?next=profile')
 def profile(request):
     golfers = GolferProfile.objects.all()
-    ads = Ad.objects.all()
+    ads = Ad.objects.all().order_by('-published_date')
     args = {'ads': ads, 'golfers': golfers}
     args.update(csrf(request))
     return render(request, 'profile.html', args)
