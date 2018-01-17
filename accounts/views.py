@@ -1,6 +1,7 @@
 from django.contrib import messages, auth
 from accounts.forms import UserRegistrationForm, UserLoginForm
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.decorators import login_required
 from django. urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.context_processors import csrf
@@ -9,6 +10,7 @@ from ads.models import Ad
 from ads.views import ads_page
 from django.conf import settings
 from ads.forms import NewAdForm
+import arrow
 import datetime
 import stripe
 
@@ -20,35 +22,39 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             try:
-                customer = stripe.Charge.create(
-                    amount=999,
-                    currency="USD",
-                    description=form.cleaned_data['email'],
+                customer = stripe.Customer.create(
+                    email=form.cleaned_data['email'],
                     card=form.cleaned_data['stripe_id'],
+                    plan='GOLFITES_SUB',
                 )
-                if customer.paid:
-                    form.save()
-                    user = auth.authenticate(email=request.POST.get('email'),
-                                             password=request.POST.get('password1'))
+
+                if customer:
+                    user = form.save()
+                    user.stripe_id = customer.id
+                    user.subscription_end = arrow.now().replace(weeks=+4).datetime
+                    user.save()
+
+                    user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
+
                     if user:
                         auth.login(request, user)
                         messages.success(request, "You have successfully registered")
                         return redirect(reverse('profile'))
+
                     else:
-                        messages.error(request, "unable to log you in at this time!")
+                        messages.error(request, "We were unable to log you in at this time")
                 else:
-                    messages.error(request, "We were unable to take a payment with that card!")
+                    messages.error(request, "We were unable to take payment from the card provided")
+
             except stripe.error.CardError as e:
                 messages.error(request, "Your card was declined!")
     else:
         today = datetime.date.today()
-        form = UserRegistrationForm()
+        form = UserRegistrationForm(initial={'expiry_month': today.month, 'expiry_year': today.year})
 
     args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE}
     args.update(csrf(request))
-
     return render(request, 'register.html', args)
-
 
 def profile(request):
     golfers = GolferProfile.objects.all()
@@ -114,3 +120,13 @@ def edit_ad(request, id):
     else:
         form = NewAdForm(instance=ad)
     return render(request, 'ads/newadform.html', {'form': form})
+
+
+@login_required(login_url='/accounts/login/')
+def cancel_subscription(request):
+   try:
+       customer = stripe.Customer.retrieve(request.user.stripe_id)
+       customer.cancel_subscription(at_period_end=True)
+   except Exception as e:
+       messages.error(request, e)
+   return redirect('profile')

@@ -8,6 +8,7 @@ class NewAdForm(forms.ModelForm):
         fields = (
                   'name',
                   'contact_email',
+                  'published_date',
                   'product_short_description',
                   'location',
                   'price',

@@ -2,11 +2,11 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="maincontent">
+    <div class="maincontent" style="background-color:#eee;">
 <div class="container">
 
         <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="background:#EEEEEE;">
             <li class="breadcrumb-item">
                 <a href="{% url 'index' %}">Home</a>
             </li>
@@ -22,9 +22,10 @@
                 {% endif %}
 </div>
     <div class="col-md-6 ad-page-col-2">
-                <h2 class="product-header">{{ ad.name }}</h2>
-                <p class="product-details-desc"><strong>Description:</strong> {{ ad.product_short_description }}</p>
-                <p class="product-details-price">€ {{ ad.price }}</p>
+                <h4 class="ads-header-page">{{ ad.name }}</h4>
+        <hr>
+                <p class="ad-details-desc"><strong>Description:</strong> {{ ad.product_short_description }}</p>
+                <p class="ad-details-price">€ {{ ad.price }}</p>
 
                 <p><strong>Views:</strong> {{ ad.views }}</p>
                 <p><strong>Location:</strong> {{ ad.location }}</p>

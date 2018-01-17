@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% load staticfiles %}
-{% block content %}
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
 <div class="maincontent" style="padding-bottom:60px;background: #EEEEEE;">
     <div class="container">
         <!-- Breadcrumbs -->
@@ -10,7 +8,6 @@
             </li>
             <li class="breadcrumb-item">My Profile</li>
         </ol>
-
         <div class="row">
             <div class="col-xs-12">
                 <h4 style="font-size:30px;">Member Dashboard</h4>
@@ -19,75 +16,65 @@
         <div class="container" style="background-color: #fff;padding:40px 20px;">
             <div class="row">
                 <div class="col-lg-3 col-md-12 col-sm-12">
-                    <div class="seller-info">
+                    <div class="member-dashboard">
                         <h4 style="font-size:24px;text-align:left;">My Details:</h4>
                         <hr>
-                        <a class="profile-img" href="#">
-
-
-                </a>
-
-                <p style="font-family:roboto;font-size:20px;">Welcome, {{ user.username }}! Thanks for logging in.</p>
-                <hr>
-                        <p class="seller-info"><strong>Username: </strong>{{ user.username }}</p>
-                        <p class="seller-info"><strong>Email address: </strong>{{ user.email }}</p>
-                    </div>
-                    <div class="seller-actions">
-                    <div class="change-password">
-                        <button style="background-color:#516588; color:#fff; font-family:roboto;border:none;padding:12px 18px;" onclick="location.href='{% url 'change_password' %}'">Change Password</button>
-                    </div>
-                        <div class="edit-ads-section" style="margin-top:50px;">
-                            <h4 style="text-align:left;font-size:24px;">My Ads:</h4>
-                        <hr>
-{% for ad in ads %}
-                    {% if user.id == ad.advertiser_id %}
-                        {% if ad.image %}
-                                <img class="img-responsive" src="/media/{{ ad.image }}" style="width:50px; height: 50px;"/>
-                            {% else %}
-                                <div class="">No images available</div>
-                            {% endif %}
-                        <p class="browseads"><strong>Ad title: </strong>{{ ad.name }}</p>
-                        <p class="browseads"><strong>Ad price: </strong>&euro;{{ ad.price }}</p>
-                        <button style="background-color:#516588; color:#fff; font-family:roboto;border:none;padding:12px 18px;" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit
-                            ad
-                        </button>
-                        <hr>
-                    {% endif %}
-                {% endfor %}
-
-
-
-
+                        <div class="user-message">
+                            <p>Welcome, {{ user.username }}! Thanks for logging in.</p>
                         </div>
-                    <div class="edit-ads-section" style="margin-top:50px;">
-                            <h4 style="text-align:left;font-size:24px;">My Profile:</h4>
                         <hr>
-{% for golferprofile in golfers %}
-                    {% if user.id == golferprofile.golfer_id %}
-                        {% if golferprofile.image %}
-                                <img class="img-responsive" src="/media/{{ golferprofile.image }}" style="width:50px; height: 50px;"/>
-                            {% else %}
-                                <div class="">No images available</div>
-                            {% endif %}
-                        <p class="browseads"><strong>Golfer Name: </strong>{{ golferprofile.name }}</p>
-                        <button style="background-color:#516588; color:#fff; font-family:roboto;border:none;padding:12px 18px;" onclick="location.href='{% url 'editgolfer' golferprofile.id %}'">Edit
-                            Profile
-                        </button>
-                        <hr>
-                    {% endif %}
-                {% endfor %}
-
-
-
-
+                        <div class="subscriptions">
+                            <h4 class="subscriptions-header"><strong>Subscription Details:</strong></h4>
+                            <p>You have {{ user.subscription_end|timeuntil}} left on your subscription</p>
+                            <p>To cancel your subscription click 'Cancel Subscription' below</p>
+                            <p>
+                                <a href="{% url "cancel_subscription" %}" onclick="return cancelSubscriptionCheck();" class="btn btn-danger">Cancel Subscription</a>
+                            </p>
                         </div>
+                        <hr>
+                        <div class="member-info">
+                            <h4 class="info-header"><strong>Account Info:</strong></h4>
+                            <p><strong>Username: </strong>{{ user.username }}</p>
+                            <p><strong>Email address: </strong>{{ user.email }}</p>
+                        </div>
+                        <div class="change-password">
+                            <button class="slider-btn-1" onclick="location.href='{% url 'change_password' %}'">Change Password</button>
+                        </div>
+                    <hr>
+                        <div class="my-ads-section" style="margin-top:50px;">
+                            <h4 class="my-ads-header"><strong>My Ads:</strong></h4>
+                             {% for ad in ads %}
+                                 {% if user.id == ad.advertiser_id %}
+                                     {% if ad.image %}
+                            <img class="img-responsive" src="/media/{{ ad.image }}" style="width:50px; height: 50px;" />
+                                     {% else %}
+                            <div class="">No images available</div>
+                            {% endif %}
+                            <p class="browseads"><strong>Ad title: </strong>{{ ad.name }}</p>
+                            <p class="browseads"><strong>Ad price: </strong>&euro;{{ ad.price }}</p>
+                            <button class="slider-btn-1" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit ad
+                            </button>
+                            {% endif %} {% endfor %}
+                        </div>
+                    <hr>
+                        <div class="my-profile-section" style="margin-top:50px;">
+                            <h4 class="my-profile-header"><strong>My Profile:</strong></h4>
 
-
+                            {% for golferprofile in golfers %}
+                            {% if user.id == golferprofile.golfer_id %}
+                                {% if golferprofile.image %}
+                            <img class="img-responsive" src="/media/{{ golferprofile.image }}" style="width:50px; height: 50px;" />
+                                {% else %}
+                            <div class="">No images available</div>
+                            {% endif %}
+                            <p><strong>Golfer Name: </strong>{{ golferprofile.name }}</p>
+                            <button class="slider-btn-1" onclick="location.href='{% url 'editgolfer' golferprofile.id %}'">Edit Profile
+                            </button>
+                             {% endif %} {% endfor %}
+                        </div>
+                    <hr>
+                    </div>
                 </div>
-                </div>
-
-
-
                 <div class="col-lg-9 col-md-12 col-sm-12">
                     <h4 style="font-size:24px;text-align:left;">Features:</h4>
                     <hr>
@@ -132,7 +119,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-9 col-md-9 pull-right" style="margin-top:40px;">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <div class="portfolio-item">
@@ -175,12 +161,16 @@
                         </div>
                     </div>
                 </div>
-</div>
+            </div>
         </div>
-</div>
     </div>
-
-{% block search %}
-{% csrf_token %}
-{% endblock %}
-{% endblock %}
+</div>
+<script type="text/javascript">
+function cancelSubscriptionCheck() {
+    if (confirm('Are you sure you want to cancel?')) {
+        return true;
+    }
+    return false;
+}
+</script>
+{% block search %} {% csrf_token %} {% endblock %} {% endblock %}

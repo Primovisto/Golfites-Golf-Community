@@ -191,6 +191,8 @@ p{
 
     footer .footer-wording{
         color:#fff;
+        position:relative;
+        top:25px;
     }
 
 
@@ -346,6 +348,10 @@ section .wrapper{
     width:120px;
 }
 
+.ad-title{
+    margin-top:0;
+}
+
 .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
             position: absolute;
             top:34%;
@@ -458,19 +464,60 @@ iframe{
     text-decoration:none;
 }
 
-.ad-details img{
-    width:350px;
-    height: 266px;
-    margin:30px auto 0 auto;
-}
+
 /* Single Ad Page Styling*/
 .ad-page-col{
-    margin-top:20px;
+    background:#fff;
+    padding:20px;
+    border-radius:4px;
+    -webkit-box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+-moz-box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 }
-
 .ad-page-col-2{
     background-color: #fff;
     padding:20px 40px;
+    border-radius:4px;
+    -webkit-box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+-moz-box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+}
+
+.ad-column{
+    padding:20px 0;
+    background-color:#fff;
+    margin-top:30px;
+    -webkit-box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+-moz-box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border:1px solid #bbb;
+}
+
+#placement-bottom {
+    display: none;
+}
+.ads-header h4{
+    font-size:30px;
+}
+
+.ads-header-page{
+    text-align:left;
+    font-size:30px;
+    color:rgba(81, 101, 136, 1);
+
+}
+
+.ad-title{
+    color:rgba(81, 101, 136, 1);
+    font-size:24px;
+    text-align:left;
+}
+
+.ad-details-price{
+    font-size:24px;
 }
 
 /* Academy Posts Page Styling */
@@ -668,6 +715,11 @@ width:200px;
     margin-top:60px;
 }
 
+
+
+.subscriptions-header, .info-header, .my-ads-header,.my-profile-header{
+    text-align:left;
+}
 
 
 
