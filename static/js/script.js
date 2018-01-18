@@ -1,11 +1,11 @@
-$(document).ready(function(){
-  $('.slider-active').owlCarousel({
+
+    jQuery(document).ready(function(){
+  jQuery('.slider-active').owlCarousel({
     loop:true,
       navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
       animateIn: 'fadeIn',
-    nav:true,
-      autoHeight:true,
-    responsive:{
+      nav:true,
+      responsive:{
         0:{
             items:1
         },
@@ -18,6 +18,7 @@ $(document).ready(function(){
     }
 })
 });
+
 
 
 $(document).ready(function() {

@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 <link rel="shortcut icon" href="/media/images/favicon.ico?" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+<link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
     <link rel="stylesheet" href="{% static "css/font-awesome-4.7.0/css/font-awesome.css" %}">
     <link rel="stylesheet" href="{% static "css/animate.css" %}">
-    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -56,10 +57,10 @@
     </ul>
   </li>
         <li class="dropdown">
-            <a id="drop1" role="button" href="{% url 'education_blog' %}" class="nav-link">About <b class="caret"></b></a>
+            <a id="drop1" role="button" href="{% url 'about' %}" class="nav-link">About <b class="caret"></b></a>
             <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
-      <li role="presentation" class="dropdown-link"><a role="menuitem" href="{% url 'equipment' %}">About Us</a></li>
-      <li role="presentation"><a role="menuitem" href="{% url 'ads' %}">Contact Us</a></li>
+      <li role="presentation" class="dropdown-link"><a role="menuitem" href="{% url 'about' %}">About Us</a></li>
+      <li role="presentation"><a role="menuitem" href="{% url 'contact' %}">Contact Us</a></li>
     </ul>
         </li>
 

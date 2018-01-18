@@ -46,4 +46,4 @@ If you would like to deploy this app locally download or clone this repo and fol
 Edward Stack - This project was completed as part of Code Institutes mentored online program.
 
 <h2>Acknowledgements</h2>
-Bootstrap, jQuery, Owl Carousel, animate.css, font-awesome, Heroku, Javascript
+Bootstrap, jQuery, Owl Carousel, animate.css, font-awesome, Heroku, Javascript, Pixabay (Images)

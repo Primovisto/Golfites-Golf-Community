@@ -32,3 +32,8 @@ class Equipment(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class EquipmentGallery(models.Model):
+    image = models.ImageField(u'images', upload_to='images', blank=True)
+    countries = models.ForeignKey('Equipment', blank=True, null=True, on_delete=models.PROTECT)
