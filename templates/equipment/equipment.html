@@ -34,11 +34,11 @@
 
                 {% for equipment in equipment %}
 
-                        <div class="col-lg-4 col-sm-6 col-xs-12">
-                        <div class="equipment-detail">
+                        <div class="col-lg-2 col-sm-6 col-xs-12">
+                        <div class="equipment-detail" style="margin-bottom:30px;">
                         <a onclick="location.href='{% url 'equipmentpage' equipment.id %}'">
                             {% if equipment.image %}
-                                <img class="img-responsive" src="/media/{{ equipment.image }}"/>
+                                <img class="equipment-images img-responsive" src="/media/{{ equipment.image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}

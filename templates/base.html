@@ -55,7 +55,13 @@
       <li role="presentation"><a role="menuitem" href="{% url 'ads' %}">Ads</a></li>
     </ul>
   </li>
-        <li><a href="{% url 'education_blog' %}" class="nav-link">About Us</a></li>
+        <li class="dropdown">
+            <a id="drop1" role="button" href="{% url 'education_blog' %}" class="nav-link">About <b class="caret"></b></a>
+            <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
+      <li role="presentation" class="dropdown-link"><a role="menuitem" href="{% url 'equipment' %}">About Us</a></li>
+      <li role="presentation"><a role="menuitem" href="{% url 'ads' %}">Contact Us</a></li>
+    </ul>
+        </li>
 
     </div>
     <li class="nav-section secondary">

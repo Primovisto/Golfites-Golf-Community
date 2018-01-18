@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-<div class="maincontent" style="background:#eee; padding-bottom:60px;">
+<div class="maincontent" style="background:#fff; padding-bottom:60px;">
 <div class="container">
 
         <!-- Breadcrumbs -->
@@ -43,10 +43,10 @@
                         <h4 class="ad-title">{{ ad.name }}</h4>
 
 
-<span><p>Location: {{ ad.location }}</p>
-                                <p>Condition: {{ ad.condition }}</p>
-<p>Date Published: {{ ad.published_date }}</p></span>
-                            <p>Ad Views: {{ ad.views }}</p>
+<span><p><strong>Location:</strong> {{ ad.location }}</p>
+                                <p><strong>Condition:</strong> {{ ad.condition }}</p>
+<p><strong>Date Published:</strong> {{ ad.published_date }}</p></span>
+                            <p><strong>Ad Views:</strong> {{ ad.views }}</p>
 
 <p style="font-size:20px;font-weight:700;">€ {{ ad.price }}</p>
 <button class="slider-btn-1" onclick="location.href='{% url 'ads_page' ad.id %}'">View Ad</button>

@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="maincontent">
+    <div class="maincontent" style="margin:50px">
 <div class="container">
 
         <!-- Breadcrumbs -->
@@ -13,8 +13,8 @@
             <li class="breadcrumb-item">
                 <a href="{% url 'equipment' %}">Browse Products</a></li>
         </ol>
-    <div class="row">
-            <div class="col-md-6" style="margin-top:20px;">
+    <div class="row equipment-row">
+            <div class="col-md-6">
                 {% if equipment.image %}
                     <img class="img-responsive equipment-image" src="/media/{{ equipment.image }}"/>
                 {% else %}
@@ -23,14 +23,17 @@
 </div>
     <div class="col-md-6">
         <span>
-                <h2 class="equipment-header">{{ equipment.name }}</h2>
+                <h4 class="equipment-header">{{ equipment.name }}</h4>
+            <hr class="horizontal-row">
+            <img class="img responsive equipment-brand" src="/media/{{ equipment.brand_logo}}" style="height:40px; width:140px;" />
 
             </span>
                 <p class="equipment-details-desc"><strong>Description:</strong> {{ equipment.product_short_description }}</p>
                 <p class="equipment-details-price">€ {{ equipment.price }}</p>
+        <p class="equipment-details-condition"><strong>Condition:</strong> {{ equipment.condition }}</p>
+        <p class="equipment-details-views"><strong>Views:</strong> {{ equipment.views }}</p>
 
-                <p class="equipment-details-views">Views: {{ equipment.views }}</p>
-                <hr>
+                <hr class="horizontal-row">
                 <div id="paypal" style="display: flex; justify-content: flex-start;cursor:pointer;">{{ equipment.paypal_form.sandbox }}</div>
 
                 </div>
