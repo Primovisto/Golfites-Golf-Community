@@ -22,136 +22,86 @@ p{
 
 /* base.html Styling*/
 
-.navigation {
-        position: absolute;
-        display: flex;
-        left: 0;
-        right: 0;
-        z-index: 500;
-        height: 75px;
-        perspective: 2000px;
-        padding-bottom: 30px;
-        background-color: rgba(81, 101, 136, 1);
-        border-bottom: 1px solid #fff;
-    }
 
-    .navigation .nav {
-        position: relative;
-    }
+.navbar-nav{
+    position: relative;
+    font-size: 15px;
+    font-family: roboto;
+    top: 29px;
+    left:40px;
+}
 
+.navbar, .dropdown-menu{
+background:#3a5685;
+border: none;
+    height:85px;
 
+}
+.divider-border{
+    position:relative;
+    top:-2px;
+    padding: 0;
+}
 
-    .dropdown-menu{
-        margin: 0;
-    }
+#divider{
+    position:relative;
+    left:12px;
+    font-size:20px;
+}
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+  border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .navbar-toggle{
+ color: #fff;
+}
+.dropdown-menu{
+      -webkit-box-shadow: none;
+    box-shadow:none;
+}
 
-    #drop1:hover{
-        background-color:rgba(81, 101, 136, 1);
-    }
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
+  border-bottom: #fff 3px solid;
+}
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
+  border-bottom: #fff 3px solid;
+}
 
-    .nav .open>a, .nav .open>a:hover{
-        background-color:rgba(81, 101, 136, 1);
-        border-color:#fff;
-    }
+.navbar-toggle .icon-bar{
+    color: #fff;
+    background: #fff;
+}
 
-    .dropdown-link{
-        font-family:roboto;
-    }
-
-
-    .navigation .nav-section.logo {
-        position: absolute;
-        top: 12px;
-        left: 10px;
-    }
-
-    .navigation li {
-        list-style: none;
-    }
-
-    .navigation .nav-section.logo .nav-link {
-        padding-left: 20px;
-        color: #fff;
-        position: relative;
-        bottom: 8px;
-    }
-
-    .navigation .nav-section.primary {
-        display: flex;
-        justify-content: center;
-        line-height: 50px;
-        position: relative;
-        top: 16px;
-        width:850px;
-        left:170px;
-    }
-
-    .navigation .nav-section.secondary {
-        display: flex;
-        display: -ms-flexbox;
-        position: absolute;
-        top: 15px;
-        right: 0;
-    }
-
-
-    .navigation .nav-section.secondary .divider {
-        color:#fff;
-        position:relative;
-        top:10px;
-        font-size:18px;
-    }
-    .navigation .nav-section.secondary span img {
-        height: 18px;
-        width: 18px;
-        position: relative;
-        left: 12px;
-        bottom: 2px;
-    }
-    .navigation .nav-link {
-        padding: 0 18px;
-        text-decoration: none;
-        display: inline-block;
-        height: 60px;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        font-size: 17px;
-        line-height: 50px;
-        font-weight: 500;
-        margin: 0;
-        color: #fff;
-    }
-
-    .navigation .nav-link:hover {
-
-        border-bottom:3px solid #fff;
-    }
+.navbar-toggle{
+    margin-top:28px;
+}
 
 
 
-    .navigation .nav-section .nav-secondary-link {
-        padding: 0 18px;
-        text-decoration: none;
-        display: inline-block;
-        height: 60px;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        font-size: 17px;
-        line-height: 50px;
-        font-weight: 500;
-        margin: 0;
-        color: #fff;
-    }
-    .navigation .nav-section .nav-secondary-link:hover {
-        background-color:rgba(81, 101, 136, 1);
-        height:40px;
-    }
+
+
+
 
 
 
@@ -173,13 +123,21 @@ p{
     }
     button.sign-up-btn{
         display:inline-block;
-        padding:12px 18px;
+        padding:12px 16px;
         color:#fff;
+        text-transform: uppercase;
         margin:20px auto;
-        font-size:18px;
-        background-color:rgba(81, 101, 136, 1);
+        font-size:14px;
+        background-color:#3a5685;
         border-radius:2px;
         border:none;
+    }
+
+    button.sign-up-btn:hover{
+        background-color:#2e497a;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.62);
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.62);
+-moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.62);
     }
 
     footer{
@@ -200,14 +158,8 @@ p{
 
 .owl-carousel .item img {
 
-	height:auto;
+	height:666px;
         }
-
-.slider-area .slider-active.owl-carousel .item .item-caption{
-    margin-left: auto;
-    margin-right:auto;
-    left:11%;
-}
 
 .slider-area .slider-active.owl-carousel .item .slide-header{
     margin-left:auto;
@@ -240,6 +192,11 @@ p{
 
 }
 
+span .tagline-divider{
+        font-size:16px;
+
+    }
+
 .slide-header .button-slider-section{
     margin-top:20px;
 }
@@ -248,7 +205,7 @@ p{
     padding:10px 18px;
     font-size:18px;
     font-family:roboto;
-    background-color:rgba(81, 101, 136, 1);
+    background-color:#3a5685;
     font-weight:400;
     border:none;
     border-radius:3px;
@@ -261,7 +218,7 @@ p{
 }
 
 .slide-header .button-slider-section button.slider-btn-1:hover{
-    background-color:#333;
+    background-color:#2e497a;
     -webkit-box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
 -moz-box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
 box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
@@ -273,8 +230,8 @@ box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
 }
 
 .slide-header .button-slider-section button.slider-btn-2:hover{
-    background-color:#fff;
-    color:rgba(81, 101, 136, 1);
+    background-color:#222;
+    color:#fff;
     -webkit-box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
 -moz-box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
 box-shadow: 2px 3px 4px 1px rgba(0,0,0,0.62);
@@ -314,14 +271,22 @@ section .login-register-form-section .col-centered{
 
 .site-btn{
 
-    padding:6px 16px;
-    font-size:16px;
-    background-color:rgba(81, 101, 136, 1);
+    padding:10px 16px;
+    font-size:14px;
+    text-transform: uppercase;
+    background-color:#3a5685;
     border-radius:2px;
-    letter-spacing:1px;
     border:none;
+    font-family: roboto;
     color:#fff;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.7);
+}
+
+.site-btn:hover{
+box-shadow: 0 2px 3px 0 rgba(0,0,0,0.62);
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.62);
+-moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.62);
+    background-color:#2e497a;
+
 }
 
 .register-link{
@@ -348,7 +313,7 @@ section .wrapper{
     display:flex;
     justify-content:center;
 }
-.col-background{
+.col-features{
     background-color:#fff;
     width:30%;
 
@@ -388,7 +353,7 @@ section .wrapper{
 
 .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
             position: absolute;
-            top:34%;
+            top:40%;
 	        left:10%;
             margin-left:auto;
             margin-right:auto;
@@ -423,7 +388,7 @@ section .wrapper{
     border-radius:3px;
     height:40px;
     width: 300px;
-    color:#516588;
+    color:#3a5685;
     background: #fcfcfc;
 }
 
@@ -591,7 +556,7 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 .catalogue-header h1{
     font-family:roboto;
     font-size:30px;
-    color:rgba(81, 101, 136, 1);
+    color:#3a5685;
     text-align: center;
 
 }
@@ -644,7 +609,7 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 .equipment-header{
     font-size:30px;
     text-align:left;
-    color:rgba(81, 101, 136, 1);
+    color:#3a5685;
 }
 
 .equipment-details-desc{
@@ -694,7 +659,7 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 }
 
 .overlay-btn .view-site-btn {
-    background-color: #516588;
+    background-color: #3a5685;
     color: #fff;
     padding: 5px 8px;
     font-size: 14px;
@@ -825,7 +790,7 @@ width:200px;
 
 
 .login-form{
-    margin-top:60px;
+    margin-top:90px;
 }
 
 .member-dashboard{
@@ -846,7 +811,7 @@ width:200px;
 }
 .about-banner-image .about-us-banner{
     position:absolute;
-    top:38.5%;
+    top:37.5%;
 
 }
 
@@ -866,7 +831,7 @@ width:200px;
 }
 
 .about-banner-image h4{
-    font-size:26px;
+    font-size:24px;
     color:#fff;
     padding:10px;
     background-color:rgba(0,0,0,0.6);
@@ -898,14 +863,14 @@ width:200px;
     padding:10px 20px 0 0;
     text-align:right;
     left:76%;
-    top: 34%;
+    top: 32%;
 
 
 }
 
 .contact-us-banner h4{
     position:absolute;
-    top:42%;
+    top:41%;
     padding:20px 20px 20px 0;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
     background:rgba(0,0,0, 0.6);
@@ -993,6 +958,174 @@ width:200px;
 
 
 
+@media (device-width:768px) {
+
+    .navbar-brand img{
+        height:40px;
+        width:140px;
+    }
+    .navbar-nav > li > a{
+        padding-top:0;
+        padding-bottom:25px;
+    }
+
+    .owl-carousel .item img{
+        height:500px;
+
+    }
+
+    .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
+        left:0;
+        top:37%;
+    }
+
+    .slide-header h2{
+        font-size:22px;
+        padding: 0 80px;
+    }
+
+    .col-features{
+        margin: 20px auto;
+    width: 80%;
+    }
+
+    section .login-register-form-section{
+        width:80%;
+    }
+
+    .col-features h4{
+        padding-top:15px;
+    }
+    section .register-header p{
+
+padding:0 40px;    }
 
 
+}
+
+@media (max-width:767px){
+
+    .navbar-nav{
+        position:relative;
+        left:10px;
+        top:20px;
+    }
+
+    #navbar.navbar-collapse{
+        background-color:#3a5685;
+    }
+
+    span#divider{
+        visibility: hidden;
+    }
+    ul.nav.navbar-nav.pull-right{
+        float:left !important;
+    }
+
+    .owl-carousel .item img{
+        height:500px;
+
+    }
+
+
+
+    .slide-header h2{
+        font-size:16px;
+    }
+
+    .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
+        left:0;
+        top:30%;
+    }
+    .slider-area .slider-active.owl-carousel .item .item-caption .slide-header .connect {
+        font-size: 15px;
+    }
+
+    .slide-header .button-slider-section button.slider-btn-1, .slide-header .button-slider-section button.slider-btn-2{
+        padding: 6px 10px;
+    font-size: 13px;
+        letter-spacing:0;
+    }
+
+    .connect span{
+        font-size:16px;
+    }
+
+    span .tagline-divider{
+        font-size:16px;
+
+    }
+
+section#register{
+    padding-top:40px;
+}
+
+    section .register-header h4{
+        font-size:24px;
+    }
+
+    section .register-header p{
+        font-size:15px;
+    }
+
+    .login-form{
+        margin-top:40px;
+    }
+
+    section .login-register-form-section{
+        height:300px;
+        margin: 0 20px;
+    }
+
+    .register-link{
+        margin-top:35px;
+    }
+
+    .col-features{
+        margin: 20px auto;
+    width: 90%;
+    }
+
+    .col-features h4{
+        padding-top:15px;
+    }
+
+    button.sign-up-btn{
+        display:flex;
+        margin: 0 auto;
+    }
+
+    .banner-header h4{
+        margin-right:0;
+    }
+
+    .ad-title{
+        margin-top:20px;
+    }
+}
+
+@media(min-device-width:769px) and (max-device-width:1024px){
+    .col-features{
+        width: 30%;
+    margin: 0 15px;
+    }
+
+    .login-form{
+        padding: 0 100px;
+    }
+
+    .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
+        left:0;
+    }
+
+
+}
+
+@media (min-width: 768px)
+{
+.navbar-nav>li>a {
+    padding-top: 8px;
+    padding-bottom: 22px;
+}
+}
 
