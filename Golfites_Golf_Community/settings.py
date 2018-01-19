@@ -32,12 +32,12 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_L2u1PAnN0QLTVcbLRes1qB2W')
 # PayPal Settings
 SITE_URL = 'http://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
-PAYPAL_RECEIVER_EMAIL = 'edward@primovisto.com'
+PAYPAL_RECEIVER_EMAIL = 'johnpaulstack@gmail.com'
 
 DISQUS_WEBSITE_SHORTNAME = 'mybootcampblog'
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['golfites-golf-community.herokuapp.com', 'localhost', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['golfites-golf-community.herokuapp.com', 'localhost', '127.0.0.1']
 
 AUTH_USER_MODEL = 'accounts.User'
 

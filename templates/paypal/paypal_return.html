@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Thanks for buying my item :)</h1>
- 
-    <h2>POST</h2>
-    {{ post }}
- 
-    <h2>GET</h2>
-    {{ get }}
+    <div class="container" style="position:relative;top:100px;height:420px;">
+    <ol class="breadcrumb login-page">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Paypal-Return</li>
+        </ol>
+
+    <h1 style="margin-top:60px; color:#333;">Thanks for purchasing our item :)</h1>
+    <a href="https://golfites-golf-community.heroukapp.com">Return to homepage.</a>
+    </div>
+
 {% endblock %}

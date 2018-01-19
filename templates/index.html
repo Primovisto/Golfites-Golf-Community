@@ -5,14 +5,14 @@
 <div class="slider-area">
     <div class="slider-active owl-carousel">
         <div class="item">
-            <img src="/media/images/ir-int-mast-golf_obrien_101005_7739.jpg" />
+            <img src="/media/images/OldHead.png" />
             <div class="item-caption">
                 <div class="slide-header">
                     <h2>The online community for Irish golfers with a passion for the game</h2>
-                    <div class="connect"> <span>Connect</span> <span style="color:#fff;font-size:25px;">|</span> <span>Learn</span> <span style=" color:#fff;font-size:25px;">|</span> <span>Play</span></div>
+                    <div class="connect"> <span>Connect</span> <span class="tagline-divider">|</span> <span>Learn</span> <span class="tagline-divider">|</span> <span>Play</span></div>
                     <div class="button-slider-section">
-                        <button type="button" onclick="location.href='{% url 'login' %}'" class="slider-btn-1">Get Started</button>
-                        <button type="button" class="slider-btn-2">About Golfites</button>
+                        <button type="button" onclick="location.href='{% url 'login' %}'" class="slider-btn-1 animated slideInUp">Get Started</button>
+                        <button type="button" onclick="location.href='{% url 'about' %}'" class="slider-btn-2 animated slideInDown">About Golfites</button>
                     </div>
                 </div>
             </div>
@@ -32,16 +32,17 @@
     </div>
     <div class="container login-register-form-section">
         <div class="row">
-            <div class="col-lg-4 col-centered">
+            <div class="col-lg-4 col-centered" data-aos="fade-up" data-aos-once="false">
                 <form role="form" method="post" class="login-form" action="{% url 'login' %}">
                     {% csrf_token %} {{ form| as_bootstrap }}
                     <div class="form-group">
-                        <button type="submit" class="slider-btn-1">Login</button>
-                    </div>
-                </form>
-                <div class="register-link">
+                        <button type="submit" class="site-btn">Login</button>
+                        <div class="register-link">
                     <p>Not a registered member? <a href="{% url 'register' %}">Sign up</a></p>
                 </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
@@ -49,43 +50,43 @@
 <section id="features">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-background">
+            <div class="col-md-4 col-features">
                 <h4>Forum</h4>
-                <img src="/media/images/bigstock-modern-golf-man-with-smart-pho-65229274.jpg" />
+                <img src="/media/images/bigstock-modern-golf-man-with-smart-pho-65229274.jpg" class="img-responsive"/>
                 <p class="features_paragraph">Join Ireland's one and only golf specific forum to discuss and debate all things golf with fellow Golfites members. Golfers usually have a lot to say so get it off your chest here! </p>
                 <div class="wrapper">
-                    <button type="button" onclick="location.href='{% url 'forum' %}'" style="margin:20px 0;" class="slider-btn-1">Join our Forum</button>
+                    <button type="button" onclick="location.href='{% url 'forum' %}'" style="margin:20px 0;" class="site-btn">Join our Forum</button>
                 </div>
             </div>
-            <div class="col-md-4 col-background" style="margin:0 57px;">
+            <div class="col-md-4 col-features">
                 <h4>Academy</h4>
-                <img src="/media/images/Academy-1-2016.jpg" />
+                <img src="/media/images/Academy-1-2016.jpg" class="img-responsive"/>
                 <p class="features_paragraph">Do you have a thirst for golfing knowledge? Join our Academy and take your game to the next level by learning from our experienced group of academy contributors. </p>
                 <div class="wrapper">
-                    <button type="button" onclick="location.href='{% url 'education_blog' %}'" style="margin:20px 0;" class="slider-btn-1">Visit the Academy</button>
+                    <button type="button" onclick="location.href='{% url 'education_blog' %}'" style="margin:20px 0;" class="site-btn">Visit the Academy</button>
                 </div>
             </div>
-            <div class="col-md-4 col-background">
+            <div class="col-md-4 col-features">
                 <h4>Irish Golf Courses</h4>
-                <img src="/media/images/89252.jpg" />
+                <img src="/media/images/89252.jpg" class="img-responsive" />
                 <p class="features_paragraph">Search and discover Irish golf courses near you using Golfites' course finder map and directory. The number one and only place to map over 400 of our great golf courses.</p>
                 <div class="wrapper" style="display:flex;justify-content:center;">
-                    <button type="button" onclick="location.href='{% url 'courses' %}'" style="margin:20px 0;" class="slider-btn-1">Search golf courses</button>
+                    <button type="button" onclick="location.href='{% url 'courses' %}'" style="margin:20px 0;" class="site-btn">Search golf courses</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row white-background">
-            <div class="col-md-4">
+            <div class="col-md-4 col-features">
                 <h4 class="homepage-options">Equipment</h4>
-                <img src="/media/images/equipment.jpg" />
+                <img src="/media/images/equipment.jpg" class="img-responsive"/>
                 <p class="features_paragraph">On the look out for a new driver, irons or putter? Click through below to check out Golfites wide range of golf equipment. We might have just what you are looking for!</p>
                 <div class="wrapper">
-                <button type="button" onclick="location.href='{% url 'equipment' %}'" class="slider-btn-1">View Equipment</button>
+                <button type="button" onclick="location.href='{% url 'equipment' %}'" class="site-btn">View Equipment</button>
                     </div>
             </div>
-            <div class="col-md-4" style="padding:0 20px;">
+            <div class="col-md-4 col-features" style="padding:0 20px;">
                 <h4 class="homepage-options">Latest Ads</h4>
                 {% for ad in latest_ads %}
                 <div class="ad-item">
@@ -105,15 +106,19 @@
                 </div>
                 <hr> {% endfor %}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-features">
                 <h4 class="homepage-options">Ads Board</h4>
                 <p>Do you have golf clubs and/or accessories you'd like to sell? Post an ad on Golfites and give your items the best chance to find a new home. </p>
                 <div class="wrapper">
-                <button type="button" onclick="location.href='{% url 'new_ad' %}'" style="margin:10px;" class="slider-btn-1">Post an Ad</button>
-                <button type="button" onclick="location.href='{% url 'ads' %}'" style="margin:10px;" class="slider-btn-1">Search Ads</button>
+                <button type="button" onclick="location.href='{% url 'new_ad' %}'" style="margin:10px;" class="site-btn">Post an Ad</button>
+                <button type="button" onclick="location.href='{% url 'ads' %}'" style="margin:10px;" class="site-btn">Search Ads</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    AOS.init();
+  </script>
+
 {% block search %} {% csrf_token %} {% endblock %} {% endblock %}

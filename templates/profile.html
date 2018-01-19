@@ -38,7 +38,7 @@
                             <p><strong>Email address: </strong>{{ user.email }}</p>
                         </div>
                         <div class="change-password">
-                            <button class="slider-btn-1" onclick="location.href='{% url 'change_password' %}'">Change Password</button>
+                            <button class="site-btn" onclick="location.href='{% url 'change_password' %}'">Change Password</button>
                         </div>
                     <hr>
                         <div class="my-ads-section" style="margin-top:20px;">
@@ -52,7 +52,7 @@
                             {% endif %}
                             <p class="browseads"><strong>Ad title: </strong>{{ ad.name }}</p>
                             <p class="browseads"><strong>Ad price: </strong>&euro;{{ ad.price }}</p>
-                            <button class="slider-btn-1" style="margin-bottom:30px;" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit ad
+                            <button class="site-btn" style="margin-bottom:30px;" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit ad
                             </button>
                             {% endif %}
 
@@ -71,7 +71,7 @@
                             <div class="">No images available</div>
                             {% endif %}
                             <p><strong>Golfer Name: </strong>{{ golferprofile.name }}</p>
-                            <button class="slider-btn-1" onclick="location.href='{% url 'editgolfer' golferprofile.id %}'">Edit Profile
+                            <button class="site-btn" onclick="location.href='{% url 'editgolfer' golferprofile.id %}'">Edit Profile
                             </button>
                              {% endif %} {% endfor %}
                         </div>

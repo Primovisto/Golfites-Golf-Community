@@ -30,6 +30,8 @@ from about import urls as about_urls
 from courses import urls as courses_urls
 from equipment.views import search_names
 from contact import urls as contact_urls
+from paypal.standard.ipn import urls as paypal_urls
+from paypal_store import views as paypal_views
 
 
 urlpatterns = [
@@ -47,6 +49,9 @@ urlpatterns = [
     url(r'^courses/search/$', search_names, name='search'),
     url(r'^about/', include(about_urls)),
     url(r'^contact/', include(contact_urls)),
+    url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
+    url(r'^paypal-return', paypal_views.paypal_return),
+    url(r'^paypal-cancel', paypal_views.paypal_cancel),
 
 
 
