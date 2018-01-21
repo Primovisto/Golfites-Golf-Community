@@ -314,8 +314,7 @@ section .wrapper{
     justify-content:center;
 }
 .col-features{
-    background-color:#fff;
-    width:30%;
+
 
 }
 
@@ -689,9 +688,8 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 
 
 .maincontent{
-    border-top:4px solid #6c8835;
     margin-top:20px;
-    padding:20px;
+    padding:20px 0;
 }
 
 /*Breadcrumbs*/
@@ -715,7 +713,9 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 }
 
 .golfer-page-column-2{
-    background-color:#fff;padding:50px;
+    background-color:#fff;
+    padding:50px;
+    margin:20px 0;
 }
 
 .golfer-details a{
@@ -742,7 +742,7 @@ width:200px;
 
 .maincontent.login-page{
     background:#eee;
-    padding:80px;
+
 }
 
 .breadcrumb.login-page{
@@ -811,14 +811,15 @@ width:200px;
 }
 .about-banner-image .about-us-banner{
     position:absolute;
-    top:37.5%;
+    top:46%;
+    width:100%;
 
 }
 
 .about-us-text{
     position: absolute;
-    left: 79.5%;
-    top: 30%;
+    left: 85%;
+    top: 37.5%;
 
 }
 
@@ -836,7 +837,7 @@ width:200px;
     padding:10px;
     background-color:rgba(0,0,0,0.6);
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
-    width:1140px;
+    width:100%;
     text-align:right;
     margin-right:50px;
 }
@@ -862,19 +863,19 @@ width:200px;
     position: absolute;
     padding:10px 20px 0 0;
     text-align:right;
-    left:76%;
-    top: 32%;
+    left:82%;
+    top: 33%;
 
 
 }
 
 .contact-us-banner h4{
     position:absolute;
-    top:41%;
+    top:43%;
     padding:20px 20px 20px 0;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
     background:rgba(0,0,0, 0.6);
-    width:1140px;
+    width:100%;
     text-align:right;
     color:#fff;
     font-size:26px;
@@ -960,47 +961,91 @@ width:200px;
 
 @media (device-width:768px) {
 
-    .navbar-brand img{
-        height:40px;
-        width:140px;
-    }
-    .navbar-nav > li > a{
-        padding-top:0;
-        padding-bottom:25px;
+    .navbar-brand img {
+        height: 40px;
+        width: 140px;
     }
 
-    .owl-carousel .item img{
-        height:500px;
+    .navbar-nav > li > a {
+        padding-top: 0;
+        padding-bottom: 25px;
+    }
+
+    .owl-carousel .item img {
+        height: 500px;
 
     }
 
-    .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
-        left:0;
-        top:37%;
+    .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption {
+        left: 0;
+        top: 37%;
     }
 
-    .slide-header h2{
-        font-size:22px;
+    .slide-header h2 {
+        font-size: 22px;
         padding: 0 80px;
     }
 
-    .col-features{
+    .col-features {
         margin: 20px auto;
-    width: 80%;
+        width: 80%;
     }
 
-    section .login-register-form-section{
-        width:80%;
+    section .login-register-form-section {
+        width: 80%;
     }
 
-    .col-features h4{
-        padding-top:15px;
+    .col-features h4 {
+        padding-top: 15px;
     }
-    section .register-header p{
 
-padding:0 40px;    }
+    section .register-header p {
+
+        padding: 0 40px;
+    }
+
+    .banner-image img {
+        height: 500px;
+    }
+
+    .banner-image .search-position {
+
+        top: 20%;
+        left: 30%;
+    }
+
+    iframe{
+        width:100%;
+        margin:20px auto 0 auto;
+    }
+
+    .about-banner-image img {
+
+    height: 500px;
+}
 
 
+.about-us-text {
+
+    visibility:hidden;
+}
+
+.about-us-text p {
+
+    font-size:35px;
+}
+
+.about-banner-image h4{
+    visibility:hidden;
+}
+
+.about-banner-image .about-us-banner{
+    visibility:hidden;
+}
+
+.equipment-images.img-responsive{
+    height:220px;
+}
 }
 
 @media (max-width:767px){
@@ -1102,6 +1147,61 @@ section#register{
     .ad-title{
         margin-top:20px;
     }
+    .banner-image img{
+       height:400px;
+
+}
+
+    iframe{
+        width:100%;
+        margin:20px auto 0 auto;
+    }
+    .banner-image .search-position{
+    top: 25%;
+    left: 10%;
+    }
+
+    .center-block{
+        padding:0;
+    }
+
+    .equipment-images.img-responsive{
+        height:100%;
+    }
+.about-banner-image img {
+
+    height: 300px;
+}
+
+
+.about-us-text {
+    position: absolute;
+    left: 52%;
+    top: 30%;
+}
+
+.about-banner-image h4{
+    width:100%;
+    font-size:18px;
+}
+
+.about-banner-image .about-us-banner{
+    top:36%;
+}
+
+.contact-banner-image img{
+    height:400px;
+}
+
+.contact-us-banner h4{
+    top:47%;
+    width:100%;
+}
+
+.contact-us-text{
+    left: 42%;
+    top: 39%;
+}
 }
 
 @media(min-device-width:769px) and (max-device-width:1024px){
@@ -1117,15 +1217,130 @@ section#register{
     .academy-slider .slider-active .item .item-caption, .slider-active .item .item-caption{
         left:0;
     }
+.banner-image img {
+        height: 500px;
+    }
 
+    .banner-image .search-position {
+
+        top: 25%;
+    left: 35%;
+    }
+
+    iframe{
+        width:100%;
+        margin:auto;
+    }
+
+
+    .about-us-text {
+    visibility:hidden;
+}
+
+    .contact-us-text{
+        visibility:hidden;
+    }
+
+
+
+    .contact-us-banner h4{
+        visibility:hidden;
+    }
+
+    .equipment-images.img-responsive{
+        height:220px;
+    }
 
 }
 
 @media (min-width: 768px)
 {
+
+
 .navbar-nav>li>a {
     padding-top: 8px;
     padding-bottom: 22px;
 }
+
+    .about-us-text {
+
+    visibility: hidden;
 }
+
+
+        .about-banner-image img {
+
+    height: 250px;
+}
+
+
+.about-banner-image .about-us-banner{
+    visibility: hidden;
+}
+
+.contact-us-banner h4{
+    visibility: hidden;
+}
+
+.contact-us-text{
+    visibility: hidden;
+}
+}
+
+@media (min-device-width:667px) and (max-device-width:736px){
+    .banner-image .search-position{
+        top: 45%;
+    left: 27%;
+    }
+
+        .about-banner-image img {
+
+    height: 400px;
+}
+
+.about-us-text {
+
+    left: 70%;
+    top: 80%;
+}
+
+.about-us-text p {
+
+    font-size:35px;
+}
+
+.about-banner-image h4{
+    width:100%;
+    font-size:18px;
+}
+
+.about-banner-image .about-us-banner{
+    top:91%;
+    width:100%;
+}
+.contact-banner-image img{
+    height:400px;
+}
+
+.contact-us-banner h4{
+    top:83%;
+    width:100%;
+}
+
+.contact-us-text{
+    left: 65%;
+    top: 70%;
+}
+}
+
+@media (min-device-width:375px) and (max-device-width:667px) {
+
+    .golfer-details img {
+     width:100%;
+     height: 100%;
+}
+
+}
+
+
 

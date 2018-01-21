@@ -18,13 +18,11 @@
                     <h1>Golfers</h1>
                 </div>
             </div>
-        </div>
-        <!-- Content Row -->
-        <div class="container">
+
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 golfer-page-column">
                     {% for golfer in golfers %}
-                    <div class="col-lg-3 col-sm-6 col-xs-12 golfer-page-column-2">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 golfer-page-column-2">
                         <div class="golfer-details">
                             <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
                         {% if golfer.image %}
@@ -39,7 +37,7 @@
                                 <p><strong>Handicap:</strong> {{ golfer.current_handicap }}</p>
                                 <p><strong>Golf Club:</strong> {{ golfer.golf_club }}</p>
 
-                                <button type="button" class="slider-btn-1">View Profile</button>
+                                <button type="button" class="site-btn">View Profile</button>
 
 
                              </a>

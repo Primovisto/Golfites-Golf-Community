@@ -2,8 +2,8 @@
 {% load bootstrap_tags %}
 {% load staticfiles %}
 {% block content %}
-    <div class="maincontent" style="border-top:4px solid #6aefcc;margin-top:20px;padding:20px;">
-    <div class="container">
+
+
     <div class="contact-banner-image">
         <img src="/media/images/banner2.jpg_Thumbnail0.jpg"/>
         <div class="contact-us-text">
@@ -14,22 +14,12 @@
 
         </div>
     </div>
-    </div>
+
         <div class="container">
 
         <div class="row" style="margin-top:80px;">
 
-               <div class="col-sm-3">
 
-                   <p><a class="page-links" href="https://golfites-golf-community.herokuapp.com">Homepage</a></p>
-            <hr class="horizontal-row-margin">
-            <p><a class="page-links" href="#">About Us</a></p>
-            <hr class="horizontal-row-margin">
-            <p><a class="page-links" href="#">FAQs</a></p>
-            <hr class="horizontal-row-margin">
-            <p><a class="page-links" href="#">Terms & Conditions</a></p>
-<hr class="horizontal-row-margin">
-            </div>
             <div class="col-sm-9">
                 <div class="contact-details">
 
@@ -100,10 +90,20 @@
                   </form>
                </div>
                 </div>
+<div class="col-sm-3">
 
+                   <p><a class="page-links" href="https://golfites-golf-community.herokuapp.com">Homepage</a></p>
+            <hr class="horizontal-row-margin">
+            <p><a class="page-links" href="#">About Us</a></p>
+            <hr class="horizontal-row-margin">
+            <p><a class="page-links" href="#">FAQs</a></p>
+            <hr class="horizontal-row-margin">
+            <p><a class="page-links" href="#">Terms & Conditions</a></p>
+<hr class="horizontal-row-margin">
+            </div>
         </div>
     </div>
-    </div>
+
     {% block search %}
         {% csrf_token %}
         {% endblock %}
