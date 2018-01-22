@@ -101,15 +101,10 @@ border: none;
 
 
 
-
-
-
-
-
-
     section.footer-top{
         padding:50px 0;
         background-color:#bbb;
+
     }
 
     section .banner-header{
@@ -145,6 +140,7 @@ border: none;
         height:60px;
         background-color: #666;
         color:#fff;
+
     }
 
     footer .footer-wording{
@@ -653,6 +649,12 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
     width: 100%;
 }
 
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
  .portfolio-item .logo-image .overlay:hover {
     opacity: 1;
 }
@@ -662,13 +664,11 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
     color: #fff;
     padding: 5px 8px;
     font-size: 14px;
-    position: absolute;
     font-family:roboto;
-    top: 55%;
-    left: 24%;
     text-decoration: none;
     border-radius: 4px;
     border:none;
+    margin: 10px 0;
 }
 
 .overlay-btn .view-site-btn:hover {
@@ -689,7 +689,7 @@ box-shadow: 0px 3px 3px -1px rgba(163,163,163,1);
 
 .maincontent{
     margin-top:20px;
-    padding:20px 0;
+    padding:80px 0;
 }
 
 /*Breadcrumbs*/
@@ -1045,6 +1045,11 @@ width:200px;
 
 .equipment-images.img-responsive{
     height:220px;
+}
+
+.overlay-btn .view-site-btn{
+    padding:10px 18px;
+    left:38%;
 }
 }
 
