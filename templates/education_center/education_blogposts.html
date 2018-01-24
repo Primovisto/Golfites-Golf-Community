@@ -1,34 +1,45 @@
 {% extends "base.html" %}
  
 {% block content %}
-    <div class="slider-area academy-slider">
-    <div class="slider-active owl-carousel">
+    <div class="slider-area">
+    <div class="slider-active owl-carousel academy-carousel">
         <div class="item">
-            <a href="{% url 'login' %}"><img src="/media/images/GolfitesAcademy.png" /></a>
+            <img src="/media/images/large-open-air-course-with-golf-stick-and-ball-web-header.jpg" />
             <div class="item-caption">
                 <div class="slide-header">
-                    <h2>Welcome to the Golfites Academy</h2>
-                    <p>Gain the best tips and advice from Golfites team of experienced contributors.</p>
+                    <h4 class="academy-slider-header">Welcome to the Golfites Academy</h4>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <section>
+
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
-                <h4 style="text-align:left;">Golf Instruction</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <div class="col-md-9">
+                <h4 style="text-align:left;margin-top:40px;font-size:24px;text-transform:uppercase;">Learn from our Team of Dedicated Intructors </h4>
+                <hr>
+                <p> Golfites team of experienced instructors are here to help our members. They will post daily tips, comment on questions, analyze golf swings, and communicate directly with golfites members who have questions. Our hand-selected team of contributors are made up of mostly certified PGA professionals with vast experience and knowledge in the field of golf. If you are struggling with your swing or any aspect of your game, drop by the academy and our team will help you to get your game back in shape. Read our contributors blog posts or contact them directly via the comment's section of their articles for help or advice. </p>
+<p>Want to become a Golfites instructor? Let us know <a href="{% url 'contact' %}">here.</a></p>
             </div>
         </div>
     </div>
-    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+
+            </div>
+        </div>
+    </div>
+
  {% for post in posts %}
         <div class="container">
         <div class="row">
 
-            <div class="col-md-2 col-sm-3 text-center" style="padding:20px 0 0;">
+            <div class="col-md-1 col-sm-5 text-center" style="padding:20px 0;">
                 <hr>
                 <div class="academy-detail">
                 <a class="story-img" href="#">
@@ -37,32 +48,31 @@
                     <p>{{ post.author }}</p>
             </div>
             </div>
-            <div class="col-md-8 col-sm-9" style="background-color:#fff;padding:20px 0 0;">
+            <div class="col-md-7 col-sm-7" style="margin: 0 40px;padding:20px 0;">
             <hr>
-                <h3>{{ post.title }}</h3>
-                <div class="row">
-                    <div class="col-xs-9">
+            <a class="blog-post-link" href="{% url 'education_blog_post' post.id %}"><h4 class="blog-post-title">{{ post.title }}</h4></a>
+            <p class="blog-post-info">{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
+
                     <div class="academy-blog-post">
                         {% if post.image %}
           <img src="/media/{{ post.image}}">
       {% endif %}
-    <p>{{ post.content|truncatewords:30 }}</p>
-    <p><button class="btn btn-default" onclick="location.href ={{ post.id }}">Read More</button></p>
-                        <button class="btn btn-default" onclick="location.href='{% url 'education_new_post' %}'">New Post</button>
-    <p>{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
+    <p class="blog-post-content">{{ post.content|truncatewords:60 }}</p>
+    <p><button class="site-btn" onclick="location.href ={{ post.id }}">Read More</button></p>
+                    {% if user.is_authenticated %}
+                        <button class="site-btn" onclick="location.href='{% url 'education_new_post' %}'">New Post</button>
+                    {% else %}
+                    {% endif %}
+
 
 </div>
                     </div>
-                </div>
 
-            </div>
+<div class="col-md-2"></div>
 
-            <div class="col-md-2 col-sm-3 text-center">
-
-
-
-            </div>
+</div>
         </div>
-        </div>
+
 {% endfor %}
+
 {% endblock %}

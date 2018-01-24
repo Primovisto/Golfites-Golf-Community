@@ -4,11 +4,13 @@ from django. urls import reverse
 from django.shortcuts import render, redirect
 from django.template.context_processors import csrf
 from ads.models import Ad
+from golfer.models import GolferProfile
 
 
 # Create your views here.
 def index(request):
     latest_ads = Ad.objects.all().order_by('-id')[:2]
+    golfers = GolferProfile.objects.all().order_by('-id')[:8]
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():
@@ -25,9 +27,6 @@ def index(request):
     else:
         form = UserLoginForm()
 
-    args = {'form': form, 'latest_ads': latest_ads}
+    args = {'form': form, 'latest_ads': latest_ads, 'golfers': golfers}
     args.update(csrf(request))
     return render(request, 'index.html', args)
-
-
-

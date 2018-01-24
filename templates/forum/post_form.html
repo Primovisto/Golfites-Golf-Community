@@ -8,19 +8,24 @@
    mode: "textareas",
    theme: "modern",
    plugins: "paste"
+
 });
 </script>
 {% endblock %}
 {% block content %}
+    <div class="content" style="background-color:#fafafa;padding-top:130px;padding-bottom:60px;">
+    <div class="container">
  <section>
    <div class="col-md-9">
      <form method="post" action="{{ form_action }}">
        {% csrf_token %}
        {{ form|as_bootstrap }}
        <div class="form-group">
-         <button type="submit" class="btn btn-primary">{{button_text}}</button>
+         <button type="submit" class="site-btn">{{button_text}}</button>
        </div>
      </form>
    </div>
  </section>
+    </div>
+    </div>
 {% endblock %}

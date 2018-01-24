@@ -1,28 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="maincontent">
+    <div class="container">
     <div class="row">
-        <div class="col-md-2 col-sm-3 text-center">
-            <a class="story-img" href="#">
-                <img src="http://placehold.it/100" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
-            </a>
-        </div>
-        <div class="col-md-10 col-sm-9">
-            <h3>{{ post.title }}</h3>
+
+        <div class="col-md-9 col-sm-9 pull-left">
+            <h4 class="blog-post-title">{{ post.title }}</h4>
+            <p style="display:inline-block;"><strong> {{ post.author }}</strong></p><span style="margin:0 5px;">|</span><p style="display:inline-block;">{{ post.published_date }} | <strong>Views</strong> - {{ post.views }} | <strong>Tag - </strong> {{ post.tag }}</p>
+            <div class="social-buttons">
+
+<!-- Twitter -->
+<a href="http://twitter.com/share?url=<URL>&text=<TEXT>&via=<VIA>" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+</a>
+
+<!-- Google Plus -->
+<a href="https://plus.google.com/share?url=<BTN>" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+</a>
+
+<!-- Facebook -->
+<a href="http://www.facebook.com/sharer/sharer.php?u=<URL>" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+</a>
+
+            <!-- Email -->
+<a href="mailto:?subject=<SUBJECT&body=<BODY>" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+</a>
+</div>
+</div>
             <div class="row">
                 <div class="col-xs-9">
-                    {% if post.image %}
-          <img src="/media/{{ post.image}}">
-      {% endif %}
+                <div class="post-detail">
+<div class="center-block" style="background-size: cover;width:60%;margin-bottom:40px;height:300px; background: url('/media/{{ post.image }}') no-repeat center center; ">
+
+</div>
       <p>{{ post.content|linebreaks }}</p>
-      <p><button class="btn btn-default"
+      <p><button class="site-btn"
 onclick="location.href='/education_center'">Back to Blog</button> </p>
-                <button class="btn btn-default" onclick="location.href='{% url 'education_edit' post.id %}'">Edit</button>
-                    <p>{{ post.published_date }} | {{ post.views }} | <strong>Tag - </strong> {{ post.tag }}</p>
+
+                {% if user.is_authenticated %}
+                        <button class="site-btn" onclick="location.href='{% url 'education_edit' post.id %}'">Edit Post</button>
+                    {% else %}
+                    {% endif %}
                     {% load disqus_tags %}
                     {% set_disqus_title post.title %}
                     {% disqus_show_comments %}
                 </div>
+                </div>
             </div>
         </div>
+    <div class="col-md-3">
+
     </div>
+    </div>
+    </div>
+
+
 {% endblock %}

@@ -3,19 +3,13 @@
 {% load bootstrap_tags %}
 {% load embed_video_tags %}
 {% block content %}
-<div class="maincontent" style="background-color:#eee;">
+<div class="maincontent">
     <div class="container">
-        <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="breadcrumb-item">Browse Products</li>
-        </ol>
-        <div class="container">
+
+
             <div class="row">
                 <div class="col-xs-12 catalogue-header">
-                    <h1>Golfers</h1>
+                    <h1>Golfer Profiles</h1>
                 </div>
             </div>
 
@@ -30,7 +24,7 @@
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
-                        <h4 class="golfer-title"><strong>Name: </strong> {{ golfer.name}}</h4>
+                        <h4 class="golfer-title">{{ golfer.name}}</h4>
 
 
 
@@ -46,8 +40,8 @@
                     {% endfor %}
                 </div>
             </div>
-            <!-- End of Content -->
-        </div>
+
+
     </div>
 </div>
 {% block search %}

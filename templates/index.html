@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="register-header">
-                    <h4>Join the Golfites community</h4>
+                    <h2>Join the Golfites Community</h2>
                     <p>Join our community and gain access to Golfites array of built-in features. Connect, Learn and Play with other members.</p>
                 </div>
             </div>
@@ -77,6 +77,14 @@
         </div>
     </div>
     <div class="container">
+    <div class="row row-padding">
+    <div class="col-md-12">
+        <div class="market-header">
+        <h2>Golfites Marketplace</h2>
+        <p>Visit our marketplace to view Golfites members' latest adverts or purchase equipment from the Golfites store.</p>
+    </div>
+        </div>
+    </div>
         <div class="row white-background">
             <div class="col-md-4 col-features">
                 <h4 class="homepage-options">Equipment</h4>
@@ -117,6 +125,44 @@
         </div>
     </div>
 </section>
+    <section id="profiles">
+    <div class="container profiles-section">
+        <div class="row row-padding">
+    <div class="col-md-12">
+        <div class="market-header">
+        <h2>Golfers Area</h2>
+        <p>Our Golfers area is a golfing social platform which allows Golfites members to create their very own profile.<br> Golfer profiles can be viewed and commented on by other members.</p>
+    </div>
+        </div>
+    </div>
+
+
+        <div class="row">
+        <div class="col-md-12">
+            {% for golfer in golfers %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:3px;">
+                       <div class="content-1">
+                            <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
+                            <div class="content-overlay"></div>
+                        {% if golfer.image %}
+                                <img class="img-responsive content-image" style="height:200px;" src="/media/{{ golfer.image }}"/>
+                            {% else %}
+                                <div class="">No images available</div>
+                            {% endif %}
+                            <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">{{ golfer.name }} </h3>
+        <button type="button" onclick="location.href='{% url 'ads' %}'" style="margin:10px 0;" class="site-btn">View Profile</button>
+      </div>
+                             </a>
+                       </div>
+
+                    </div>
+                    {% endfor %}
+</div>
+        </div>
+   </div>
+
+    </section>
 <script>
     AOS.init();
   </script>

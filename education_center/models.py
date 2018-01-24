@@ -28,4 +28,11 @@ class EducationBlogPost(models.Model):
         return self.title
 
 
+class BlogContributor(models.Model):
+
+    name = models.CharField(max_length=200)
+    profile_image = models.ImageField(upload_to="images", blank=True, null=True)
+    post_count = models.IntegerField(default=0)
+
+
 

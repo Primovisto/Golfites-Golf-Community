@@ -11,7 +11,10 @@
 
 
 {% block content %}
-   <section>
+    <div class="content" style="background:#fafafa;padding-top: 130px;
+    padding-bottom: 60px;">
+    <div class="container">
+
        <div class="col-md-9">
            <form method="post" action="{% url 'new_thread' subject.id %}">
                {% csrf_token %}
@@ -20,9 +23,11 @@
                {{ post_form | as_bootstrap }}
 
                <div class="form-group">
-                   <button type="submit" class="btn-primary"> Post New Thread</button>
+                   <button type="submit" class="site-btn"> Post New Thread</button>
                </div>
            </form>
        </div>
-   </section>
+
+    </div>
+    </div>
 {% endblock %}

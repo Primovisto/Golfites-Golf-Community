@@ -1,13 +1,19 @@
-<section class="thread">
-    <header>
-        <table>
-            <tr>
-                <td>
+<section class="thread" style="">
+    <div class="row">
+        <div class="col-md-10">
                     <a href="{% url 'thread' thread.id %}">
-                        <h4>{{ thread.name }}</h4>
+                        <h4 style="text-align:left; margin:0; color:#3a5685;">{{ thread.name }}</h4>
                     </a>
-                </td>
-            </tr>
-        </table>
-    </header>
+            <p style="color:#888;margin:5px 0;font-size:13px;">By {{ thread.user.username }}, {{ thread.created_at }}</p>
+                        </div>
+        <div class="col-md-2">
+            <div class="user-thread">
+
+
+            </div>
+
+        </div>
+            </div>
+
 </section>
+<hr style="background:#fff;margin:0;">

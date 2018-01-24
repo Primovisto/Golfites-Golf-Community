@@ -2,11 +2,16 @@
 {% load thread_extras %}
 {% load staticfiles %}
 {% block content %}
+<div class="content" style="padding-top:130px;background-color: #fcfcfc;">
 
+<div class="container">
  <div class="row header">
 
    <div class="container">
-     <h2>{{ thread.name }}</h2>
+
+
+     <h4 class="thread-post-title">{{ thread.name }}</h4>
+
      <div class="col-md-12">
          <table class="table">
              <tbody>
@@ -31,14 +36,17 @@
      </div>
      {% if user.is_authenticated %}
        <p>
-         <a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New post</a>
+         <a href="{% url 'new_post' thread.id %}" class="site-btn">New post</a>
        </p>
      {% endif %}
    </div>
  </div>
- <div class="container">
+
+<div class="container">
    {% for post in thread.posts.all %}
      {% include "forum/post.html" %}
    {% endfor %}
- </div>
+</div>
+</div>
+</div>
 {% endblock %}
