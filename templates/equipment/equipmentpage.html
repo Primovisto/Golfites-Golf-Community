@@ -2,43 +2,39 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="maincontent" style="padding:160px 0">
-<div class="container">
-
-
-    <div class="row equipment-row">
+<div class="maincontent">
+    <div class="container">
+        <div class="row equipment-row">
+            <!-- Equipment Image -->
             <div class="col-md-6">
                 {% if equipment.image %}
-                    <img class="img-responsive equipment-image" src="/media/{{ equipment.image }}"/>
-                {% else %}
-                    <div class="#">No images</div>
+                <img class="img-responsive equipment-image" src="/media/{{ equipment.image }}" /> {% else %}
+                <div class="#">No images</div>
                 {% endif %}
-
-</div>
-    <div class="col-md-6">
-        <span>
+            </div>
+            <!-- Equipment Description -->
+            <div class="col-md-6">
+                <span>
                 <h4 class="equipment-header">{{ equipment.name }}</h4>
             <hr class="horizontal-row">
             <img class="img responsive equipment-brand" src="/media/{{ equipment.brand_logo}}" style="height:100%; width:140px;" />
 
-
             </span>
                 <p><strong>Description:</strong> {{ equipment.product_short_description }}</p>
-        <p style="color:#333; font-size:20px;"><strong>€ {{ equipment.price }}</strong></p>
-        <p><strong>Condition:</strong> {{ equipment.condition }}</p>
-        <p><strong>Views:</strong> {{ equipment.views }}</p>
+                <p style="color:#333; font-size:20px;"><strong>€ {{ equipment.price }}</strong></p>
+                <p><strong>Condition:</strong> {{ equipment.condition }}</p>
+                <p><strong>Views:</strong> {{ equipment.views }}</p>
 
                 <hr class="horizontal-row">
+                <!-- Payment Section-->
                 <div id="paypal" style="display: flex; justify-content: flex-start;cursor:pointer;">{{ equipment.paypal_form.sandbox }}</div>
 
-                </div>
-</div>
-      </div>
+            </div>
+        </div>
     </div>
+</div>
 
-
-
-    {% block search %}
-        {% csrf_token %}
-        {% endblock %}
+{% block search %}
+    {% csrf_token %}
+{% endblock %}
 {% endblock %}

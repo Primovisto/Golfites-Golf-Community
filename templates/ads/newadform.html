@@ -4,27 +4,20 @@
 {% block content %}
     <div class="maincontent">
     <div class="container">
-
-        <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{% url 'profile' %}">My Profile</a>
-            </li>
-            <li class="breadcrumb-item active">Add Ad</li>
-        </ol>
-
+<h3>Create a New Ad</h3>
         <!-- Content Row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-2"></div>
+            <div class="col-lg-8" style="background-color:#fff; padding:30px;">
+                <!-- Create Ad Form -->
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | as_bootstrap }}
                     <button type="submit" class="site-btn">Create Ad</button>
                 </form>
+                <!-- End Form -->
             </div>
+            <div class="col-md-2"></div>
         </div>
         <!-- End of Content -->
     </div>

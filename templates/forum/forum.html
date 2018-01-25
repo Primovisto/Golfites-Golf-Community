@@ -1,8 +1,5 @@
-{% extends "base.html" %}
-{% load thread_extras %}
-{% block content %}
-   {% load bootstrap_tags %}
-    <div class="content" style="padding:120px 0;background-color:#fafafa;">
+{% extends "base.html" %} {% load thread_extras %} {% block content %} {% load bootstrap_tags %}
+<div class="content" style="padding:120px 0;background-color:#fafafa;">
 
     <div class="container" style="padding-left:0;">
         <div class="col-md-12" style="padding-left:0;">
@@ -12,43 +9,39 @@
     </div>
 
     <div class="container" style="border:1px solid #eee;padding:0;border-radius:3px;">
-    <div class="forum-subject-header">
-        <h4 style="text-align: left;padding:10px 0 10px 10px;margin:0; background-color:rgba(58,86,133, 0.9);color:#fff;">General Golf Discussion</h4>
-    </div>
-   {% for subject in subjects %}
+        <div class="forum-subject-header">
+            <h4 style="text-align: left;padding:10px 0 10px 10px;margin:0; background-color:rgba(58,86,133, 0.9);color:#fff;">General Golf Discussion</h4>
+        </div>
+        {% for subject in subjects %}
 
+        <section class="subject">
+            <div class="container">
 
-       <section class="subject">
-       <div class="container">
-
-       <div class="col-md-1">
-           <i class="fa fa-comments" style="font-size:20px;color:#fff;padding:10px; border-radius:50%;background-color:#eee;"></i>
-       </div>
-       <div class="col-md-8" style="padding-left:0;">
-           <h4 style="text-align:left; margin:0; color:#3a5685;"><a style="color:#3a5685;" href="{% url "threads" subject.id %}">{{ subject.name }}</a></h4>
-           <p>
-               <a style="color:#333;" href="{% url "threads" subject.id %}">
+                <div class="col-md-1">
+                    <i class="fa fa-comments" style="font-size:20px;color:#fff;padding:10px; border-radius:50%;background-color:#eee;"></i>
+                </div>
+                <div class="col-md-8" style="padding-left:0;">
+                    <h4 style="text-align:left; margin:0; color:#3a5685;"><a style="color:#3a5685;" href="{% url "threads" subject.id %}">{{ subject.name }}</a></h4>
+                    <p>
+                        <a style="color:#333;" href="{% url " threads " subject.id %}">
                    {% autoescape off %}{{ subject.description }}{% endautoescape %}
                </a>
-           </p>
-       </div>
-       <div class="col-md-3">
-           <div class="posts" style="display: inline-block;margin:0 20px;">
-               <p style="font-family:roboto; font-size:18px;font-weight:100;">{{ subject|get_total_subject_posts }}</p>
-               <p style="color:#888;"> Posts</p>
-           </div>
-           <div class="threads" style="display: inline-block;">
-               <p style="font-family:roboto; font-size:18px;font-weight:100;">{{ subject.threads.count }}</p>
-               <p style="color:#888;">Threads</p>
-           </div>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <div class="posts" style="display: inline-block;margin:0 20px;">
+                        <p style="font-family:roboto; font-size:18px;font-weight:100;">{{ subject|get_total_subject_posts }}</p>
+                        <p style="color:#888;"> Posts</p>
+                    </div>
+                    <div class="threads" style="display: inline-block;">
+                        <p style="font-family:roboto; font-size:18px;font-weight:100;">{{ subject.threads.count }}</p>
+                        <p style="color:#888;">Threads</p>
+                    </div>
 
-           </div>
-       </div>
-       </section>
-       <hr style="background:#fff;margin:0;">
-
-
-   {% endfor %}
+                </div>
+            </div>
+        </section>
+        <hr style="background:#fff;margin:0;"> {% endfor %}
     </div>
-    </div>
+</div>
 {% endblock %}

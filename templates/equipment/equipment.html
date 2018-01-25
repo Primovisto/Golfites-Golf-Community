@@ -1,11 +1,7 @@
-{% extends "base.html" %}
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
-{% block content %}
-
+{% extends "base.html" %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 
 <div class="maincontent" style="padding-top:160px;">
-<div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <h2>Golfites Equipment</h2>
@@ -14,16 +10,15 @@
         </div>
     </div>
 
-        <!-- Content Row -->
-<div class="container">
+    <!-- Equipment Section-->
+    <div class="container">
         <div class="row">
 
+            {% for equipment in equipment %}
 
-                {% for equipment in equipment %}
-
-                        <div class="col-lg-2 col-sm-6 col-xs-12">
-                        <div class="equipment-detail" style="margin-bottom:30px;">
-                        <a onclick="location.href='{% url 'equipmentpage' equipment.id %}'">
+            <div class="col-lg-2 col-sm-6 col-xs-12">
+                <div class="equipment-detail" style="margin-bottom:30px;">
+                    <a onclick="location.href='{% url 'equipmentpage' equipment.id %}'">
                             {% if equipment.image %}
                                 <img class="equipment-images img-responsive" src="/media/{{ equipment.image }}"/>
                             {% else %}
@@ -32,18 +27,18 @@
                         <h2 class="equipment-title">{{ equipment.name}}</h2>
 
                         </a>
-                        </div>
-                        </div>
+                </div>
+            </div>
 
-                {% endfor %}
-
+            {% endfor %}
 
         </div>
 
-</div>
+    </div>
+
 
 </div>
-    {% block search %}
-        {% csrf_token %}
-        {% endblock %}
+{% block search %}
+    {% csrf_token %}
+{% endblock %}
 {% endblock %}

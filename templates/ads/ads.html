@@ -1,25 +1,24 @@
 {% extends "base.html" %}
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
-{% block content %}
-<div class="maincontent" style=" padding-top:160px; padding-bottom:60px;">
-<div class="container">
+{% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+<div class="maincontent">
+    <div class="container">
+        <div class="row">
+            <!-- Page Header -->
+            <div class="ads-header">
+                <h2>Golfites Ads</h2>
+                <p style="text-align:center;">Browse adverts created by fellow Golfites Members. Think of it like a golf only version of Donedeal!</p>
+            </div>
+        </div>
 
-<div class="row">
-    <div class="ads-header">
-        <h2>Golfites Ads</h2>
-        <p style="text-align:center;">Browse adverts created by fellow Golfites Members. Think of it like a golf only version of Donedeal!</p>
-    </div>
-</div>
-{% for ad in ads %}
+
+
+    <!-- Ads Section -->
+        {% for ad in ads %}
         <div class="row">
 
-
-
-
-                        <div class="col-lg-12 col-sm-12 col-xs-12 ad-column">
-                        <div class="ad-details">
-                        <div class="col-md-4">
+            <div class="col-lg-12 col-sm-12 col-xs-12 ad-column">
+                <div class="ad-details">
+                    <div class="col-md-4">
                         <a class="ad-link" onclick="location.href='{% url 'ads_page' ad.id %}'">
                             {% if ad.image %}
                                 <img class="img-responsive" src="/media/{{ ad.image }}" style="background-size:cover;"/>
@@ -27,33 +26,27 @@
                                 <div class="">No images available</div>
                             {% endif %}
                         </a>
-                      </div>
-                        </div>
-                        <div class="col-md-8">
-                        <h4 class="ad-title">{{ ad.name }}</h4>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="ad-title">{{ ad.name }}</h4>
 
+                    <p><strong>Location:</strong> {{ ad.location }}</p>
+                    <p><strong>Condition:</strong> {{ ad.condition }}</p>
+                    <p><strong>Date Published:</strong> {{ ad.published_date }}</p>
+                    <p><strong>Ad Views:</strong> {{ ad.views }}</p>
 
-<span><p><strong>Location:</strong> {{ ad.location }}</p>
-                                <p><strong>Condition:</strong> {{ ad.condition }}</p>
-<p><strong>Date Published:</strong> {{ ad.published_date }}</p></span>
-                            <p><strong>Ad Views:</strong> {{ ad.views }}</p>
+                    <p style="font-size:20px;font-weight:700;color:#333;">€ {{ ad.price }}</p>
+                    <button class="site-btn" onclick="location.href='{% url 'ads_page' ad.id %}'">View Ad</button>
 
-<p style="font-size:20px;font-weight:700;color:#333;">€ {{ ad.price }}</p>
-<button class="site-btn" onclick="location.href='{% url 'ads_page' ad.id %}'">View Ad</button>
+                </div>
+            </div>
+        </div>
 
-                        </div>
-                        </div>
-                        </div>
+        {% endfor %}
+       <!-- End Ads Section -->
 
-                {% endfor %}
-
-
-
-        <!-- End of Content -->
-</div>
+    </div>
 
 </div>
-    {% block search %}
-        {% csrf_token %}
-        {% endblock %}
-{% endblock %}
+{% block search %} {% csrf_token %} {% endblock %} {% endblock %}

@@ -1,44 +1,39 @@
-{% extends 'base.html' %}
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
-{% block content %}
-    <div class="maincontent" style="padding-top:160px;">
-<div class="container">
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+<div class="maincontent">
+    <div class="container">
 
-
-    <div class="row">
+        <div class="row">
+        <!-- Ad Image -->
             <div class="col-md-6 ad-page-col">
                 {% if ad.image %}
-                    <img class="img-responsive product-image" src="/media/{{ ad.image }}"/>
-                {% else %}
-                    <div class="#">No images</div>
+                <img class="img-responsive product-image" src="/media/{{ ad.image }}" /> {% else %}
+                <div class="#">No images</div>
                 {% endif %}
-</div>
-    <div class="col-md-6 ad-page-col-2">
+            </div>
+
+        <!-- Ad Description -->
+            <div class="col-md-6 ad-page-col-2">
                 <h2 style="font-size:30px;">{{ ad.name }}</h2>
-        <hr>
-                <p class="ad-page-text"><strong>Description:</strong> {{ ad.product_short_description }}</p>
-                <p class="ad-page-text">€ {{ ad.price }}</p>
+                <hr>
+                <p><strong>Description:</strong> {{ ad.product_short_description }}</p>
+                <p>€ {{ ad.price }}</p>
 
-                <p class="ad-page-text"><strong>Views:</strong> {{ ad.views }}</p>
-                <p class="ad-page-text"><strong>Location:</strong> {{ ad.location }}</p>
-        <p class="ad-page-text"><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
-        <div class="comments-section">
-            <p class="ad-page-text"><strong>Message seller about this ad:</strong></p>
-                    {% load disqus_tags %}
-                    {% set_disqus_title post.title %}
-                    {% disqus_show_comments %}
+                <p><strong>Views:</strong> {{ ad.views }}</p>
+                <p><strong>Location:</strong> {{ ad.location }}</p>
+                <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
 
-        </div>
+                <!-- Ad Comments -->
+                <p><strong>Message seller about this ad:</strong></p>
+                {% load disqus_tags %}
+                {% set_disqus_title post.title %}
+                {% disqus_show_comments %}
+
                 <hr>
 
+            </div>
+        </div>
+    </div>
+
 </div>
-      </div>
-    </div>
 
-    </div>
-
-    {% block search %}
-        {% csrf_token %}
-        {% endblock %}
-{% endblock %}
+{% block search %} {% csrf_token %} {% endblock %} {% endblock %}

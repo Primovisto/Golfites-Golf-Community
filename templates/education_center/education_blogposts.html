@@ -1,70 +1,109 @@
-{% extends "base.html" %}
- 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="academy-header-image">
-<div class="academy-header-text">
-                    <h4 class="academy-slide-header">Welcome to the Golfites Academy</h4>
-                    <p class="academy-slide-header">Discover the best hints and tips from our team of dedicated intructors</p>
+    <div class="academy-header-text">
+        <h4 class="academy-slide-header">Welcome to the Golfites Academy</h4>
+        <p class="academy-slide-header">Discover the best hints and tips from our team of dedicated instructors</p>
+    </div>
 </div>
-</div>
-<div class="maincontent" style="background-color:#fff;">
-    <div class="container">
+
+    <div class="container" style="margin-top:60px;padding: 30px; background-color:#fff;">
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <p> Golfites team of experienced instructors are here to help our members. They will post daily tips, comment on questions, analyze golf swings, and communicate directly with golfites members who have questions. Our hand-selected team of contributors are made up of mostly certified PGA professionals with vast experience and knowledge in the field of golf. If you are struggling with your swing or any aspect of your game, drop by the academy and our team will help you to get your game back in shape. Read our contributors blog posts or contact them directly via the comment's section of their articles for help or advice. </p>
-<p>Want to become a Golfites instructor? Let us know <a href="{% url 'contact' %}">here.</a></p>
+
+            <div class="col-md-6">
+                <h2>Meet the Team</h2>
+                <hr>
+                <p> Golfites team of experienced instructors are here to help our members. They will post daily tips, comment on questions, analyze golf swings, and communicate directly with golfites members who have questions. Our hand-selected team of contributors are made up of mostly certified PGA professionals with vast experience and knowledge in the field of golf. If you are struggling with your swing or any aspect of your game, drop by the academy and our team will help you to get your game back in shape. Read our instructors blog posts or contact them directly via the comment's section of their articles for help or advice. </p>
+                <p>Want to become a Golfites instructor? Let us know <a href="{% url 'contact' %}">here.</a></p>
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="contributors-column">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/media/images/9e1c55ab19d7998b_800x800ar.jpg" class="img-responsive" style="height:100px;" />
+                            <h4 class="academy-contributors-header">Anne Lynch</h4>
+                            <p class="academy-contributors-text">PGA Professional</p>
+
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/media/images/Jim-Hardy_Angus-Murray.jpg" class="img-responsive" style="height:100px;" />
+                            <h4 class="academy-contributors-header">Joe McCarthy</h4>
+                            <p class="academy-contributors-text">PGA Assistant</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/media/images/David+Jones+Powerade+PGA+Assistants+Championship+SjkuWa6Uty8l.jpg" style="height:100px;" class="img-responsive" />
+                            <h4 class="academy-contributors-header">Mike Brown</h4>
+                            <p class="academy-contributors-text">PGA Professional</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/media/images/9e1c55ab19d7998b_800x800ar.jpg" class="img-responsive" style="height:100px;" />
+                            <h4 class="academy-contributors-header">John O Dwyer</h4>
+                            <p class="academy-contributors-text">PGA Professional</p>
+
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/media/images/Jim-Hardy_Angus-Murray.jpg" class="img-responsive" style="height:100px;" />
+                            <h4 class="academy-contributors-header">Marie Collins</h4>
+                            <p class="academy-contributors-text">PGA Assistant</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/media/images/David+Jones+Powerade+PGA+Assistants+Championship+SjkuWa6Uty8l.jpg" style="height:100px;" class="img-responsive" />
+                            <h4 class="academy-contributors-header">Stephen O Connor</h4>
+                            <p class="academy-contributors-text">PGA Professional</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-
-            </div>
-        </div>
-    </div>
-
- {% for post in posts %}
-        <div class="container">
+    <h2 class="academy-posts-header">Academy Posts </h2>
+    <!-- Display Posts -->
+    {% for post in posts %}
+    <div class="container posts-container">
         <div class="row">
 
-            <div class="col-md-1" style="padding:20px 0;">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8" style="padding:45px 0;margin-right:20px;">
 
                 <div class="academy-detail">
-                <a class="story-img" href="#">
-                    <img src="/media/{{ post.author_image}}" class="img-responsive center-block">
-                </a>
+                    <a class="story-img" href="#">
+                        <img src="/media/{{ post.author_image}}" class="img-responsive center-block">
+                    </a>
                     <p>{{ post.author }}</p>
+                </div>
+
             </div>
-            </div>
+
             <div class="col-md-7" style="padding:20px 0;">
 
-            <a class="blog-post-link" href="{% url 'education_blog_post' post.id %}"><h4 class="blog-post-title">{{ post.title }}</h4></a>
-            <p class="blog-post-info">{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
+                <a class="blog-post-link" href="{% url 'education_blog_post' post.id %}"><h4 class="blog-post-title">{{ post.title }}</h4></a>
+                <p class="blog-post-info">{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
 
-                    <div class="academy-blog-post">
-                        {% if post.image %}
-          <img src="/media/{{ post.image}}">
-      {% endif %}
-    <p class="blog-post-content">{{ post.content|truncatewords:60 }}</p>
-    <p><button class="site-btn" onclick="location.href ={{ post.id }}">Read More</button></p>
+                <div class="academy-blog-post">
+                    {% if post.image %}
+                    <img src="/media/{{ post.image}}"> {% endif %}
+                    <p class="blog-post-content">{{ post.content|truncatewords:60 }}</p>
+                    <p>
+                        <button class="site-btn" onclick="location.href ={{ post.id }}">Read More</button>
+                    </p>
+                <!-- Check if user is staff before allowing them to add a new post -->
                     {% if user.is_staff %}
-                        <button class="site-btn" onclick="location.href='{% url 'education_new_post' %}'">New Post</button>
-                    {% else %}
-                    {% endif %}
+                    <button class="site-btn" onclick="location.href='{% url 'education_new_post' %}'">New Post</button>
+                    {% else %} {% endif %}
 
+                </div>
+                <hr style="margin-top: 50px;margin-bottom: 0;">
+            </div>
+            <div class="col-md-2"></div>
 
-</div>
-                    </div>
-
-<div class="col-md-2"></div>
-
-</div>
         </div>
+    </div>
 
-{% endfor %}
-</div>
+    {% endfor %}
+
 {% endblock %}
