@@ -3,29 +3,24 @@
 {% load staticfiles %}
 {% block head_js %}
 <script src="{% static 'js/tinymce/tinymce.min.js' %}"></script>
-<script type="text/javascript">
- tinyMCE.init({
-   mode: "textareas",
-   theme: "modern",
-   plugins: "paste"
-
-});
-</script>
+<script type="text/javascript">tinyMCE.init({mode:"textareas",theme:"modern",plugins:"paste"});</script>
 {% endblock %}
 {% block content %}
-    <div class="content" style="background-color:#fafafa;padding-top:130px;padding-bottom:60px;">
+<div class="content" style="background-color:#fafafa;padding-top:130px;padding-bottom:60px">
     <div class="container">
- <section>
-   <div class="col-md-9">
-     <form method="post" action="{{ form_action }}">
-       {% csrf_token %}
-       {{ form|as_bootstrap }}
-       <div class="form-group">
-         <button type="submit" class="site-btn">{{button_text}}</button>
-       </div>
-     </form>
-   </div>
- </section>
-    </div>
-    </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="col-md-8">
+                <form method="post" action="{{ form_action }}">
+                {% csrf_token %}
+                {{ form|as_bootstrap }}
+                    <div class="form-group">
+                        <button type="submit" class="site-btn">{{button_text}}</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
 {% endblock %}

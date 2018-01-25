@@ -18,7 +18,20 @@
 
 <div class="container">
     <div class="row" style="margin-top:80px;padding: 40px;background-color: #fff;">
-        <div class="col-sm-9">
+        <div class="col-md-4">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form role="form" action="{% url 'contact' %}" method="post" novalidate>
+                    <legend>Have a question? &nbsp;<strong>Send us a message!</strong></legend>
+                    {% csrf_token %} {{ form | as_bootstrap }}
+                    <div class="form-group">
+                        <button type="submit" class="site-btn">Submit</button>
+                    </div>
+                    <p>{{ field }}</p>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
             <div class="contact-details">
                        <!-- Google Maps -->
                 <iframe class="img-responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9679.016424047197!2d-8.626316360746156!3d52.66441887746707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b5c691649d871%3A0x1800c7a937e11b80!2sJohnsgate%2C+Limerick!5e0!3m2!1sen!2sie!4v1512608604059" width="750" height="300" frameborder="0" style="border:0; margin:20px 0;" allowfullscreen></iframe>
@@ -70,31 +83,8 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <form role="form" action="{% url 'contact' %}" method="post" novalidate>
-                    <legend>Have a question? &nbsp;<strong>Send us a message!</strong></legend>
-                    {% csrf_token %} {{ form | as_bootstrap }}
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                    <p>{{ field }}</p>
-                </form>
-            </div>
-        </div>
+</div>
 
-        <!-- Links Section -->
-        <div class="col-sm-3">
-
-            <p><a class="page-links" href="https://golfites-golf-community.herokuapp.com">Homepage</a></p>
-            <hr class="horizontal-row-margin">
-            <p><a class="page-links" href="#">About Us</a></p>
-            <hr class="horizontal-row-margin">
-            <p><a class="page-links" href="#">FAQs</a></p>
-            <hr class="horizontal-row-margin">
-            <p><a class="page-links" href="#">Terms & Conditions</a></p>
-            <hr class="horizontal-row-margin">
-        </div>
     </div>
 </div>
 
