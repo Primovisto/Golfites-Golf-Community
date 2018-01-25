@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="maincontent" style="background-color:#eee;">
+    <div class="maincontent" style="padding-top:160px;">
 <div class="container">
 
 
@@ -15,16 +15,16 @@
                 {% endif %}
 </div>
     <div class="col-md-6 ad-page-col-2">
-                <h4 class="ads-header-page">{{ ad.name }}</h4>
+                <h2 style="font-size:30px;">{{ ad.name }}</h2>
         <hr>
-                <p class="ad-details-desc"><strong>Description:</strong> {{ ad.product_short_description }}</p>
-                <p class="ad-details-price">€ {{ ad.price }}</p>
+                <p class="ad-page-text"><strong>Description:</strong> {{ ad.product_short_description }}</p>
+                <p class="ad-page-text">€ {{ ad.price }}</p>
 
-                <p><strong>Views:</strong> {{ ad.views }}</p>
-                <p><strong>Location:</strong> {{ ad.location }}</p>
-        <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
+                <p class="ad-page-text"><strong>Views:</strong> {{ ad.views }}</p>
+                <p class="ad-page-text"><strong>Location:</strong> {{ ad.location }}</p>
+        <p class="ad-page-text"><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
         <div class="comments-section">
-            <p><strong>Message seller about this ad:</strong></p>
+            <p class="ad-page-text"><strong>Message seller about this ad:</strong></p>
                     {% load disqus_tags %}
                     {% set_disqus_title post.title %}
                     {% disqus_show_comments %}

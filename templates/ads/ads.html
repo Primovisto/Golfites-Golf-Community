@@ -2,12 +2,13 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-<div class="maincontent" style="background:#fff; padding-bottom:60px;">
+<div class="maincontent" style=" padding-top:160px; padding-bottom:60px;">
 <div class="container">
 
 <div class="row">
     <div class="ads-header">
-        <h4>Golf Ads</h4>
+        <h2>Golfites Ads</h2>
+        <p style="text-align:center;">Browse adverts created by fellow Golfites Members. Think of it like a golf only version of Donedeal!</p>
     </div>
 </div>
 {% for ad in ads %}
@@ -37,7 +38,7 @@
 <p><strong>Date Published:</strong> {{ ad.published_date }}</p></span>
                             <p><strong>Ad Views:</strong> {{ ad.views }}</p>
 
-<p style="font-size:20px;font-weight:700;">€ {{ ad.price }}</p>
+<p style="font-size:20px;font-weight:700;color:#333;">€ {{ ad.price }}</p>
 <button class="site-btn" onclick="location.href='{% url 'ads_page' ad.id %}'">View Ad</button>
 
                         </div>

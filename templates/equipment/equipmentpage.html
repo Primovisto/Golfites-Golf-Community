@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-    <div class="maincontent">
+    <div class="maincontent" style="padding:160px 0">
 <div class="container">
 
 
@@ -13,11 +13,7 @@
                 {% else %}
                     <div class="#">No images</div>
                 {% endif %}
-            {% if equipmentgallery.image %}
-                    <img class="img-responsive" src="/media/{{ equipmentgallery.image }}"/>
-                {% else %}
-                    <div class="#">No images</div>
-                {% endif %}
+
 </div>
     <div class="col-md-6">
         <span>
@@ -27,10 +23,10 @@
 
 
             </span>
-                <p class="equipment-details-desc"><strong>Description:</strong> {{ equipment.product_short_description }}</p>
-                <p class="equipment-details-price">€ {{ equipment.price }}</p>
-        <p class="equipment-details-condition"><strong>Condition:</strong> {{ equipment.condition }}</p>
-        <p class="equipment-details-views"><strong>Views:</strong> {{ equipment.views }}</p>
+                <p><strong>Description:</strong> {{ equipment.product_short_description }}</p>
+        <p style="color:#333; font-size:20px;"><strong>€ {{ equipment.price }}</strong></p>
+        <p><strong>Condition:</strong> {{ equipment.condition }}</p>
+        <p><strong>Views:</strong> {{ equipment.views }}</p>
 
                 <hr class="horizontal-row">
                 <div id="paypal" style="display: flex; justify-content: flex-start;cursor:pointer;">{{ equipment.paypal_form.sandbox }}</div>

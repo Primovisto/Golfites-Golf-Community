@@ -50,7 +50,7 @@
 <section id="features">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-features">
+            <div class="col-md-4 col-features" data-aos="zoom-in" data-aos-once="false">
                 <h4>Forum</h4>
                 <img src="/media/images/bigstock-modern-golf-man-with-smart-pho-65229274.jpg" class="img-responsive"/>
                 <p class="features_paragraph">Join Ireland's one and only golf specific forum to discuss and debate all things golf with fellow Golfites members. Golfers usually have a lot to say so get it off your chest here! </p>
@@ -58,7 +58,7 @@
                     <button type="button" onclick="location.href='{% url 'forum' %}'" style="margin:20px 0;" class="site-btn">Join our Forum</button>
                 </div>
             </div>
-            <div class="col-md-4 col-features">
+            <div class="col-md-4 col-features" data-aos="zoom-in" data-aos-once="false">
                 <h4>Academy</h4>
                 <img src="/media/images/Academy-1-2016.jpg" class="img-responsive"/>
                 <p class="features_paragraph">Do you have a thirst for golfing knowledge? Join our Academy and take your game to the next level by learning from our experienced group of academy contributors. </p>
@@ -66,7 +66,7 @@
                     <button type="button" onclick="location.href='{% url 'education_blog' %}'" style="margin:20px 0;" class="site-btn">Visit the Academy</button>
                 </div>
             </div>
-            <div class="col-md-4 col-features">
+            <div class="col-md-4 col-features" data-aos="zoom-in" data-aos-once="false">
                 <h4>Irish Golf Courses</h4>
                 <img src="/media/images/89252.jpg" class="img-responsive" />
                 <p class="features_paragraph">Search and discover Irish golf courses near you using Golfites' course finder map and directory. The number one and only place to map over 400 of our great golf courses.</p>
@@ -130,8 +130,8 @@
         <div class="row row-padding">
     <div class="col-md-12">
         <div class="market-header">
-        <h2>Golfers Area</h2>
-        <p>Our Golfers area is a golfing social platform which allows Golfites members to create their very own profile.<br> Golfer profiles can be viewed and commented on by other members.</p>
+        <h2>Golfer Profiles</h2>
+        <p>Our Golfers area is a golfing social platform which allows Golfites members to create their very own golfing profile <br> and interact with other members and their profiles.</p>
     </div>
         </div>
     </div>
@@ -140,7 +140,7 @@
         <div class="row">
         <div class="col-md-12">
             {% for golfer in golfers %}
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:3px;">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding:3px;" data-aos="zoom-in" data-aos-once="false">
                        <div class="content-1">
                             <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
                             <div class="content-overlay"></div>
@@ -149,7 +149,7 @@
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
-                            <div class="content-details fadeIn-bottom">
+                            <div class="content-details fadeIn-bottom fadeIn-left">
         <h3 class="content-title">{{ golfer.name }} </h3>
         <button type="button" onclick="location.href='{% url 'ads' %}'" style="margin:10px 0;" class="site-btn">View Profile</button>
       </div>
@@ -160,6 +160,15 @@
                     {% endfor %}
 </div>
         </div>
+    <div class="row">
+        <div class="button-section-profiles">
+
+            <button type="button" onclick="location.href='{% url 'all_golfers' %}'" class="view-golfer-btn">View More Profiles</button>
+            <button type="button" onclick="location.href='{% url 'new' %}'" class="create-golfer-btn">Create Your Profile</button>
+
+            </div>
+        </div>
+
    </div>
 
     </section>

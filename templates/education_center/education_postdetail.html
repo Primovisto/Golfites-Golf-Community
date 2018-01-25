@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="maincontent">
+    <div class="maincontent" style="padding:140px 0;">
     <div class="container">
     <div class="row">
-
-        <div class="col-md-9 col-sm-9 pull-left">
+<div class="col-md-2"></div>
+        <div class="col-md-8 col-sm-9 text-center">
+            <div class="post-detail">
             <h4 class="blog-post-title">{{ post.title }}</h4>
             <p style="display:inline-block;"><strong> {{ post.author }}</strong></p><span style="margin:0 5px;">|</span><p style="display:inline-block;">{{ post.published_date }} | <strong>Views</strong> - {{ post.views }} | <strong>Tag - </strong> {{ post.tag }}</p>
             <div class="social-buttons">
@@ -29,11 +30,16 @@
     <i class="fa fa-envelope"></i>
 </a>
 </div>
+                </div>
 </div>
-            <div class="row">
-                <div class="col-xs-9">
+    <div class="col-md-2"></div>
+    </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
                 <div class="post-detail">
-<div class="center-block" style="background-size: cover;width:60%;margin-bottom:40px;height:300px; background: url('/media/{{ post.image }}') no-repeat center center; ">
+               <div class="center-block" style="background-size: cover;width:100%;margin-bottom:40px;height:300px; background: url('/media/{{ post.image }}') no-repeat center center; ">
 
 </div>
       <p>{{ post.content|linebreaks }}</p>
@@ -49,13 +55,13 @@ onclick="location.href='/education_center'">Back to Blog</button> </p>
                     {% disqus_show_comments %}
                 </div>
                 </div>
+            <div class="col-md-2"></div>
             </div>
+
         </div>
-    <div class="col-md-3">
 
     </div>
-    </div>
-    </div>
+
 
 
 {% endblock %}

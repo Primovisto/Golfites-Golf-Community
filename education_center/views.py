@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import EducationBlogPost
 from .forms import EducationBlogPostForm
 from django.shortcuts import redirect
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 def education_post_list(request):
@@ -29,6 +30,7 @@ def education_top_posts(request):
     return render(request, "education_center/education_blogposts.html", {'posts': posts})
 
 
+@staff_member_required
 def education_new_post(request):
     if request.method == "POST":
         form = EducationBlogPostForm(request.POST, request.FILES)
@@ -43,6 +45,7 @@ def education_new_post(request):
     return render(request, 'education_center/education_blogpostform.html', {'form': form})
 
 
+@staff_member_required
 def education_edit_post(request, id):
     post = get_object_or_404(EducationBlogPost, pk=id)
     if request.method == "POST":

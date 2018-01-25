@@ -2,10 +2,10 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-<div class="maincontent">
+<div class="maincontent" style="padding-top:140px;">
     <div class="container">
 
-        <div class="row">
+        <div class="row" style="background-color:#fff;padding:40px;">
             <div class="col-md-6">
                 {% if courses.course_image %}
                 <img class="img-responsive product-image" src="/media/{{ courses.course_image }}" /> {% else %}

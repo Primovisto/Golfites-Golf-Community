@@ -1,29 +1,21 @@
 {% extends "base.html" %}
  
 {% block content %}
-    <div class="slider-area">
-    <div class="slider-active owl-carousel academy-carousel">
-        <div class="item">
-            <img src="/media/images/large-open-air-course-with-golf-stick-and-ball-web-header.jpg" />
-            <div class="item-caption">
-                <div class="slide-header">
-                    <h4 class="academy-slider-header">Welcome to the Golfites Academy</h4>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="academy-header-image">
+<div class="academy-header-text">
+                    <h4 class="academy-slide-header">Welcome to the Golfites Academy</h4>
+                    <p class="academy-slide-header">Discover the best hints and tips from our team of dedicated intructors</p>
 </div>
-
+</div>
+<div class="maincontent" style="background-color:#fff;">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
-                <h4 style="text-align:left;margin-top:40px;font-size:24px;text-transform:uppercase;">Learn from our Team of Dedicated Intructors </h4>
-                <hr>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <p> Golfites team of experienced instructors are here to help our members. They will post daily tips, comment on questions, analyze golf swings, and communicate directly with golfites members who have questions. Our hand-selected team of contributors are made up of mostly certified PGA professionals with vast experience and knowledge in the field of golf. If you are struggling with your swing or any aspect of your game, drop by the academy and our team will help you to get your game back in shape. Read our contributors blog posts or contact them directly via the comment's section of their articles for help or advice. </p>
 <p>Want to become a Golfites instructor? Let us know <a href="{% url 'contact' %}">here.</a></p>
             </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 
@@ -39,8 +31,8 @@
         <div class="container">
         <div class="row">
 
-            <div class="col-md-1 col-sm-5 text-center" style="padding:20px 0;">
-                <hr>
+            <div class="col-md-1" style="padding:20px 0;">
+
                 <div class="academy-detail">
                 <a class="story-img" href="#">
                     <img src="/media/{{ post.author_image}}" class="img-responsive center-block">
@@ -48,8 +40,8 @@
                     <p>{{ post.author }}</p>
             </div>
             </div>
-            <div class="col-md-7 col-sm-7" style="margin: 0 40px;padding:20px 0;">
-            <hr>
+            <div class="col-md-7" style="padding:20px 0;">
+
             <a class="blog-post-link" href="{% url 'education_blog_post' post.id %}"><h4 class="blog-post-title">{{ post.title }}</h4></a>
             <p class="blog-post-info">{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
 
@@ -59,7 +51,7 @@
       {% endif %}
     <p class="blog-post-content">{{ post.content|truncatewords:60 }}</p>
     <p><button class="site-btn" onclick="location.href ={{ post.id }}">Read More</button></p>
-                    {% if user.is_authenticated %}
+                    {% if user.is_staff %}
                         <button class="site-btn" onclick="location.href='{% url 'education_new_post' %}'">New Post</button>
                     {% else %}
                     {% endif %}
@@ -74,5 +66,5 @@
         </div>
 
 {% endfor %}
-
+</div>
 {% endblock %}

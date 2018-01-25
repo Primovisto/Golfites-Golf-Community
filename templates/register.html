@@ -13,13 +13,13 @@
 {% endblock %}
 
 {% block content %}
-    <div class="maincontent register-page">
+    <div class="maincontent" style="padding-top:140px;">
     <div class="container">
 
 <div class="col-xs-3"></div>
         <div class="col-md-6 register-page-column">
             <div class="register-details">
-            <h4>Create Your Golfites Account</h4>
+            <h4 style="text-align:center;">Create Your Golfites Account</h4>
             <p>Join Golfites today for €4.99/month. Already have an account? <a href="https://golfites-golf-community.herokuapp.com/accounts/login">Login here</a></p>
                 </div>
   <form role="form" method="post" id="register-form" action="{% url 'register' %}">
