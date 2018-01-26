@@ -45,12 +45,12 @@ If you would like to deploy this app locally download or clone this repo and fol
 
 Manual testing was undertaken for this application. Test such as:
 
-Testing the responsiveness of the application (on desktop and mobile applications)
-Testing the register/login/logout flow
-Testing the post_new/edit equipment, ads, golfer profiles
-Testing the checkout process
-Testing the database
-Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
+1. Testing the responsiveness of the application (on desktop and mobile applications)
+2. Testing the register/login/logout flow
+3. Testing the post_new/edit equipment, ads, golfer profiles
+4. Testing the checkout process
+5. Testing the database
+6. Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
 
 
 
