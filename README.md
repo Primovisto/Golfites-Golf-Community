@@ -43,7 +43,16 @@ If you would like to deploy this app locally download or clone this repo and fol
 
 <h2>Testing</h2>
 
-Manual testing was undertaken for this application.
+Manual testing was undertaken for this application. Test such as:
+
+Testing the responsiveness of the application (on desktop and mobile applications)
+Testing the register/login/logout flow
+Testing the post_new/edit equipment, ads, golfer profiles
+Testing the checkout process
+Testing the database
+Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
+
+
 
 <h2>Author</h2>
 
