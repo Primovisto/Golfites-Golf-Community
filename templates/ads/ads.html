@@ -20,8 +20,8 @@
                 <div class="ad-details">
                     <div class="col-md-4">
                         <a class="ad-link" onclick="location.href='{% url 'ads_page' ad.id %}'">
-                            {% if ad.image %}
-                                <img class="img-responsive" src="/media/{{ ad.image }}" style="background-size:cover;"/>
+                            {% if ad.item_image %}
+                                <img class="img-responsive" src="/media/{{ ad.item_image }}" style="background-size:cover;"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
@@ -29,14 +29,14 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <h4 class="ad-title">{{ ad.name }}</h4>
+                    <h4 class="ad-title">{{ ad.item }}</h4>
 
-                    <p><strong>Location:</strong> {{ ad.location }}</p>
+                    <p><strong>Location:</strong> {{ ad.your_location }}</p>
                     <p><strong>Condition:</strong> {{ ad.condition }}</p>
                     <p><strong>Date Published:</strong> {{ ad.published_date }}</p>
                     <p><strong>Ad Views:</strong> {{ ad.views }}</p>
 
-                    <p style="font-size:20px;font-weight:700;color:#333;">€ {{ ad.price }}</p>
+                    <p style="font-size:20px;font-weight:700;color:#333;">€ {{ ad.item_price }}</p>
                     <button class="site-btn" onclick="location.href='{% url 'ads_page' ad.id %}'">View Ad</button>
 
                 </div>

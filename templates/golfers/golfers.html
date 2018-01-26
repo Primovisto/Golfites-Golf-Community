@@ -20,17 +20,17 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 golfer-page-column-2">
                         <div class="golfer-details">
                             <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
-                        {% if golfer.image %}
-                                <img class="img-responsive" src="/media/{{ golfer.image }}"/>
+                        {% if golfer.your_image %}
+                                <img class="img-responsive" src="/media/{{ golfer.your_image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
-                        <h4 class="golfer-title">{{ golfer.name}}</h4>
+                        <h4 class="golfer-title">{{ golfer.your_name}}</h4>
 
 
 
                                 <p><strong>Handicap:</strong> {{ golfer.current_handicap }}</p>
-                                <p><strong>Golf Club:</strong> {{ golfer.golf_club }}</p>
+                                <p><strong>Golf Club:</strong> {{ golfer.your_golf_club }}</p>
 
                                 <button type="button" class="site-btn">View Profile</button>
 

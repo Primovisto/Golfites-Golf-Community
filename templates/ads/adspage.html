@@ -5,21 +5,21 @@
         <div class="row">
         <!-- Ad Image -->
             <div class="col-md-6 ad-page-col">
-                {% if ad.image %}
-                <img class="img-responsive product-image" src="/media/{{ ad.image }}" /> {% else %}
+                {% if ad.item_image %}
+                <img class="img-responsive product-image" src="/media/{{ ad.item_image }}" /> {% else %}
                 <div class="#">No images</div>
                 {% endif %}
             </div>
 
         <!-- Ad Description -->
             <div class="col-md-6 ad-page-col-2">
-                <h2 style="font-size:30px;">{{ ad.name }}</h2>
+                <h2 style="font-size:30px;">{{ ad.item }}</h2>
                 <hr>
                 <p><strong>Description:</strong> {{ ad.product_short_description }}</p>
-                <p>€ {{ ad.price }}</p>
+                <p>€ {{ ad.item_price }}</p>
 
                 <p><strong>Views:</strong> {{ ad.views }}</p>
-                <p><strong>Location:</strong> {{ ad.location }}</p>
+                <p><strong>Location:</strong> {{ ad.your_location }}</p>
                 <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
 
                 <!-- Ad Comments -->

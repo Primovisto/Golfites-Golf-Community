@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% load thread_extras %} {% block content %} {% load bootstrap_tags %}
+{% extends "base.html" %}
+{% load thread_extras %}
+{% block content %}
+    {% load bootstrap_tags %}
 <div class="content" style="padding:120px 0;background-color:#fafafa;">
 
     <div class="container" style="padding-left:0;">
@@ -23,7 +26,7 @@
                 <div class="col-md-8" style="padding-left:0;">
                     <h4 style="text-align:left; margin:0; color:#3a5685;"><a style="color:#3a5685;" href="{% url "threads" subject.id %}">{{ subject.name }}</a></h4>
                     <p>
-                        <a style="color:#333;" href="{% url " threads " subject.id %}">
+                        <a style="color:#333;" href="{% url "threads" subject.id %}">
                    {% autoescape off %}{{ subject.description }}{% endautoescape %}
                </a>
                     </p>

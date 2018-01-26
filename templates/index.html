@@ -118,17 +118,17 @@
             <div class="col-md-4 col-features" style="padding:0 20px;">
                 <h4 class="homepage-options">Latest Ads</h4> {% for ad in latest_ads %}
                 <div class="ad-item">
-                    <h4>{{ ad.name  }}</h4>
+                    <h4>{{ ad.item  }}</h4>
                     <span class="text-center">
-                    {% if ad.image %}
-                    <img src="/media/{{ ad.image }}" class="ad-image img-responsive" alt="Golfites - Ads"/> {% else %}
+                    {% if ad.item_image %}
+                    <img src="/media/{{ ad.item_image }}" class="ad-image img-responsive" alt="Golfites - Ads"/> {% else %}
                 <div class="">No images available</div>
                     {% endif %}
 
                     </span>
                     <div style="display:inline-block;">
-                        <p><strong>Price:</strong> € {{ ad.price }}</p>
-                        <p><strong>Location:</strong> {{ ad.location }}</p>
+                        <p><strong>Price:</strong> € {{ ad.item_price }}</p>
+                        <p><strong>Location:</strong> {{ ad.your_location }}</p>
                         <button type="button" onclick="location.href='{% url 'ads_page' ad.id %}'" style="padding:6px 10px;color:#fff;margin:5px auto;font-size:14px; background-color:rgba(81, 101, 136, 1);border-radius:2px; border:none;font-family:roboto;">View Ad</button>
                     </div>
                 </div>
@@ -170,12 +170,12 @@
                     <div class="content-1">
                         <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
                             <div class="content-overlay"></div>
-                            {% if golfer.image %}
-                            <img class="img-responsive content-image" style="height:200px;" src="/media/{{ golfer.image }}" alt="Golfites Golfers" /> {% else %}
+                            {% if golfer.your_image %}
+                            <img class="img-responsive content-image" style="height:200px;" src="/media/{{ golfer.your_image }}" alt="Golfites Golfers" /> {% else %}
                             <div class="">No images available</div>
                             {% endif %}
                             <div class="content-details fadeIn-bottom fadeIn-left">
-                                <h4 class="content-title">{{ golfer.name }} </h4>
+                                <h4 class="content-title">{{ golfer.your_name }} </h4>
                                 <button type="button" onclick="location.href='{% url 'ads' %}'" style="margin:10px 0;" class="site-btn">View Profile</button>
                             </div>
                         </a>

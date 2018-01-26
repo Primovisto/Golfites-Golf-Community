@@ -9,17 +9,17 @@
             <!-- Golfer Image -->
             <div class="col-md-6" style="background-color:#fff;padding:20px;">
                 <div class="golfer-img">
-                    {% if golfer.image %}
-                    <img class="img-responsive" src="/media/{{ golfer.image }}" /> {% else %}
+                    {% if golfer.your_image %}
+                    <img class="img-responsive" src="/media/{{ golfer.your_image }}" /> {% else %}
                     <div class="#">No images</div>
                     {% endif %}
                 </div>
             </div>
             <!-- Golfer Description -->
             <div class="col-md-6" style="background-color:#fff;padding :20px;">
-                <h2 class="golfer-header">{{ golfer.name }}</h2>
+                <h2 class="golfer-header">{{ golfer.your_name }}</h2>
             <hr>
-                <p><strong>Club:</strong> {{ golfer.golf_club }}</p>
+                <p><strong>Club:</strong> {{ golfer.your_golf_club }}</p>
                 <p><strong>Current Handicap:</strong> {{ golfer.current_handicap }}</p>
                 <p><strong>Lowest Handicap:</strong> {{ golfer.lowest_handicap }}</p>
                 <p><strong>Greatest Golfing Achievement:</strong> {{ golfer.biggest_golfing_achievement }}</p>
@@ -28,7 +28,7 @@
                 <hr>
             <!-- Video Embed -->
                 <p><strong>My Golf Swing:</strong>
-                    <br>{% video golfer.swing as my_video %} {% video my_video '500x410' %} {% endvideo %}</p>
+                    <br>{% video golfer.swing_video as my_video %} {% video my_video '500x410' %} {% endvideo %}</p>
             </div>
 
         </div>

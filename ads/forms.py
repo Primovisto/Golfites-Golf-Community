@@ -7,11 +7,11 @@ class NewAdForm(forms.ModelForm):
         model = Ad
         fields = (
                   'advertiser',
-                  'name',
+                  'item',
                   'contact_email',
                   'published_date',
                   'product_short_description',
-                  'location',
-                  'price',
+                  'your_location',
+                  'item_price',
                   'views',
-                  'image')
+                  'item_image')

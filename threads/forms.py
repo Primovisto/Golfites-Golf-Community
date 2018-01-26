@@ -3,6 +3,8 @@ from .models import Thread, Post
 
 
 class ThreadForm(forms.ModelForm):
+    name = forms.CharField(label="Thread name")
+
     class Meta:
         model = Thread
         fields = ['name']

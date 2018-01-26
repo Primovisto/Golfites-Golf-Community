@@ -126,9 +126,9 @@ def edit_ad(request, id):
 
 @login_required(login_url='/accounts/login/')
 def cancel_subscription(request):
-   try:
-       customer = stripe.Customer.retrieve(request.user.stripe_id)
-       customer.cancel_subscription(at_period_end=True)
-   except Exception as e:
-       messages.error(request, e)
-   return redirect('profile')
+    try:
+        customer = stripe.Customer.retrieve(request.user.stripe_id)
+        customer.cancel_subscription(at_period_end=True)
+    except Exception as e:
+        messages.error(request, e)
+    return redirect('profile')
