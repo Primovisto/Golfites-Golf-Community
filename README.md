@@ -41,6 +41,19 @@ If you would like to deploy this app locally download or clone this repo and fol
 
 7. Finally, navigate to http://localhost:8000/ to view your app locally.
 
+<h2>Testing</h2>
+
+Manual testing was undertaken for this application. Test such as:
+
+1. Testing the responsiveness of the application (on desktop and mobile applications)
+2. Testing the register/login/logout flow
+3. Testing the post_new/edit equipment, ads, golfer profiles
+4. Testing the checkout process
+5. Testing the database
+6. Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
+
+
+
 <h2>Author</h2>
 
 Edward Stack - This project was completed as part of Code Institutes mentored online program.
