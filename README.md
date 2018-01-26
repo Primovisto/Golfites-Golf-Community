@@ -41,6 +41,10 @@ If you would like to deploy this app locally download or clone this repo and fol
 
 7. Finally, navigate to http://localhost:8000/ to view your app locally.
 
+<h2>Testing</h2>
+
+Manual testing was undertaken for this application.
+
 <h2>Author</h2>
 
 Edward Stack - This project was completed as part of Code Institutes mentored online program.
