@@ -1,3 +1,15 @@
+/* STYLE.CSS STYLESHEET FOR GOLFITES COMMUNITY WEBSITE*/
+
+/*
+Theme Name: Golfites Golf Community
+Description: Online Golf Community
+Author: Edward Stack
+Author URI: https://velabri.co/
+Tags: Python Django Web App
+*/
+
+
+/************** General Styles **************/
 body,
 html {
     height: 100%;
@@ -10,6 +22,14 @@ h2{
     font-size:40px;
     font-family:roboto;
     font-weight:700;
+    text-align:center;
+    margin:10px 0;
+    color:#333;
+}
+
+h3{
+    font-size:36px;
+    font-family:roboto;
     text-align:center;
     margin:10px 0;
     color:#333;
@@ -28,16 +48,21 @@ h4 {
 }
 
 p {
-    color: #8c8c8c;
+    color: #666;
     font-family: roboto;
     font-size: 15px;
     line-height:1.6;
 }
 
+.maincontent {
+
+    padding: 160px 0 95px 0;
+}
 
 
 
-/* base.html Styling*/
+
+/************** Navigation Styles **************/
 
 .navbar-nav {
     position: relative;
@@ -150,12 +175,12 @@ p {
 
 
 
+/************** Footer Styles **************/
+
 
 section.footer-top {
     padding: 50px 0;
     background-color: #bbb;
-
-
 }
 
 section .banner-header {
@@ -203,10 +228,9 @@ footer .footer-wording {
 
 
 
-/* index.html Styling*/
+/******** Homepage Slider Styles ********/
 
 .owl-carousel .item img {
-
     height: 666px;
 }
 
@@ -225,23 +249,10 @@ footer .footer-wording {
     font-weight: 700;
 }
 
-.slide-header p {
-    font-family: arial;
-    font-size: 24px;
-    padding: 10px 20px;
-    color: #fff;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
-    font-weight: 700;
-}
-
 .slider-area .slider-active.owl-carousel .item .item-caption .slide-header .connect {
     font-size: 20px;
     font-weight: 400;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
-}
-
-span .tagline-divider {
-    font-size: 16px;
 }
 
 .slide-header .button-slider-section {
@@ -284,19 +295,26 @@ span .tagline-divider {
     box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.62);
 }
 
-section#register {
+.slider-active .item .item-caption {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+}
 
+
+/******** Homepage Login/Register Section Styles ********/
+
+section#register {
     padding-top: 60px;
 }
 
-section .register-header h4 {
-
-    text-align: center;
-
-}
-
 section .register-header p {
-
     text-align: center;
     margin-bottom: 40px;
 
@@ -335,8 +353,9 @@ section .login-register-form-section .col-centered {
     text-align: center;
 }
 
-section#features {
+/******** Homepage Features Section Styles ********/
 
+section#features {
     padding: 60px 0;
 }
 
@@ -362,6 +381,8 @@ section .wrapper {
     height:200px;
 }
 
+/******** Homepage Marketplace Section Styles ********/
+
 .white-background {
     background-color: #fff;
 
@@ -376,6 +397,10 @@ section .wrapper {
     display: inline-block;
 }
 
+.ad-item h4{
+    font-size:18px;
+}
+
 .ad-item span.text-center {
     display: inline-block;
     margin-top: 10px;
@@ -386,10 +411,6 @@ section .wrapper {
     width: 120px;
 }
 
-.ad-title {
-    margin-top: 0;
-}
-
 .homepage-options:after {
     background-color: #9e9e9e;
     content: " ";
@@ -398,6 +419,9 @@ section .wrapper {
     margin: 16px auto 0;
     width: 50px;
 }
+
+
+/******** Homepage Golfer Profiles Section Styles ********/
 
 section#profiles{
     padding-top:40px;
@@ -467,47 +491,83 @@ padding-bottom:80px;
   opacity: 1;
 }
 
-.content-details h3{
+.content-details h4{
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
-.content-details p{
-  color: #fff;
-  font-size: 0.8em;
-}
-
 .fadeIn-bottom{
   top: 80%;
 }
-
-.academy-slider .slider-active .item .item-caption,
-.slider-active .item .item-caption {
-    position: absolute;
-    top: 40%;
-    left: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: #fff;
-    font-size: 36px;
-    font-weight: bold;
+.fadeIn-left{
+  left: 20%;
 }
 
-.academy-slider .slider-active .item .item-caption {
+.button-section-profiles{
+    text-align:center;
+    margin-top: 40px;
+}
 
-    left: 18%;
+.create-golfer-btn{
+    background-color:#fff;
+    border:2px solid #3a5685;
+    color:#3a5685;
+    padding:12px 16px;
+    font-family:roboto;
+    margin-left:-5px;
+    text-transform:uppercase;
+    font-weight:700;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+}
+
+.create-golfer-btn:hover{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color:#333;
+    border:2px solid #333;
+    color:#fff;
+    padding:12px 16px;
+    font-family:roboto;
+    margin-left:-5px;
+    text-transform:uppercase;
+    font-weight:700;
+
+}
+
+.view-golfer-btn{
+    background-color:#3a5685;
+    border:2px solid #3a5685;
+    color:#fff;
+    padding:12px 16px;
+    font-family:roboto;
+    text-transform:uppercase;
+    font-weight:700;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.view-golfer-btn:hover{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color:#333;
+    border:2px solid #333;
+    color:#fff;
+    padding:12px 16px;
+    font-family:roboto;
+    text-transform:uppercase;
+    font-weight:700;
 }
 
 
 
 
 
-
-/* Courses Page Styles*/
+/*********** Courses Page Styles ***********/
 
 #search-results {
     background-color: #eee;
@@ -547,11 +607,6 @@ padding-bottom:80px;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
 }
 
-.courses-header h4 {
-    font-size: 30px;
-    text-align: left;
-}
-
 .center-block {
     padding-right: 0;
 }
@@ -560,6 +615,7 @@ padding-bottom:80px;
     height: 710px;
     overflow: auto;
     border: 1px solid;
+    background-color:#fff;
 }
 
 .courses-content .courses-alignment {
@@ -594,7 +650,7 @@ iframe {
 
 
 
-/* Ads Page Styling*/
+/*********** Ads.html Styles ***********/
 
 .ad-details .ad-link {
     cursor: pointer;
@@ -602,9 +658,7 @@ iframe {
 }
 
 
-
-
-/* Single Ad Page Styling*/
+/*********** adspage.html styles ***********/
 
 .ad-page-col {
     background: #fff;
@@ -624,35 +678,24 @@ iframe {
     box-shadow: 0px 3px 3px -2px rgba(163, 163, 163, 1);
 }
 
+.ad-page-col-2 p{
+    color:#444;
+}
+
 .ad-column {
-    padding: 20px 0;
-    background-color: #e5e5e5;
+    background-color: #fff;
+    padding: 40px 0;
     margin-top: 30px;
-    -webkit-box-shadow: 0px 3px 3px -1px rgba(163, 163, 163, 1);
-    -moz-box-shadow: 0px 3px 3px -1px rgba(163, 163, 163, 1);
-    box-shadow: 0px 3px 3px -1px rgba(163, 163, 163, 1);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    border: 1px solid #bbb;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
 }
 
 #placement-bottom {
     display: none;
 }
 
-.ads-header h4 {
-    font-size: 30px;
-}
-
-.ads-header h4:after {
-    background-color: #9e9e9e;
-    content: " ";
-    display: block;
-    height: 1px;
-    margin: 16px auto 0;
-    width: 50px;
-}
 
 .ads-header-page {
     text-align: left;
@@ -661,11 +704,9 @@ iframe {
 }
 
 .ad-title {
-    color: rgba(81, 101, 136, 1);
-    font-size: 24px;
-    text-align: left;
-}
 
+    font-weight:700;
+}
 
 
 .ad-details-price {
@@ -674,21 +715,35 @@ iframe {
 
 
 
-/* Academy Posts Page Styling */
+/*********** Academy Page Styles ***********/
 
-.owl-carousel.academy-carousel .item img{
-    height:100%;
+h4.academy-slide-header{
+    font-size:40px;
+    color:#fff;
+    margin:40px 0 0 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+p.academy-slide-header {
+    font-size:24px;
+    color:#fff;
+    margin:0;
+    font-weight:400;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
 }
 
 .academy-detail .story-img img {
     width: 70px;
     height: 70px;
-    background-color: #12ABB2;
+    background-color: #eee;
     color: #ffffff;
 }
 
 .academy-detail p {
     margin-top: 5px;
+    text-align:center;
+    font-size:12px;
 }
 
 .academy-blog-post {
@@ -708,8 +763,8 @@ iframe {
 .blog-post-title{
     font-size:22px;
     color:#3a5685;
-    text-align: left;
     margin-bottom:5px;
+
 
 }
 
@@ -724,24 +779,53 @@ iframe {
 
 }
 
+.academy-contributors-header{
+    font-size:16px;
+    font-weight:700;
+    text-align:center;
+    margin:5px 0;
+
+}
+
+.academy-contributors-text{
+    font-size:12px;
+    text-align:center;
+}
+
 .blog-post-info{
     font-size:12px;
     margin-bottom:20px;
 }
 
-.academy-slider-header{
-    font-size:40px;
-    color:#fff;
-    margin-top:40px;
+.contributors-column{
+    margin-top:20px;
 }
 
+.academy-posts-header{
+    padding:60px 0;
+}
+
+.posts-container{
+    background-color:#fff;
+}
+.academy-header-image{
+    background-image: url("/media/images/Driving-Range.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+}
+
+.academy-header-text{
+    position:relative;
+    text-align: center;
+    top:45%;
+}
 
 .blog-post-content{
     margin:20px 0;
 }
 
-/* Style all font awesome icons */
-/** Social Button CSS **/
 
 .share-btn {
     display: inline-block;
@@ -773,28 +857,17 @@ iframe {
 
 
 .post-detail{
-    margin-top:30px;
+
+    background: #fff;
+    padding:30px 50px;
 }
 
 
 
-/* Equipment Page Styling */
+/******** Equipment Section Styles ********/
 
-.catalogue-header h1 {
-    font-family: roboto;
-    font-size: 30px;
-    color: #3a5685;
-    text-align: center;
-}
 
-.catalogue-header h1:after {
-    background-color: #9e9e9e;
-    content: " ";
-    display: block;
-    height: 1px;
-    margin: 16px auto 0;
-    width: 50px;
-}
+
 
 .equipment-detail {
     border: 1px solid #eee;
@@ -826,16 +899,6 @@ iframe {
     padding: 40px;
 }
 
-
-
-/*
-.equipment-detail img{
-    width:320px;
-    height: 250px;
-    margin:30px auto 0 auto;
-}
-*/
-
 .equipment-header {
     font-size: 30px;
     text-align: left;
@@ -847,10 +910,7 @@ iframe {
 }
 
 .equipment-row {
-    background: #eee;
-    -webkit-box-shadow: 0px 3px 3px -1px rgba(163, 163, 163, 1);
-    -moz-box-shadow: 0px 3px 3px -1px rgba(163, 163, 163, 1);
-    box-shadow: 0px 3px 3px -1px rgba(163, 163, 163, 1);
+    background: #fff;
     padding: 40px 0;
 }
 
@@ -860,6 +920,13 @@ iframe {
 
 .horizontal-row {
     border-top: 1px solid #ddd;
+}
+
+
+/******** Profile Page Styles ********/
+
+.portfolio-item{
+    background-color:#fff;
 }
 
 .portfolio-item .logo-image .overlay {
@@ -895,7 +962,7 @@ iframe {
 .overlay-btn .view-site-btn {
     background-color: #3a5685;
     color: #fff;
-    padding: 5px 8px;
+    padding: 8px 12px;
     font-size: 14px;
     font-family: roboto;
     text-decoration: none;
@@ -909,37 +976,61 @@ iframe {
     color: #516588;
 }
 
-.portfolio-item {
-    border: 1px solid #516588;
-}
-
-.logo-image {
-    border-bottom: 1px solid #516588;
+.portfolio-item h4{
+    text-align:center;
+    padding:10px 0 30px 0;
 }
 
 
+.my-ad-details{
+    text-align:center;
+}
 
+.profile-page-row {
+    padding: 60px 30px;
+    background-color: #fff;
 
-.maincontent {
-    margin-top: 20px;
-    padding: 80px 0;
+}
+
+.profile-page-row#row-margin{
+    margin-top:80px;
+}
+
+.profile-page-row h3{
+    margin-bottom:30px;
+}
+
+.profile-page-row h3:after{
+    background-color: #9e9e9e;
+    content: " ";
+    display: block;
+    height: 1px;
+    margin: 16px auto 0;
+    width: 50px;
+}
+
+#features-row h3:after{
+    background-color: #9e9e9e;
+    content: " ";
+    display: block;
+    height: 1px;
+    margin: 16px auto 0;
+    width: 50px;
 }
 
 
 
-
-
-
-/* Golfers Page*/
+/*********** Golfers Profile Section Styles ***********/
 
 .golfer-page-column {
     padding: 20px;
 }
 
 .golfer-page-column-2 {
-    background-color: #eee;
+    background-color: #fff;
     padding: 50px;
-    border: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .golfer-details a {
@@ -962,9 +1053,14 @@ iframe {
     width: 500px;
 }
 
+.golfer-header{
+    text-align:left;
+    font-size:36px;
+}
 
 
-/* Login Page Styling */
+
+/*********** Login Page Styles ***********/
 
 
 .login-page-column {
@@ -982,7 +1078,7 @@ iframe {
 
 
 
-/* Registration-Page */
+/*********** Registration Page Styles ***********/
 
 
 .register-page-column {
@@ -999,103 +1095,69 @@ iframe {
 }
 
 
-
-
-
-
 .login-form {
     margin-top: 80px;
-}
-
-.member-dashboard {
-    height: 540px;
-    overflow: auto;
 }
 
 .subscriptions-header,
 .info-header,
 .my-ads-header,
 .my-profile-header {
-    text-align: left;
+    text-align: center;
+}
+
+.member-info{
+    text-align: center;
 }
 
 
+/*********** About Us Page Styles ***********/
 
-/* About Us Page */
 
-.about-banner-image img {
-    width: 100%;
-    height: 100%;
+.about-banner-text {
+    position: relative;
+    top:50%;
+    text-align:center;
+    color:#fff;
+}
+
+.about-banner-image  {
+    background-image: url("/media/images/banner_1.jpg");
+    -webkit-background-size: cover;
     background-size: cover;
-}
-
-.about-banner-image .about-us-banner {
-    position: absolute;
-    top: 46%;
     width: 100%;
-}
-
-.about-us-text {
-    position: absolute;
-    left: 85%;
-    top: 37.5%;
+    height: 350px;
 }
 
 .about-us-text p {
-    color: #fff;
-    font-family: Roboto;
-    font-size: 40px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+    margin-top:40px;
 }
 
-.about-banner-image h4 {
-    font-size: 24px;
-    color: #fff;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+.about-text-col{
+    background-color:#fff;
+    margin-top:80px;
+    padding:30px;
+}
+
+
+
+
+/*********** Contact-Us Page Styles ***********/
+
+.contact-banner-image  {
+    background-image: url("/media/images/banner2.jpg_Thumbnail0.jpg");
     width: 100%;
-    text-align: right;
-    margin-right: 50px;
+    height: 350px;
 }
 
-.about-us-header {
-    text-align: left;
-    font-size: 24px;
-    margin-top: 40px;
+.contact-banner-text{
+    position:relative;
+    color:#fff;
+    top:50%;
+    text-align:center;
+
 }
 
-
-
-
-/* Contact Us Page*/
-
-.contact-banner-image img {
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-
-
-.contact-us-text {
-    position: absolute;
-    padding: 10px 20px 0 0;
-    text-align: right;
-    left: 82%;
-    top: 33%;
-}
-
-.contact-us-banner h4 {
-    position: absolute;
-    top: 43%;
-    padding: 20px 20px 20px 0;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    text-align: right;
-    color: #fff;
-    font-size: 26px;
-}
 
 .contact-us-text p {
     color: #fff;
@@ -1169,7 +1231,7 @@ iframe {
 }
 
 
-/* Forum Post Page*/
+/*********** Forum Section Styles ***********/
 .post-row{
         border: 1px solid #e0e0e0;
     border-radius: 3px;
@@ -1206,7 +1268,15 @@ iframe {
 }
 
 
-@media (device-width:768px) {
+
+
+
+/*********** Media Queries for Mobile and Tablet Devices ***********/
+
+
+
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
     .navbar-brand img {
         height: 40px;
@@ -1266,30 +1336,6 @@ iframe {
         margin: 20px auto 0 auto;
     }
 
-    .about-banner-image img {
-
-        height: 500px;
-    }
-
-
-    .about-us-text {
-
-        visibility: hidden;
-    }
-
-    .about-us-text p {
-
-        font-size: 35px;
-    }
-
-    .about-banner-image h4 {
-        visibility: hidden;
-    }
-
-    .about-banner-image .about-us-banner {
-        visibility: hidden;
-    }
-
     .equipment-images.img-responsive {
         height: 220px;
     }
@@ -1298,7 +1344,10 @@ iframe {
         padding: 10px 18px;
         left: 38%;
     }
+
 }
+
+/* Smartphones (portrait and landscape) ----------- */
 
 @media (max-width:767px) {
 
@@ -1419,41 +1468,10 @@ iframe {
     .equipment-images.img-responsive {
         height: 100%;
     }
-    .about-banner-image img {
 
-        height: 300px;
-    }
-
-
-    .about-us-text {
-        position: absolute;
-        left: 52%;
-        top: 30%;
-    }
-
-    .about-banner-image h4 {
-        width: 100%;
-        font-size: 18px;
-    }
-
-    .about-banner-image .about-us-banner {
-        top: 36%;
-    }
-
-    .contact-banner-image img {
-        height: 400px;
-    }
-
-    .contact-us-banner h4 {
-        top: 47%;
-        width: 100%;
-    }
-
-    .contact-us-text {
-        left: 42%;
-        top: 39%;
-    }
 }
+
+/* Tablets (landscape) ----------- */
 
 @media(min-device-width:769px) and (max-device-width:1024px) {
     .col-features {
@@ -1484,21 +1502,6 @@ iframe {
         margin: auto;
     }
 
-
-    .about-us-text {
-        visibility: hidden;
-    }
-
-    .contact-us-text {
-        visibility: hidden;
-    }
-
-
-
-    .contact-us-banner h4 {
-        visibility: hidden;
-    }
-
     .equipment-images.img-responsive {
         height: 220px;
     }
@@ -1512,30 +1515,9 @@ iframe {
         padding-bottom: 22px;
     }
 
-    .about-us-text {
-
-        visibility: hidden;
-    }
-
-
-    .about-banner-image img {
-
-        height: 250px;
-    }
-
-
-    .about-banner-image .about-us-banner {
-        visibility: hidden;
-    }
-
-    .contact-us-banner h4 {
-        visibility: hidden;
-    }
-
-    .contact-us-text {
-        visibility: hidden;
-    }
 }
+
+/***** Smartphones Landscape *****/
 
 @media (min-device-width:667px) and (max-device-width:736px) {
     .banner-image .search-position {
@@ -1543,44 +1525,6 @@ iframe {
         left: 27%;
     }
 
-    .about-banner-image img {
-
-        height: 400px;
-    }
-
-    .about-us-text {
-
-        left: 70%;
-        top: 80%;
-    }
-
-    .about-us-text p {
-
-        font-size: 35px;
-    }
-
-    .about-banner-image h4 {
-        width: 100%;
-        font-size: 18px;
-    }
-
-    .about-banner-image .about-us-banner {
-        top: 91%;
-        width: 100%;
-    }
-    .contact-banner-image img {
-        height: 400px;
-    }
-
-    .contact-us-banner h4 {
-        top: 83%;
-        width: 100%;
-    }
-
-    .contact-us-text {
-        left: 65%;
-        top: 70%;
-    }
 }
 
 
@@ -1594,7 +1538,7 @@ iframe {
 
 
 
-/* CSS making menu responsive for tablets */
+/* Tablets Responsive Menu (portrait and landscape) ----------- */
 
 @media (max-width: 1024px) {
     .navbar-header {
@@ -1640,9 +1584,9 @@ iframe {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-
-    .collapse.in {
+    .collapse.in{
         display: block !important;
-    }
+}
+
 }
 
