@@ -23,41 +23,36 @@ stripe.api_key = settings.STRIPE_SECRET
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST, request.FILES)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             try:
-                customer = stripe.Customer.create(
-                    email=form.cleaned_data['email'],
+                customer = stripe.Charge.create(
+                    amount=999,
+                    currency="USD",
+                    description=form.cleaned_data['email'],
                     card=form.cleaned_data['stripe_id'],
-                    plan='GOLFITES_PLAN',
                 )
-
-                if customer:
-                    user = form.save()
-                    user.stripe_id = customer.id
-                    user.subscription_end = arrow.now().replace(weeks=+4).datetime
-                    user.save()
-
-                    user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
-
+                if customer.paid:
+                    form.save()
+                    user = auth.authenticate(email=request.POST.get('email'),
+                                             password=request.POST.get('password1'))
                     if user:
                         auth.login(request, user)
                         messages.success(request, "You have successfully registered")
                         return redirect(reverse('profile'))
-
                     else:
-                        messages.error(request, "We were unable to log you in at this time!")
+                        messages.error(request, "unable to log you in at this time!")
                 else:
-                    messages.error(request, "We were unable to take payment from the card provided")
-
+                    messages.error(request, "We were unable to take a payment with that card!")
             except stripe.error.CardError as e:
                 messages.error(request, "Your card was declined!")
     else:
         today = datetime.date.today()
-        form = UserRegistrationForm(initial={'expiry_month': today.month, 'expiry_year': today.year})
+        form = UserRegistrationForm()
 
     args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE}
     args.update(csrf(request))
+
     return render(request, 'register.html', args)
 
 
