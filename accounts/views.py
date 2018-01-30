@@ -26,16 +26,20 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             try:
-                customer = stripe.Charge.create(
-                    amount=999,
-                    currency="USD",
-                    description=form.cleaned_data['email'],
-                    card=form.cleaned_data['stripe_id'],
+                customer = stripe.Customer.create(
+                    email=form.cleaned_data['email'],
+                    card=form.cleaned_data['stripe_id'],  # this is currently the card token/id
+                    plan='GOLFITES_SUB',
                 )
-                if customer.paid:
-                    form.save()
+
+                if customer:
+                    user = form.save()
+                    user.stripe_id = customer.id
+                    user.subscription_end = arrow.now().replace(weeks=+4).datetime
+                    user.save()
                     user = auth.authenticate(email=request.POST.get('email'),
                                              password=request.POST.get('password1'))
+
                     if user:
                         auth.login(request, user)
                         messages.success(request, "You have successfully registered")
