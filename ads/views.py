@@ -4,11 +4,13 @@ from .forms import NewAdForm
 from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url='/accounts/login/')
 def all_ads(request):
     ads = Ad.objects.all()
     return render(request, "ads/ads.html", {"ads": ads})
 
 
+@login_required(login_url='/accounts/login/')
 def ads_page(request, id):
     ad = get_object_or_404(Ad, pk=id)
     ad.views += 1

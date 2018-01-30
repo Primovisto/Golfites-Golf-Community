@@ -4,19 +4,21 @@ from .models import EducationBlogPost
 from .forms import EducationBlogPostForm
 from django.shortcuts import redirect
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 
 
 def education_post_list(request):
     """
     Create a view that will return a
     list of Posts that were published prior to'now'
-    and render them to the 'eductionblogposts.html' template
+    and render them to the 'educationblogposts.html' template
     """
     posts = EducationBlogPost.objects.filter(published_date__lte=timezone.now()
                                 ).order_by('-published_date')
     return render(request, "education_center/education_blogposts.html", {'posts': posts})
 
 
+@login_required(login_url='/accounts/login?next=education_center')
 def education_post_detail(request, id):
     post = get_object_or_404(EducationBlogPost, pk=id)
     post.views += 1  # clock up the number of post views

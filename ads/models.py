@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Ad(models.Model):
-    advertiser = models.ForeignKey('accounts.User', default='user.username', blank=True, null=True, on_delete=models.PROTECT)
+    advertiser = models.ForeignKey('accounts.User', default='', blank=True, null=True, on_delete=models.PROTECT)
     item = models.CharField(max_length=35, default='')
     condition = models.CharField(max_length=35, default='Used')
     published_date = models.DateTimeField(blank=True, null=True)

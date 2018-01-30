@@ -4,18 +4,20 @@ from .forms import NewGolferForm
 from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url='/accounts/login?next=golfers/')
 def all_golfers(request):
     golfers = GolferProfile.objects.all()
     return render(request, "golfers/golfers.html", {"golfers": golfers})
 
 
+@login_required(login_url='/accounts/login?next=golfers/(?P<id>\d+)/')
 def golfer_page(request, id):
     golfer = get_object_or_404(GolferProfile, pk=id)
     golfer.save()
     return render(request, "golfers/golferprofile.html", {"golfer": golfer})
 
 
-@login_required(login_url="/accounts/login?next=products/new/")
+@login_required(login_url="/accounts/login?next=golfers/new/")
 def add_new_golfer(request):
     if request.method == "POST":
         form = NewGolferForm(request.POST, request.FILES)

@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import register, login, profile, logout, change_password, cancel_subscription
+from .views import register, login, profile, logout, change_password, cancel_subscription, subscriptions_webhook
 
 urlpatterns = [
     url(r'^register', register, name='register'),
@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^profile', profile, name='profile'),
     url(r'^change_password/$', change_password, name='change_password'),
     url(r'^cancel_subscription/$', cancel_subscription, name='cancel_subscription'),
+
 
     ]
