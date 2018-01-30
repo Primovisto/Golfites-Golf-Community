@@ -23,13 +23,13 @@ stripe.api_key = settings.STRIPE_SECRET
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+        form = UserRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             try:
                 customer = stripe.Customer.create(
                     email=form.cleaned_data['email'],
                     card=form.cleaned_data['stripe_id'],
-                    plan='GOLFITES_SUB',
+                    plan='GOLFITES_PLAN',
                 )
 
                 if customer:
@@ -46,7 +46,7 @@ def register(request):
                         return redirect(reverse('profile'))
 
                     else:
-                        messages.error(request, "We were unable to log you in at this time")
+                        messages.error(request, "We were unable to log you in at this time!")
                 else:
                     messages.error(request, "We were unable to take payment from the card provided")
 

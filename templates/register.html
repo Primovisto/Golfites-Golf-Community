@@ -22,7 +22,7 @@
             <h4 style="text-align:center;">Create Your Golfites Account</h4>
             <p>Join Golfites today for €4.99/month. Already have an account? <a href="https://golfites-golf-community.herokuapp.com/accounts/login">Login here</a></p>
                 </div>
-  <form role="form" method="post" id="register-form" action="{% url 'register' %}">
+  <form role="form" method="post" id="register-form" enctype="multipart/form-data" action="{% url 'register' %}">
     <div id="credit-card-errors" style="display:none">
       <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
