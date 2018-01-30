@@ -17,10 +17,13 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from accounts.models import User
+from django.views.decorators.csrf import ensure_csrf_cookie
+
 
 stripe.api_key = settings.STRIPE_SECRET
 
 
+@ensure_csrf_cookie
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

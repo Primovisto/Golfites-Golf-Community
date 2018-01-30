@@ -27,11 +27,12 @@
       <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
 
-    {% csrf_token %}
+
     {{ form|as_bootstrap }}
     <div class="form-group">
       <input class="site-btn" id="validate_card_btn" name="commit" type="submit" value="Become a Golfites Member">
     </div>
+      {% csrf_token %}
   </form>
             </div>
         <div class="col-xs-3"></div>
