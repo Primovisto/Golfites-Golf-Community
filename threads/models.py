@@ -18,6 +18,9 @@ class Thread(models.Model):
     subject = models.ForeignKey(Subject, related_name='threads', on_delete=models.PROTECT)
     created_at = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     thread = models.ForeignKey(Thread, related_name='posts', on_delete=models.PROTECT)

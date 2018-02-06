@@ -225,7 +225,26 @@ footer .footer-wording {
     top: 25px;
 }
 
+/****** Scroll to top ******/
 
+#scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+#scrollBtn:hover {
+    background-color: #3a5685;
+}
 
 
 /******** Homepage Slider Styles ********/
@@ -493,10 +512,10 @@ padding-bottom:80px;
 
 .content-details h4{
   color: #fff;
-  font-weight: 700;
+    font-size:24px;
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
-  text-transform: uppercase;
+
 }
 
 .fadeIn-bottom{
@@ -1467,6 +1486,10 @@ p.academy-slide-header {
 
     .equipment-images.img-responsive {
         height: 100%;
+    }
+
+    .footer-wording{
+        font-size:12px;
     }
 
 }
