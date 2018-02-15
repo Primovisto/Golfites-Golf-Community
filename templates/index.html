@@ -157,8 +157,8 @@
             <div class="col-md-12">
                 <div class="market-header">
                     <h2>Golfer Profiles</h2>
-                    <p>Our Golfers area is a golfing social platform which allows Golfites members to create their very own golfing profile
-                        <br> and interact with other members and their profiles.</p>
+                    <p>Our Golfers area allows Golfites members to create their very own golfing social profile.
+                        <br> Golfites Members can also interact with other members and their profiles.</p>
                 </div>
             </div>
         </div>
@@ -171,7 +171,7 @@
                         <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
                             <div class="content-overlay"></div>
                             {% if golfer.your_image %}
-                            <img class="img-responsive content-image" style="height:200px;" src="/media/{{ golfer.your_image }}" alt="Golfites Golfers" /> {% else %}
+                            <img class="img-responsive content-image" style="height:200px;" src="{{ MEDIA_URL }}{{ golfer.your_image }}" alt="Golfites Golfers" /> {% else %}
                             <div class="">No images available</div>
                             {% endif %}
                             <div class="content-details fadeIn-bottom fadeIn-left">

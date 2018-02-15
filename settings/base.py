@@ -160,19 +160,39 @@ EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, "static"),
-)
+
+# AWS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAICBGKZ5CERIFPZ7Q'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'golfites-community-storage'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+AWS_LOCATION = 'static'
+
+
+# AWS Storage StaticFiles
+
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+# AWS Storage MediaFiles
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 

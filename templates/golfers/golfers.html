@@ -21,7 +21,7 @@
                         <div class="golfer-details">
                             <a onclick="location.href='{% url 'golfer_page' golfer.id %}'">
                         {% if golfer.your_image %}
-                                <img class="img-responsive" src="/media/{{ golfer.your_image }}"/>
+                                <img class="img-responsive" src="{{ MEDIA_URL }}{{ golfer.your_image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}

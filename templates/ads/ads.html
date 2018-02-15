@@ -21,7 +21,7 @@
                     <div class="col-md-4">
                         <a class="ad-link" onclick="location.href='{% url 'ads_page' ad.id %}'">
                             {% if ad.item_image %}
-                                <img class="img-responsive" src="/media/{{ ad.item_image }}" style="background-size:cover;"/>
+                                <img class="img-responsive" src="{{ MEDIA_URL }}{{ ad.item_image }}" style="background-size:cover;"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}

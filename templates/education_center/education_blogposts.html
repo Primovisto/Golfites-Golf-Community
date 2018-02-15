@@ -72,7 +72,7 @@
 
                 <div class="academy-detail">
                     <a class="story-img" href="#">
-                        <img src="/media/{{ post.author_image}}" class="img-responsive center-block">
+                        <img src="{{ MEDIA_URL }}{{ post.author_image }}" class="img-responsive center-block">
                     </a>
                     <p>{{ post.author }}</p>
                 </div>
@@ -86,7 +86,7 @@
 
                 <div class="academy-blog-post">
                     {% if post.image %}
-                    <img src="/media/{{ post.image}}"> {% endif %}
+                    <img src="{{ MEDIA_URL }}{{ post.image }}"> {% endif %}
                     <p class="blog-post-content">{{ post.content|truncatewords:60 }}</p>
                     <p>
                         <button class="site-btn" onclick="location.href ={{ post.id }}">Read More</button>

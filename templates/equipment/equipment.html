@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+{% extends "base.html" %} {% load static %} {% load bootstrap_tags %} {% block content %}
 
 <div class="maincontent" style="padding-top:160px;">
     <div class="container">
@@ -20,7 +20,7 @@
                 <div class="equipment-detail" style="margin-bottom:30px;">
                     <a onclick="location.href='{% url 'equipmentpage' equipment.id %}'">
                             {% if equipment.image %}
-                                <img class="equipment-images img-responsive" src="/media/{{ equipment.image }}"/>
+                                <img class="equipment-images img-responsive" src="{{ MEDIA_URL }}{{ equipment.image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
