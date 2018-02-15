@@ -29,7 +29,7 @@
                             {% for golferprofile in golfers %}
                             {% if user.id == golferprofile.golfer_id %}
                                 {% if golferprofile.your_image %}
-                            <img class="img-responsive" src="/media/{{ golferprofile.your_image }}" style="width:50px; height: 50px;margin:0 auto;" />
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{{ golferprofile.your_image }}" style="width:50px; height: 50px;margin:0 auto;" />
                                 {% else %}
                             <div class="">No images available</div>
                             {% endif %}
@@ -64,7 +64,7 @@
                              <div class="my-ad-details">
 
                                      {% if ad.item_image %}
-                            <img class="img-responsive" src="/media/{{ ad.item_image }}" style="width:50px; height: 50px; margin-left: auto;margin-right: auto;" />
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{{ ad.item_image }}" style="width:50px; height: 50px; margin-left: auto;margin-right: auto;" />
                                      {% else %}
                             <div class="">No images available</div>
                             {% endif %}
@@ -89,7 +89,7 @@
                     <div class="col-md-4">
                         <div class="portfolio-item">
                             <div class="logo-image">
-                                <img src="/media/images/profile.png" alt="golfites ads" class="img-responsive">
+                                <img src="{% static 'imgs/profile.png' %}" alt="golfites ads" class="img-responsive">
                                 <div class="overlay">
                                     <div class="overlay-btn">
                                         <button class="view-site-btn center-block" onclick="location.href='{% url 'all_golfers' %}'">Browse Profiles</button>
@@ -103,7 +103,7 @@
                     <div class="col-md-4">
                         <div class="portfolio-item">
                             <div class="logo-image">
-                                <img src="/media/images/GolfAcademySlider2.jpg" alt="golfites ads" class="img-responsive">
+                                <img src="{% static 'imgs/GolfAcademySlider2.jpg' %}" alt="golfites ads" class="img-responsive">
                                 <div class="overlay">
                                     <div class="overlay-btn">
                                         <button class="view-site-btn center-block" onclick="location.href='{% url 'education_blog' %}'">Visit Academy</button>
@@ -116,7 +116,7 @@
                     <div class="col-md-4">
                         <div class="portfolio-item">
                             <div class="logo-image">
-                                <img src="/media/images/golfitescoursefinder.jpg" alt="golfites ads" class="img-responsive">
+                                <img src="{% static 'imgs/golfitescoursefinder.jpg' %}" alt="golfites ads" class="img-responsive">
                                 <div class="overlay">
                                     <div class="overlay-btn">
                                         <button class="view-site-btn center-block" onclick="location.href='{% url 'courses' %}'">Visit Course Finder</button>
@@ -135,7 +135,7 @@
                     <div class="col-md-4">
                         <div class="portfolio-item">
                             <div class="logo-image">
-                                <img src="/media/images/The-Players-2015-_I2C5423.jpg" alt="golfites ads" class="img-responsive">
+                                <img src="{% static 'imgs/The-Players-2015-_I2C5423.jpg' %}" alt="golfites ads" class="img-responsive">
                                 <div class="overlay">
                                     <div class="overlay-btn">
                                         <button class="view-site-btn center-block" onclick="location.href='{% url 'forum' %}'">Visit our Forum</button>
@@ -148,7 +148,7 @@
                      <div class="col-md-4">
                         <div class="portfolio-item">
                             <div class="logo-image">
-                                <img src="/media/images/used-golf.jpg" alt="golfites equipment" class="img-responsive">
+                                <img src="{% static 'imgs/used-golf.jpg'%}" alt="golfites equipment" class="img-responsive">
                                 <div class="overlay">
                                     <div class="overlay-btn">
                                         <button class="view-site-btn center-block" onclick="location.href='{% url 'equipment' %}'">View Equipment</button>
@@ -161,7 +161,7 @@
                     <div class="col-md-4">
                         <div class="portfolio-item">
                             <div class="logo-image">
-                                <img src="/media/images/ilustrasi-olahraga-golf.jpg" alt="golfites ads" class="img-responsive">
+                                <img src="{% static 'imgs/ilustrasi-olahraga-golf.jpg' %}" alt="golfites ads" class="img-responsive">
                                 <div class="overlay">
                                     <div class="overlay-btn">
                                         <button class="view-site-btn center-block" onclick="location.href='{% url 'new_ad' %}'">Post an Ad</button>

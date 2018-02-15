@@ -7,7 +7,7 @@
 <div class="slider-area">
     <div class="slider-active owl-carousel">
         <div class="item">
-            <img src="/media/images/Golfites_Homepage_Hero_image-min.png" alt="golfites-header-image" />
+            <img src="{%  static 'imgs/Golfites_Homepage_Hero_image-min.png' %}" alt="golfites-header-image" />
             <div class="item-caption">
                 <div class="slide-header">
                     <h2>The online community for Irish golfers with a passion for the game</h2>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-md-4 col-features" data-aos="zoom-in" data-aos-once="false">
                 <h4>Academy</h4>
-                <img src="/media/images/Academy-1-2016.jpg" class="img-responsive" alt="Golfites Blog Academy" />
+                <img src="{%  static 'imgs/Academy-1-2016.jpg' %}" class="img-responsive" alt="Golfites Blog Academy" />
                 <p class="features_paragraph">Do you have a thirst for golfing knowledge? Join our Academy and take your game to the next level by learning from our experienced group of academy contributors. </p>
                 <div class="wrapper">
                     <button type="button" onclick="location.href='{% url 'education_blog' %}'" style="margin:20px 0;" class="site-btn">Visit the Academy</button>
@@ -81,7 +81,7 @@
             </div>
             <div class="col-md-4 col-features" data-aos="zoom-in" data-aos-once="false">
                 <h4>Irish Golf Courses</h4>
-                <img src="/media/images/89252.jpg" class="img-responsive" alt="Golfites - Irish Golf Courses" />
+                <img src="{% static 'imgs/89252.jpg' %}" class="img-responsive" alt="Golfites - Irish Golf Courses" />
                 <p class="features_paragraph">Search and discover Irish golf courses near you using Golfites' course finder map and directory. The number one and only place to map over 400 of our great golf courses.</p>
                 <div class="wrapper" style="display:flex;justify-content:center;">
                     <button type="button" onclick="location.href='{% url 'courses' %}'" style="margin:20px 0;" class="site-btn">Search golf courses</button>
@@ -109,7 +109,7 @@
         <div class="row white-background">
             <div class="col-md-4 col-features">
                 <h4 class="homepage-options">Equipment</h4>
-                <img src="/media/images/equipment.jpg" class="img-responsive" alt="Golfites Equipment" />
+                <img src="{% static 'imgs/equipment.jpg' %}" class="img-responsive" alt="Golfites Equipment" />
                 <p class="features_paragraph">On the look out for a new driver, irons or putter? Click through below to check out Golfites wide range of golf equipment. We might have just what you are looking for!</p>
                 <div class="wrapper">
                     <button type="button" onclick="location.href='{% url 'equipment' %}'" class="site-btn">View Equipment</button>
@@ -201,7 +201,7 @@
     <!-- End Profiles Section
 
     <!-- Scroll to top -->
-<button onclick="topFunction()" id="scrollBtn" title="Go to top"><img src="/media/images/OOjs_UI_icon_caretUp.svg.png" style="height:20px; width:20px;display:block;margin:0 auto;"><span>TOP</span></button>
+<button onclick="topFunction()" id="scrollBtn" title="Go to top"><img src="{% static 'imgs/OOjs_UI_icon_caretUp.svg.png' %}" style="height:20px; width:20px;display:block;margin:0 auto;"><span>TOP</span></button>
 
     <!-- AOS Animation -->
 <script>

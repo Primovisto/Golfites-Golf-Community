@@ -39,7 +39,7 @@
                 <div class="courses-alignment">
                     <a onclick="location.href='{{ course.url }}'">
                             {% if course.course_image %}
-                                <img class="img-responsive" src="/media/{{ course.course_image }}"/>
+                                <img class="img-responsive" src="{{ MEDIA_URL }}{{ course.course_image }}"/>
                             {% else %}
                                 <div class="">No images available</div>
                             {% endif %}
