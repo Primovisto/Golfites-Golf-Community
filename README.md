@@ -15,13 +15,15 @@ This project is an ecommerce golfing marketplace and social community built usin
 A demo of the Golfites site is currently being hosted <a href="https://golfites-golf-community.herokuapp.com">here</a>
 
 <h2>Built With</h2>
-Django: A Python based web application framework for rapid development
+Django: A Python based web application framework for rapid development.
 <br>
-sqlite3: a powerful, open source object-relational database system
+sqlite3: a powerful, open source object-relational database system.
 <br>
-Stripe: a web application that allows individuals and business to accept secure credit card payments on their website
+Stripe: a web application that allows individuals and business to accept secure credit card payments on their website.
 <br>
-HTML, CSS and JavaScript: Front end languages that give the application structure, style and interactivity
+HTML, CSS and JavaScript: Front end languages that give the application structure, style and interactivity.
+<br>
+Amazon S3: a web services interface that you can use to store and retrieve any amount of data. 
 
 <h2>Deployment</h2>
 
@@ -52,7 +54,9 @@ Manual testing was undertaken for this application. Test such as:
 5. Testing the database
 6. Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
 
+<h2>Storage</h2>
 
+Amazon S3 was used to store media file uploads.
 
 <h2>Author</h2>
 
