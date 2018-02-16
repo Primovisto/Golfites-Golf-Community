@@ -20,25 +20,25 @@
 });
 
 
-//Scroll Back to top of Page
 
-// When the user scrolls down 500px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+$(document).ready(function(){
 
-function scrollFunction() {
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        document.getElementById("scrollBtn").style.display = "block";
-    } else {
-        document.getElementById("scrollBtn").style.display = "none";
-    }
-}
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+	//Click event to scroll to top
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
 
+});
 
 
 $(document).ready(function() {
@@ -48,3 +48,4 @@ $(document).ready(function() {
         $(this).removeClass('open');
     });
 });
+

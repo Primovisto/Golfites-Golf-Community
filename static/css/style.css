@@ -226,31 +226,33 @@ footer .footer-wording {
 }
 
 /****** Scroll to top ******/
-
-#scrollBtn {
-    display: block;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 3px;
+.scrollToTop{
+	width:50px;
+	height:60px;
+    border-radius:2px;
+	padding:5px;
+	text-align:center;
+	background: #333;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	display:none;
 }
 
-#scrollBtn:hover {
-    background-color: #3a5685;
+.scrollToTop:hover{
+	text-decoration:none;
+    background-color:#3a5685;
 }
 
-#scrollBtn span {
-    display: block;
-
-
+.scrollToTop span{
+    display:block;
+    color:#fff;
+    text-decoration:none;
 }
+
 
 /******** Homepage Slider Styles ********/
 

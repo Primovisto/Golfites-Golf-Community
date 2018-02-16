@@ -23,7 +23,7 @@ def add_new_golfer(request):
         form = NewGolferForm(request.POST, request.FILES)
         if form.is_valid():
             golfer = form.save(commit=False)
-            golfer.seller = request.user
+            golfer.golfer = request.user
             golfer.save()
             return redirect(golfer_page, golfer.pk)
     else:
@@ -38,7 +38,7 @@ def edit_golfer(request, id):
         form = NewGolferForm(request.POST, request.FILES, instance=golfer)
         if form.is_valid():
             golfer = form.save(commit=False)
-            golfer.seller = request.user
+            golfer.golfer = request.user
             golfer.save()
 
             return redirect(golfer_page, golfer.pk)

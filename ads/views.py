@@ -4,13 +4,11 @@ from .forms import NewAdForm
 from django.contrib.auth.decorators import login_required
 
 
-@login_required(login_url='/accounts/login/')
 def all_ads(request):
     ads = Ad.objects.all()
     return render(request, "ads/ads.html", {"ads": ads})
 
 
-@login_required(login_url='/accounts/login/')
 def ads_page(request, id):
     ad = get_object_or_404(Ad, pk=id)
     ad.views += 1
@@ -24,7 +22,7 @@ def add_new_ad(request):
         form = NewAdForm(request.POST, request.FILES)
         if form.is_valid():
             ad = form.save(commit=False)
-            ad.seller = request.user
+            ad.advertiser = request.user
             ad.save()
             return redirect(ads_page, ad.pk)
     else:
@@ -39,7 +37,7 @@ def edit_ad(request, id):
         form = NewAdForm(request.POST, request.FILES, instance=ad)
         if form.is_valid():
             ad = form.save(commit=False)
-            ad.seller = request.user
+            ad.advertiser = request.user
             ad.save()
 
             return redirect(ads_page, ad.pk)

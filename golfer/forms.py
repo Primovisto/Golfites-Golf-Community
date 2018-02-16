@@ -6,7 +6,6 @@ class NewGolferForm(forms.ModelForm):
     class Meta:
         model = GolferProfile
         fields = (
-                  'golfer',
                   'your_name',
                   'your_image',
                   'your_golf_club',
