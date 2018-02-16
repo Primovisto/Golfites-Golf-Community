@@ -13,14 +13,17 @@
 
         <!-- Ad Description -->
             <div class="col-md-6 ad-page-col-2">
-                <h2 style="font-size:30px;">{{ ad.item }}</h2>
+
+                <h2 style="font-size:30px;">{{ ad.item_name }}</h2>
                 <hr>
                 <p><strong>Description:</strong> {{ ad.product_short_description }}</p>
-                <p>€ {{ ad.item_price }}</p>
-
+                <p><strong>Seller Name:</strong> {{ ad.your_name }}</p>
+                <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
+                <p style="font-size:20px; font-weight:600;">€ {{ ad.item_price }}</p>
+                <p><strong>Published Date:</strong> {{ ad.published_date }}</p>
                 <p><strong>Views:</strong> {{ ad.views }}</p>
                 <p><strong>Location:</strong> {{ ad.your_location }}</p>
-                <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
+
 
                 <!-- Ad Comments -->
                 <p><strong>Message seller about this ad:</strong></p>

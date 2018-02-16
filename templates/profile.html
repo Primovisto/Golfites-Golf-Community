@@ -68,7 +68,7 @@
                                      {% else %}
                             <div class="">No images available</div>
                             {% endif %}
-                            <p class="browseads"><strong>Ad title: </strong>{{ ad.item }}</p>
+                            <p class="browseads"><strong>Ad title: </strong>{{ ad.item_name }}</p>
                             <p class="browseads"><strong>Ad price: </strong>&euro;{{ ad.item_price }}</p>
                             <button class="site-btn" style="margin-bottom:30px;" onclick="location.href='{% url 'edit_ad' ad.id %}'">Edit ad
                             </button>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
-from .models import Equipment, EquipmentGallery
+from .models import Equipment
 
 
 def all_equipment(request):

@@ -20,7 +20,7 @@ class Equipment(models.Model):
         paypal_dict = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,
             "amount": self.price,
-            "currency": "USD",
+            "currency": "EUR",
             "item_name": self.name,
             "invoice": "%s-%s" % (self.pk, uuid.uuid4()),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
@@ -32,8 +32,3 @@ class Equipment(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class EquipmentGallery(models.Model):
-    image = models.ImageField(u'images', upload_to='images', blank=True)
-    countries = models.ForeignKey('Equipment', blank=True, null=True, on_delete=models.PROTECT)
