@@ -3,5 +3,3 @@ from .models import Equipment
 
 
 admin.site.register(Equipment)
-
-

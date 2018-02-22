@@ -1,40 +1,122 @@
 {% extends 'base.html' %} {% load static %} {% load bootstrap_tags %} {% block content %}
-
-    <!-- Page Header Image -->
-<div class="about-banner-image">
-
+<!-- Page Header Image -->
+<div class="about-banner-image" style="background:url('/media/images/golf_banner-2_1280x550_V2.jpg');background-size:cover;">
     <h2 class="about-banner-text">About Us</h2>
-
 </div>
-
-    <!-- About Us Text -->
-
-<div class="container" style="padding-bottom: 60px;">
+<!-- About Us Text -->
+<div class="container">
     <div class="row">
-        <div class="col-md-12">
-
-            <div class="col-md-9 about-text-col">
-                <div class="about-us-text">
-                    <p>Our goal at Golfites is to provide Irish Golfers with an online community where they can connect with fellow golfers. Think of us as golfing social community similar to Facebook.</p>
-                    <p>The Golfites idea came when we realised that there wasn't an online resource for golfers and specifically Irish golfers to come together in a golf specific group to connect and learn from each other. As golfers ourselves we realise that golf can be a very individualistic sport and that connecting with and learning from other golfers is an important aspect in improving our golf games. </p>
-
-                    <p>Golfites members can avail of a number of our built-in resources which are aimed at providing the golfer with a unique online experience. We are like a one stop shop for all things golf related.</p>
-                        <hr><strong>Below are the features available to Golfites Members:</strong>
-                    <ul>
-                        <li>Post Ads selling their used golf equipment and view others Ads.</li>
-                        <li>Search through our 'golf course finder' which maps and details every one of the over 400 Courses in Ireland.</li>
-                        <li>Purchase Equipment from the Golfites Shop.</li>
-                        <li>Access our Golf Academy to learn golfing tips and hints from Golfites experienced contributors.</li>
-                        <li>Read and post on the Golfites forums to discuss anything golf related.</li>
-                        <li>Create their own Golfites profile with info about them and their golf, including video of their swing which can be commented on by other members.</li>
-                        <li>Each Member can access their Member Dashboard for quick and easy access to each of the above features.</li>
-                    </ul>
-                    <hr>
-                    <p>All of the above is available for a monthly fee of just €4.99. For further information about Golfites feel free to contact us and we'll get back to you ASAP. </p>
-
+        <div class="col-md-8 about-text-col">
+            <div class="about-us-text">
+                <h4>Golfites was born from a strong passion for golf. We want to be a useful tool for those who love the game and want to connect with like minded people who share that passion and commitment.</h4>
+                <p>Golfites' provides Irish Golfers with an online community where they can connect with fellow golfers. Think of us as golfing social community similar to Facebook. As golfers ourselves we realise that golf can be a very individualistic sport and that connecting with and learning from other golfers is an important aspect in improving our games. Golfites members can avail of a number of our built-in resources.
+                    <br>
+                    <br>Membership of the Golfites Community is just €4.99 per month. Join now and gain access to all of the features listed below! </p>
+            </div>
+        </div>
+        <div class="col-md-4 about-text-col" style="padding-bottom:79px;">
+            <img src="{% static 'imgs/Golfites_Team.jpg' %}" class="rounded" style="height:auto; width:100%;border-radius:5px;padding-top:30px;">
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-top:50px;">
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="feature-icon">
+                <img src="{% static 'imgs/img_488161.png' %}" class="features-image img responsive" height="60" width="60">
+            </div>
+            <h4 class="about-features-header">Golfites Ads</h4>
+            <p class="about-features-text">Golfites members can create adverts which will allow them to sell their old or used golf equipment. Creating an ad is free for Golfites Members and there are no sale fees attached by Golfites. </p>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="feature-icon">
+                <img src="{% static 'imgs/if_speech-bubble-dots-outline_353440.png' %}" class="features-image img responsive" height="60" width="60">
+            </div>
+            <h4 class="about-features-header">Golfites Forum</h4>
+            <p class="about-features-text">The Golfites forum is the place where members can discuss anything golf related. Members can create threads or post comments and give their opinions on a wide range of golfing subjects.
+            </p>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="feature-icon">
+                <img src="{% static 'imgs/golf-bag.png' %}" class="features-image img responsive" height="70" width="70">
+            </div>
+            <h4 class="about-features-header">Golfites Equipment</h4>
+            <p class="about-features-text">Browse and purchase the newest golf equipment on Golfites. We stock a wide range of equipment from brands such as Taylormade, Titleist, Ping and Odyssey.
+            </p>
+        </div>
+    </div>
+    <div class="row features-row">
+        <div class="col-sm-4 col-md-4">
+            <div class="feature-icon">
+                <img src="{% static 'imgs/search.png' %}" class="features-image img responsive" height="60" width="60">
+            </div>
+            <h4 class="about-features-header">Search Golf Courses</h4>
+            <p class="about-features-text">Golfites users can search for and discover over 400 Irish golf courses using our course finder. It is the only interactive map showing every golf course in the country.</p>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="feature-icon">
+                <img src="{% static 'imgs/Bank-PNG-Transparent-Image.png' %}" class="features-image img responsive" height="60" width="60">
+            </div>
+            <h4 class="about-features-header" style="font-weight:700;">Golfites Academy</h4>
+            <p class="about-features-text">The Golfites Academy is a great place for members to learn and improve their games. Members gain access to exclusive content from our dedicated team of contributors. </p>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="feature-icon">
+                <img src="{% static 'imgs/profile-icon-png-891.png' %}" class="features-image img responsive" height="60" width="60">
+            </div>
+            <h4 class="about-features-header">Golfer Profiles</h4>
+            <p class="about-features-text">Members can create their own Golfites profile which can be viewed and commented on by other Golfites Members. Think of it as a golfing version of Facebook! </p>
+        </div>
+    </div>
+</div>
+<div class="container" style="background-color:#fff;margin-bottom:60px;">
+    <div class="row">
+        <div class="col-md-12 about-text-col">
+            <h4 class="team-header">Our Team</h4>
+        </div>
+    </div>
+    <div class="row" style="margin:40px 0;">
+        <div class="team-member col-lg-4 col-md-4 col-sm-12">
+            <div class="text-center">
+                <img class="team-member-img" src="{% static "imgs/man.png" %}" style="height:auto;" alt="">
+                <div style="padding:0 15px;">
+                    <h4>Alan Breen</h4>
+                    <h4 class="team-member-subtitle">Founder and CEO</h4>
+                    <p class="team-member-text">
+                        Alan is the man behind the Golfites Community. He took up golf at the age of 12 and has loved the game ever since. If you'd like to drop him a message he'd love to hear your feedback on the site.
+                    </p>
+                </div>
+                <div class="email-address">
+                    <a href="mailto:ed@velabri.co" class="email-link">alan@golfites.ie</a>
                 </div>
             </div>
-
+        </div>
+        <div class="team-member col-lg-4 col-md-4 col-sm-12">
+            <div class="text-center">
+                <img class="team-member-img" src="{% static "imgs/woman.png" %}" style="height:auto;" alt="">
+                <div style="padding:0 15px;">
+                    <h4>Jennifer Galvin</h4>
+                    <h4 class="team-member-subtitle">Customer Support</h4>
+                    <p class="team-member-text">Have a general enquiry about us? Jennifer can help you. She is one of the founding members of Golfites and an avid golfer playing off a 12 handicap.</p>
+                </div>
+                <div class="email-address">
+                    <a href="mailto:ed@velabri.co" class="email-link">jennifer@golfites.ie</a>
+                </div>
+            </div>
+        </div>
+        <div class="team-member col-lg-4 col-md-4 col-sm-12">
+            <div class="text-center">
+                <img class="team-member-img" src="{% static "imgs/man-2.png" %}" alt="">
+                <div style="padding:0 15px;">
+                    <h4>Joe Brown</h4>
+                    <h4 class="team-member-subtitle">Technical Support</h4>
+                    <p class="team-member-text">Joe is a self confessed golfaholic. Playing off a 6 handicap Joe spends almost as much time on the golf course as he does at work on his computer. If you need any help with a technical issue on the site then Joe is your man.
+                    </p>
+                </div>
+                <div class="email-address">
+                    <a href="mailto:ed@velabri.co" class="email-link">joe@golfites.ie</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
