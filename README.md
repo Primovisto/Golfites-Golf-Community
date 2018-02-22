@@ -56,7 +56,7 @@ Manual testing was undertaken for this application. Test such as:
 
 <h2>Storage</h2>
 
-Amazon S3 was used to store media file uploads.
+Amazon S3 was used to store media and static file uploads.
 
 <h2>Author</h2>
 
