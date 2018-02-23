@@ -140,12 +140,13 @@
                 </div>
             </div>
             <div class="col-md-4 col-features" style="padding:0 20px;">
-                <h4 class="homepage-options">Latest Ads</h4> {% for ad in latest_ads %}
+                <h4 class="homepage-options">Latest Ads</h4>
+                {% for ad in latest_ads %}
                 <div class="ad-item">
                     <h4>{{ ad.item  }}</h4>
                     <span class="text-center">
                     {% if ad.item_image %}
-                    <img src="/media/{{ ad.item_image }}" class="ad-image img-responsive" alt="Golfites - Ads"/> {% else %}
+                    <img src="{{ MEDIA_URL }}{{ ad.item_image }}" class="ad-image img-responsive" alt="Golfites - Ads"/> {% else %}
                 <div class="">No images available</div>
                     {% endif %}
 

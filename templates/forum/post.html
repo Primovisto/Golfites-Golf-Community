@@ -4,11 +4,10 @@
 <div class="row post-row">
  <div class="col-md-2 comment-profile text-center">
      <p class="post-username"><strong>{{ post.user.username }}</strong></p>
-   <p><img src="/media/images/ed-stack-primovisto_1_El0tErF.jpg" height="90" width="90" class="img-circle"/></p>
-
-   <p>{{ post.user.posts.count }} posts</p>
+     <img src="{% static 'imgs/profile-placeholder.png' %}" height="90" width="90" class="img-circle"/>
+     <p>{{ post.user.posts.count }} posts</p>
  </div>
- <div class="col-md-10 ">
+    <div class="col-md-10 ">
    <div class="comment-content">
      {% autoescape off %}
        {{ post.comment|emoticons }}
