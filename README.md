@@ -55,6 +55,14 @@ Manual testing was undertaken for this application. Test such as:
 6. Testing the database
 7. Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
 
+<h2>Payments</h2>
+
+<h4>Stripe</h4>
+A monthly subscription fee of €4.99 is paid via credit card on registration. 
+The site is in test mode. To create a test account fill out the registration form entering credit card number: 4242424242424242 and any security number and expiry date combo.
+
+<h4>Paypal</h4>
+In the equipments section users can use Paypal to purchase products. As the site is in test mode, Paypal Sandbox is in operation. To make a purchase users will need to login to https://developer.paypal.com and create a personal sandbox account. Once the sandbox account is created, users should return to Golfites to complete the checkout process. Learn More about creating a Paypal sandbox account here: https://developer.paypal.com/docs/classic/lifecycle/sb_create-accounts/
 <h2>Storage</h2>
 
 Amazon S3 was used to store media and static file uploads.

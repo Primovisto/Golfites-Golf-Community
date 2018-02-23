@@ -48,9 +48,9 @@
                             <p class="academy-contributors-text">PGA Assistant</p>
                         </div>
                         <div class="col-md-4">
-                            <img src="{% static "imgs/StephenPro.png" %}" class="img-responsive" />
-                            <h4 class="academy-contributors-header">Stephen O Connor</h4>
-                            <p class="academy-contributors-text">PGA Professional</p>
+                            <img src="{% static "imgs/ed-stack-primovisto (1).jpg" %}" class="img-responsive" />
+                            <h4 class="academy-contributors-header">Ed Stack</h4>
+                            <p class="academy-contributors-text">Admin</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,10 @@
 
                 <div class="academy-detail">
                     <a class="story-img" href="#">
-                        <img src="{{ MEDIA_URL }}{{ post.author_image }}" class="img-responsive center-block">
+                        {% if post.author_image %}
+                        <img src="{{ MEDIA_URL }}{{ post.author_image }}" class="img-responsive center-block">{% else %}
+                        <div class="#">No images</div>
+                {% endif %}
                     </a>
                     <p>{{ post.author }}</p>
                 </div>

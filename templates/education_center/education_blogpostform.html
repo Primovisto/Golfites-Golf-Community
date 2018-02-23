@@ -3,7 +3,7 @@
     {% load bootstrap_tags %}
     <div class="maincontent">
         <div class="container" style="background-color:#fff;">
-            <h1>Add A Post</h1>
+            <h2>Add A Post</h2>
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | as_bootstrap}}

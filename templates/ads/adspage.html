@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load bootstrap_tags %} {% block content %}
 <div class="maincontent">
     <div class="container">
 
@@ -16,10 +16,10 @@
 
                 <h2 style="font-size:30px;">{{ ad.item_name }}</h2>
                 <hr>
+                <p style="font-size:20px; font-weight:600;">€ {{ ad.item_price }}</p>
                 <p><strong>Description:</strong> {{ ad.product_short_description }}</p>
                 <p><strong>Seller Name:</strong> {{ ad.your_name }}</p>
                 <p><strong>Seller Email:</strong> {{ ad.contact_email }}</p>
-                <p style="font-size:20px; font-weight:600;">€ {{ ad.item_price }}</p>
                 <p><strong>Published Date:</strong> {{ ad.published_date }}</p>
                 <p><strong>Views:</strong> {{ ad.views }}</p>
                 <p><strong>Location:</strong> {{ ad.your_location }}</p>

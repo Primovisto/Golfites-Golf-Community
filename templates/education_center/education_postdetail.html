@@ -39,7 +39,11 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="post-detail">
-                    <div class="center-block" style="background-size: cover;width:100%;margin-bottom:40px;height:300px; background: url('/media/{{ post.image }}') no-repeat center center; ">
+                    <div class="center-block">
+                        {% if post.image %}
+                <img class="img-responsive product-image" src="{{ MEDIA_URL }}{{ post.image }}" /> {% else %}
+                <div class="#">No images</div>
+                {% endif %}
 
                     </div>
                     <p>{{ post.content|linebreaks }}</p>

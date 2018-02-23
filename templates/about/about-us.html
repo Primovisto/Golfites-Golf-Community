@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% load bootstrap_tags %} {% block content %}
 <!-- Page Header Image -->
-<div class="about-banner-image" style="background:url('/media/images/golf_banner-2_1280x550_V2.jpg');background-size:cover;">
+<div class="about-banner-image" style="background-image:url({% static 'imgs/golf_banner-2_1280x550_v2.jpg' %});background-size:cover;">
     <h2 class="about-banner-text">About Us</h2>
 </div>
 <!-- About Us Text -->
@@ -8,13 +8,13 @@
     <div class="row">
         <div class="col-md-8 about-text-col">
             <div class="about-us-text">
-                <h4>Golfites was born from a strong passion for golf. We want to be a useful tool for those who love the game and want to connect with like minded people who share that passion and commitment.</h4>
+                <p>Golfites was born from a strong passion for golf. We want to be a useful tool for those who love the game and want to connect with like minded people who share that passion and commitment.</p>
                 <p>Golfites' provides Irish Golfers with an online community where they can connect with fellow golfers. Think of us as golfing social community similar to Facebook. As golfers ourselves we realise that golf can be a very individualistic sport and that connecting with and learning from other golfers is an important aspect in improving our games. Golfites members can avail of a number of our built-in resources.
                     <br>
                     <br>Membership of the Golfites Community is just €4.99 per month. Join now and gain access to all of the features listed below! </p>
             </div>
         </div>
-        <div class="col-md-4 about-text-col" style="padding-bottom:79px;">
+        <div class="col-md-4 about-text-col" style="padding-bottom:39px;">
             <img src="{% static 'imgs/Golfites_Team.jpg' %}" class="rounded" style="height:auto; width:100%;border-radius:5px;padding-top:30px;">
         </div>
     </div>
