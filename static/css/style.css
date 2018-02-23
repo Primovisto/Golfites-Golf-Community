@@ -1534,6 +1534,9 @@ p.academy-slide-header {
         padding-top: 15px;
     }
 
+    .col-features img {
+        height: auto;
+    }
     button.sign-up-btn {
         display: flex;
         margin: 0 auto;
