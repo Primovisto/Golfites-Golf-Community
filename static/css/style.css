@@ -1699,5 +1699,10 @@ p.academy-slide-header {
         display: block !important;
 }
 
+    .portfolio-item .logo-image .overlay {
+    opacity: 1;
+
+}
+
 }
 
