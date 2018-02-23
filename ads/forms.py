@@ -10,7 +10,6 @@ class NewAdForm(forms.ModelForm):
                   'item_name',
                   'item_price',
                   'item_image',
-                  'published_date',
                   'contact_email',
                   'product_short_description',
                   'your_location',

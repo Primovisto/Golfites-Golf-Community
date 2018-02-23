@@ -60,12 +60,7 @@
     <div class="container login-register-form-section">
         <div class="row">
             <div class="col-lg-12" data-aos="fade-up" data-aos-once="false">
-                <div class="col-md-6 login-register-section-col">
-                    <div class="col-md-8 col-sm-offset-1">
-                        <div class="sign-in-header">
-                            <h4>Sign in</h4>
-                            <hr>
-                        </div>
+                <div class="col-md-5 col-centered login-register-section-col">
                 <form method="post" class="login-form" action="{% url 'login' %}">
                     {% csrf_token %} {{ form| as_bootstrap }}
                     <div class="form-group">
@@ -75,19 +70,9 @@
                         </div>
                     </div>
                 </form>
-                        </div>
-            </div>
-                <div class="col-md-6 login-register-section-col">
-                    <div class="sign-in-header">
-                            <h4>Become A Golfites Member</h4>
-                        <hr>
-                        </div>
-                    <div class="register-text">
-                        <p>For just €4.99 a month join a growing community of passionate golfers and gain access to all of the features listed above. Whether you want to sell your old used equipment or discover the latest hints and tips, Golfites has you covered! </p>
-                        <button type="button"  onclick="location.href='{% url 'register' %}'" class="site-btn">Join Now<i class="fa fa-arrow-right" style="margin-left:8px;"></i></button>
-                    </div>
 
             </div>
+
             </div>
         </div>
     </div>

@@ -355,7 +355,7 @@ section .register-header p {
 
 section .login-register-form-section {
     background-color: #fff;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 section .login-register-form-section .col-centered {
@@ -364,7 +364,7 @@ section .login-register-form-section .col-centered {
 }
 
 section .login-register-section-col{
-    padding:40px 0;
+    padding:60px 0;
 }
 
 .form-control{
