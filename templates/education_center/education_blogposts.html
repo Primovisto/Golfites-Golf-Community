@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <div class="academy-header-image">
     <div class="academy-header-text">
         <h4 class="academy-slide-header">Welcome to the Golfites Academy</h4>
@@ -6,7 +6,7 @@
     </div>
 </div>
 
-    <div class="container" style="margin-top:60px;padding: 30px; background-color:#fff;">
+    <div class="container" style="background-color:#fff;margin:80px auto;">
         <div class="row">
 
             <div class="col-md-6">
@@ -19,36 +19,36 @@
                 <div class="contributors-column">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="/media/images/9e1c55ab19d7998b_800x800ar.jpg" class="img-responsive" style="height:100px;" />
+                            <img src="{% static "imgs/AnnePro.png" %}" class="img-responsive" />
                             <h4 class="academy-contributors-header">Anne Lynch</h4>
                             <p class="academy-contributors-text">PGA Professional</p>
 
                         </div>
                         <div class="col-md-4">
-                            <img src="/media/images/Jim-Hardy_Angus-Murray.jpg" class="img-responsive" style="height:100px;" />
+                            <img src="{% static "imgs/JoePro.png" %}" class="img-responsive" />
                             <h4 class="academy-contributors-header">Joe McCarthy</h4>
                             <p class="academy-contributors-text">PGA Assistant</p>
                         </div>
                         <div class="col-md-4">
-                            <img src="/media/images/David+Jones+Powerade+PGA+Assistants+Championship+SjkuWa6Uty8l.jpg" style="height:100px;" class="img-responsive" />
+                            <img src="{% static "imgs/MikePro.png" %}" class="img-responsive" />
                             <h4 class="academy-contributors-header">Mike Brown</h4>
                             <p class="academy-contributors-text">PGA Professional</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="/media/images/Scott-Hamilton-640-x360.jpg" class="img-responsive" style="height:100px;" />
+                            <img src="{% static "imgs/JohnPro.png" %}" class="img-responsive"/>
                             <h4 class="academy-contributors-header">John O Dwyer</h4>
                             <p class="academy-contributors-text">PGA Professional</p>
 
                         </div>
                         <div class="col-md-4">
-                            <img src="/media/images/11708054.jpg" class="img-responsive" style="height:100px;" />
+                            <img src="{% static "imgs/MariePro.png" %}" class="img-responsive"/>
                             <h4 class="academy-contributors-header">Marie Collins</h4>
                             <p class="academy-contributors-text">PGA Assistant</p>
                         </div>
                         <div class="col-md-4">
-                            <img src="/media/images/Juhis%20kuva.jpg" style="height:100px;" class="img-responsive" />
+                            <img src="{% static "imgs/StephenPro.png" %}" class="img-responsive" />
                             <h4 class="academy-contributors-header">Stephen O Connor</h4>
                             <p class="academy-contributors-text">PGA Professional</p>
                         </div>

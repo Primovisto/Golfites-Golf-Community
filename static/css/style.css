@@ -336,6 +336,12 @@ footer .footer-wording {
 
 /******** Homepage Login/Register Section Styles ********/
 
+
+section .features-icon-homepage{
+    color:#3a6585;
+    font-size:36px;
+    margin-right:15px;
+}
 section#register {
     padding-top: 60px;
 }
@@ -346,14 +352,28 @@ section .register-header p {
 
 }
 
+
 section .login-register-form-section {
     background-color: #fff;
-    height: 400px;
+    margin-bottom: 20px;
 }
 
 section .login-register-form-section .col-centered {
     float: none;
     margin: 0 auto;
+}
+
+section .login-register-section-col{
+    padding:40px 0;
+}
+
+.form-control{
+    background-color:#eee!important;
+}
+
+.features-para{
+    margin-bottom:30px;
+    text-align: center;
 }
 
 .site-btn {
@@ -382,7 +402,7 @@ section .login-register-form-section .col-centered {
 /******** Homepage Features Section Styles ********/
 
 section#features {
-    padding: 60px 0;
+    padding-top: 60px;
 }
 
 section img {
@@ -411,6 +431,7 @@ section .wrapper {
 
 .white-background {
     background-color: #fff;
+    padding-bottom:30px;
 
 }
 
@@ -456,7 +477,7 @@ section#profiles{
 
 
 .profiles-section{
-padding-bottom:80px;
+padding-bottom:60px;
     background-color:#fff;
     margin-bottom: 80px;
 
@@ -1123,7 +1144,7 @@ p.academy-slide-header {
 
 
 .login-form {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .subscriptions-header,
@@ -1219,7 +1240,6 @@ p.academy-slide-header {
 /*********** Contact-Us Page Styles ***********/
 
 .contact-banner-image  {
-    background-image: url("/media/images/banner2.jpg_Thumbnail0.jpg");
     width: 100%;
     height: 350px;
 }
@@ -1493,8 +1513,12 @@ p.academy-slide-header {
     }
 
     section .login-register-form-section {
-        height: 300px;
+
         margin: 0 20px;
+    }
+
+    section .login-register-section-col{
+        padding:20px 0;
     }
 
     .register-link {
@@ -1547,6 +1571,12 @@ p.academy-slide-header {
         font-size:12px;
     }
 
+    .academy-header-text{
+        top:35%;
+    }
+
+
+
 }
 
 /* Tablets (landscape) ----------- */
@@ -1555,10 +1585,6 @@ p.academy-slide-header {
     .col-features {
         width: 30%;
         margin: 0 15px;
-    }
-
-    .login-form {
-        padding: 0 100px;
     }
 
     .academy-slider .slider-active .item .item-caption,
@@ -1630,6 +1656,10 @@ p.academy-slide-header {
 
     .navbar-toggle {
         display: block;
+    }
+
+    .col-features img{
+        height:auto;
     }
 
     .navbar-collapse {
