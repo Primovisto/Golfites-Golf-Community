@@ -51,8 +51,9 @@ Manual testing was undertaken for this application. Test such as:
 2. Testing the register/login/logout flow
 3. Testing the post_new/edit equipment, ads, golfer profiles
 4. Testing the checkout process
-5. Testing the database
-6. Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
+5. Testing the contact form
+6. Testing the database
+7. Unitests were created to test, the registration form, the homepage, the user creation process, the education_center(Academy), forum.
 
 <h2>Storage</h2>
 
