@@ -28,7 +28,7 @@
                 <hr>
             <!-- Video Embed -->
                 <p><strong>My Golf Swing:</strong>
-                    <br>{% video golfer.swing_video as my_video %} {% video my_video '500x410' %} {% endvideo %}</p>
+                    <br>{% video golfer.swing_video as my_video %} {% video my_video '500x410' is_secure=True %} {{ my_video.url }} {% endvideo %}</p>
             </div>
 
         </div>
